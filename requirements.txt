@@ -1,0 +1,4 @@
+oc-idmanager
+oc-meta
+zstandard
+tqdm
