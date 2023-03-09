@@ -27,7 +27,7 @@ import csv
 
 class PreprocessingTest(unittest.TestCase):
         def setUp(self):
-            self.test_dir = join("preprocessing", "test", "preprocess")
+            self.test_dir = join("test", "preprocess")
             self._input_dir_dc = join(self.test_dir, "data_datacite")
             self._input_dir_cit = join(self.test_dir, "data_datacite_sample")
             self._input_compr = join(self.test_dir, "dc_pp_input.json.zst")

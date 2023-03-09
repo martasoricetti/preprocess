@@ -29,7 +29,7 @@ class PubMedPPTest(unittest.TestCase):
     """This class aims at testing the methods of the classes NIHPreProcessing and ICiteMDPreProcessing."""
 
     def setUp(self):
-        self.test_dir = join("preprocessing","test", "preprocess")
+        self.test_dir = join("test", "preprocess")
         self.req_type = ".csv"
         self.num_0 = 356
         self.num_1 = 8
@@ -52,7 +52,7 @@ class PubMedPPTest(unittest.TestCase):
         self.output_md_dir_broken = join(self.test_dir, "poci_glob_dump_output_broken")
 
     def __get_output_directory(self, directory):
-        directory = join(".", "tmp", directory)
+        directory = join("", "tmp", directory)
         if not os.path.exists(directory):
             os.makedirs(directory)
         return directory

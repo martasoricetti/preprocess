@@ -27,7 +27,7 @@ class OpenAirePPTest(unittest.TestCase):
     """This class aims at testing the methods of the classes OpenAirePreProcessing."""
 
     def setUp(self):
-        self.test_dir = join("preprocessing","test", "preprocess")
+        self.test_dir = join("test", "preprocess")
         self.req_type = ".gz"
         self.num_0 = 5
         self.num_1 = 8
@@ -38,7 +38,7 @@ class OpenAirePPTest(unittest.TestCase):
 
 
     def __get_output_directory(self, directory):
-        directory = join(".", "tmp", directory)
+        directory = join("", "tmp", directory)
         if not os.path.exists(directory):
             os.makedirs(directory)
         return directory
