@@ -43,34 +43,34 @@ class OpenAirePPTest(unittest.TestCase):
             os.makedirs(directory)
         return directory
 
-    def test_id_dict_list_to_validated_id_list_API(self):
+    def test_to_validated_id_list_API(self):
         self.OAPP2 = OpenirePreProcessing(self.input_dir, self.output_dir, self.num_1, testing=True)
         id_dict_list = [{"identifier":"PMID:1284", "schema":"pmid"}, {"identifier":"DOI:10.1016/0531-5565(75)90003-0","schema":"doi"}]
         id_dict_list_2 = [{"identifier":"1284", "schema":"PMID"}, {"identifier":"10.1016/0531-5565(75)90003-0","schema":"DOI"}]
         id_dict_list_3 = [{"identifier":"1284", "schema":"PMID"}, {"identifier":"10.1016/0531-5565(75)90003-0","schema":"DOI"}, {"identifier":"https://ror.org/02mhbdp94","schema":"ror"}]
         expected = ['pmid:1284', 'doi:10.1016/0531-5565(75)90003-0']
         #check id normalization management
-        outp = self.OAPP2.id_dict_list_to_validated_id_list(id_dict_list)
+        outp = self.OAPP2.to_validated_id_list(id_dict_list)
         #check id management without prefix, with schema in uppercase
-        outp2 = self.OAPP2.id_dict_list_to_validated_id_list(id_dict_list_2)
+        outp2 = self.OAPP2.to_validated_id_list(id_dict_list_2)
         #check id exclusion in case of not handled schema
-        outp3 = self.OAPP2.id_dict_list_to_validated_id_list(id_dict_list_3)
+        outp3 = self.OAPP2.to_validated_id_list(id_dict_list_3)
         self.assertEqual(outp, expected)
         self.assertEqual(outp2, expected)
         self.assertEqual(outp3, expected)
 
-    def test_id_dict_list_to_validated_id_list_DB(self):
+    def test_to_validated_id_list_DB(self):
         self.OAPP3 = OpenirePreProcessing(self.input_dir, self.output_dir, self.num_1, testing=True)
         id_dict_list = [{"identifier":"pmid:9999999999999", "schema":"pmid"}]
         expected = []
         #check id management of an id which does not exist - API
-        outp = self.OAPP3.id_dict_list_to_validated_id_list(id_dict_list)
+        outp = self.OAPP3.to_validated_id_list(id_dict_list)
         self.assertEqual(outp, expected)
 
         #check id management of the same id after it was inserted in the db (preferred validation option)
         self.OAPP3._redis_db.set("pmid:9999999999999", "0000000000")
         expected = ["pmid:9999999999999"]
-        outp = self.OAPP3.id_dict_list_to_validated_id_list(id_dict_list)
+        outp = self.OAPP3.to_validated_id_list(id_dict_list)
         self.assertEqual(outp, expected)
 
 

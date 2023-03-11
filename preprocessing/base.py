@@ -7,11 +7,17 @@ from json import load, loads
 import zstandard as zstd
 import pathlib
 import zipfile
+import fakeredis
+from datasource.redis import RedisDataSource
 
 
 class Preprocessing(metaclass=ABCMeta):
     """This is the interface for implementing preprocessors for specific datasources.
     It provides the signatures of the methods for preprocessing a dump"""
+    BR_redis_test = fakeredis.FakeStrictRedis()
+    BR_redis = RedisDataSource("DB-META-BR")
+    RA_redis_test = fakeredis.FakeStrictRedis()
+    RA_redis = RedisDataSource("DB-META-RA")
 
     def __init__(self, **params):
         """preprocessor constructor."""
@@ -97,6 +103,10 @@ class Preprocessing(metaclass=ABCMeta):
 
         return result
 
+    def get_id_manager(self, schema, id_man_dict):
+        id_man = id_man_dict.get(schema)
+        return id_man
+
     @abstractmethod
     def split_input(self):
         """ ...
@@ -109,3 +119,4 @@ class Preprocessing(metaclass=ABCMeta):
     @abstractmethod
     def splitted_to_file(self, cur_n, data, type):
         pass
+

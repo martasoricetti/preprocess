@@ -9,8 +9,6 @@ from preprocessing.base import Preprocessing
 from oc_idmanager.doi import DOIManager
 from oc_idmanager.pmid import PMIDManager
 from oc_idmanager.pmcid import PMCIDManager
-import fakeredis
-from datasource.redis import RedisDataSource
 from datetime import datetime
 from argparse import ArgumentParser
 
@@ -34,9 +32,9 @@ class OpenirePreProcessing(Preprocessing):
 
     def __init__(self, input_dir, output_dir, interval, testing=False):
         if testing:
-            self._redis_db = fakeredis.FakeStrictRedis()
+            self._redis_db = self.BR_redis_test
         else:
-            self._redis_db = RedisDataSource("DB-META-BR")
+            self._redis_db = self.BR_redis
         self._input_dir = input_dir
         self._output_dir = output_dir
         if not exists(self._output_dir):
@@ -45,6 +43,8 @@ class OpenirePreProcessing(Preprocessing):
         self._doi_manager = DOIManager()
         self._pmid_manager = PMIDManager()
         self._pmc_manager = PMCIDManager()
+        self._id_man_dict = {"doi":self._doi_manager, "pmid": self._pmid_manager, "pmc": self._pmc_manager}
+
         super(OpenirePreProcessing, self).__init__()
 
     def split_input(self):
@@ -76,7 +76,7 @@ class OpenirePreProcessing(Preprocessing):
                                 if c_ing_id.get("schema").strip().lower() in self._accepted_ids:
                                     citing_ids_to_keep.append(c_ing_id)
                             # filter out all citing entity ids which are not valid
-                            citing_ids_to_keep = self.id_dict_list_to_validated_id_list(citing_ids_to_keep)
+                            citing_ids_to_keep = self.to_validated_id_list(citing_ids_to_keep)
                             if citing_ids_to_keep:
 
                                 cited_data = d.get("target")
@@ -85,7 +85,7 @@ class OpenirePreProcessing(Preprocessing):
                                 for c_ed_id in cited_ids:
                                     if c_ed_id.get("schema").strip().lower() in self._accepted_ids:
                                         cited_ids_to_keep.append(c_ed_id)
-                                cited_ids_to_keep = self.id_dict_list_to_validated_id_list(cited_ids_to_keep)
+                                cited_ids_to_keep = self.to_validated_id_list(cited_ids_to_keep)
 
                                 if cited_ids_to_keep:
                                     # BUILD SOURCE
@@ -146,17 +146,9 @@ class OpenirePreProcessing(Preprocessing):
         else:
             return data
 
-    def get_id_manager(self, schema):
-        id_man = None
-        if schema =="doi":
-            id_man = self._doi_manager
-        elif schema == "pmid":
-            id_man = self._pmid_manager
-        elif schema == "pmc":
-            id_man = self._pmc_manager
-        return id_man
 
-    def id_dict_list_to_validated_id_list(self, id_dict_list):
+
+    def to_validated_id_list(self, id_dict_list):
         """this method takes in input a list of id dictionaries and returns a list valid and existent ids with prefixes.
         For each id, a first validation try is made by checking its presence in META db. If the id is not in META db yet,
         a second attempt is made by using the specific id-schema API"""
@@ -166,7 +158,7 @@ class OpenirePreProcessing(Preprocessing):
             if isinstance(schema, str):
                 schema = schema.strip().lower()
             id = ent.get("identifier")
-            id_man =self.get_id_manager(schema)
+            id_man = self.get_id_manager(schema, self._id_man_dict)
             if id_man:
                 norm_id = id_man.normalise(id, include_prefix=True)
                 # check if the id is in redis db
