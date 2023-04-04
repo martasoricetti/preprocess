@@ -25,8 +25,14 @@ class PreprocessingTest(unittest.TestCase):
         def setUp(self):
             self.test_dir = join("test", "preprocess")
             self._input_dir_dc = join(self.test_dir, "data_datacite")
-            self._output_dir_dc_lm = join(self.test_dir, "tmp_data_datacite_lm")
+            self._output_dir_dc_lm = self.__get_output_directory("tmp_data_datacite_lm")
             self._interval = 7
+
+        def __get_output_directory(self, directory):
+            directory = join("", "tmp", directory)
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+            return directory
 
         def test_dc_preprocessing(self):
             if exists(self._output_dir_dc_lm):
