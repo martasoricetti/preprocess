@@ -1,0 +1,352 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11181/hpi.44.91",
+        "url": "https://doi.org/10.11181/hpi.44.91",
+        "ra": "JaLC",
+        "prefix": "10.11181",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "HIGH PRESSURE INSTITUTE OF JAPN(HPI)",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "一般社団法人 日本高圧力技術協会",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "ja",
+                "title": "超音波波形解析によるTiNi金属間化合物中の微小ボイドの定量的非破壊評価"
+            },
+            {
+                "lang": "en",
+                "title": "Nondestructive Characterization for Micro Voids in TiNi Intermetallic Compounds by means of Ultrasonic Wave Analysis"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "川手",
+                        "first_name": "裕"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "KAWATE",
+                        "first_name": "Hiroshi"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Yokohama National University",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "横浜国立大学大学院",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "大宮",
+                        "first_name": "卓人"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "OHMIYA",
+                        "first_name": "Takuto"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Yokohama National University",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "横浜国立大学大学院",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "3",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "石尾",
+                        "first_name": "雅昭"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "ISHIO",
+                        "first_name": "Masaaki"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "NEOMAX Materials Co.,Ltd.",
+                        "sequence": "2",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "(株)NEOMAXマテリアル",
+                        "sequence": "2",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "4",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "関根",
+                        "first_name": "和喜"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "SEKINE",
+                        "first_name": "Kazuyoshi"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Yokohama National University",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "横浜国立大学大学院",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2006"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/hpi/44/2/44_2_91/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "ja",
+        "updated_date": "2017-03-02",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "0387-0154",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1347-9598",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "hpi",
+                "type": "JID"
+            },
+            {
+                "journal_id": "hpi1972",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "圧力技術",
+                "type": "full",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "圧力技術",
+                "type": "abbreviation",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "高圧力",
+                "type": "before",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "JHPIJ",
+                "type": "abbreviation",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of Japan High Pressure Institute",
+                "type": "before",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "recorded_year": "1972-2019",
+        "volume": "44",
+        "issue": "2",
+        "first_page": "91",
+        "last_page": "101",
+        "date": "2006-05-01",
+        "keyword_list": [
+            {
+                "keyword": "<I>Nondestructive Characterization</I>",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "<I>Ultrasonic Testing</I>",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "<I>Wavelet Analysis</I>",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "<I>Intermetallic Compounds</I>",
+                "sequence": "4",
+                "lang": "en"
+            },
+            {
+                "keyword": "<I>Kirkendall Voids</I>",
+                "sequence": "5",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "doi": "10.1016/j.scriptamat.2004.03.013",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Scripta Materialia",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "50",
+                "first_page": "1423",
+                "last_page": "1427",
+                "publication_date": {
+                    "publication_year": "2004"
+                },
+                "content_language": "en",
+                "original_text": "1)  R. Santamarta and D. Schryvers;Scripta Materialia, Vol. 50, pp. 1423-1427 (2004) ."
+            },
+            {
+                "sequence": "2",
+                "doi": "10.1016/j.actamat.2004.08.003",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Acta Materialia",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "52",
+                "first_page": "5461",
+                "last_page": "5469",
+                "publication_date": {
+                    "publication_year": "2004"
+                },
+                "content_language": "en",
+                "original_text": "2)  T. Waitz and H. P. Karnthaler;Acta Materialia, Vol. 52, pp. 5461-5469 (2004) ."
+            },
+            {
+                "sequence": "3",
+                "doi": "10.1016/j.actamat.2004.09.029",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Acta materialia",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "53",
+                "first_page": "337",
+                "last_page": "343",
+                "publication_date": {
+                    "publication_year": "2005"
+                },
+                "content_language": "en",
+                "original_text": "3)  Y. Zhao, M. Taya, Y. Kang and A. Kawasaki;Acta materialia, Vol. 53, pp. 337-343  (2005) ."
+            },
+            {
+                "sequence": "4",
+                "original_text": "4)  A. Biswas;Acta Mterialia, Vol. 53, pp. 1415-1425 (2005) ."
+            },
+            {
+                "sequence": "5",
+                "doi": "10.1016/j.actamat.2003.08.009",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Acta Materialia",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "51",
+                "first_page": "6373",
+                "last_page": "6383",
+                "publication_date": {
+                    "publication_year": "2003"
+                },
+                "content_language": "en",
+                "original_text": "5)  H. Inoue, M. Ishio and T. Takasugi;Acta Materialia, Vol. 51, pp. 6373-6383 (2003) ."
+            },
+            {
+                "sequence": "6",
+                "original_text": "6)  R. D. LeBlanc, A. Maslouhi, D. Forsyth, A. Fahr and A. Moreau;Proc. IEEE Ultrasonics Symposium, pp. 693-697  (1997) ."
+            },
+            {
+                "sequence": "7",
+                "original_text": "7)  W. D. Feist and G. R. Tillack ; Proc. European-American Workshop Determination of Reliability and Validation Methods on NDE, pp. 291-298 (1998) ."
+            },
+            {
+                "sequence": "8",
+                "original_text": "8)  M. Hansen;&ldquo;Constitution of Binary Alloys&rdquo;, McGraw-Hill Book Co, pp. 1049-1052  (1958) ."
+            },
+            {
+                "sequence": "9",
+                "original_text": "9)  G. Cavaccini, M. Agresti, G. Borzacchiello, E. Bozzi, M. Chimenti and O. Salvetti;Proc. 15th World Conf. on Non-Destructive Testing, ed. by International Committee on NDT, pp. 110-117 (2000) ."
+            }
+        ]
+    }
+}

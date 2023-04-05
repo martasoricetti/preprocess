@@ -1,0 +1,313 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11178/jdsa.10.19",
+        "url": "https://doi.org/10.11178/jdsa.10.19",
+        "ra": "JaLC",
+        "prefix": "10.11178",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "Agricultural and Forestry Research Center, University of Tsukuba",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "筑波大学農林技術センター",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "en",
+                "title": "Diversified and Integrated Farming Systems (DIFS): Philippine Experiences for Improved Livelihood and Nutrition"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Elna Parreño-de Guzman",
+                        "first_name": "Lucille"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Crop Science Cluster, College of Agriculture, University of the Philippines Los Baños",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "B. Zamora",
+                        "first_name": "Oscar"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Crop Science Cluster, College of Agriculture, University of the Philippines Los Baños",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "Office of the Vice-Chancellor for Academic Affairs, University of the Philippines Los Baños",
+                        "sequence": "2",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "3",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Fe H. Bernardo",
+                        "first_name": "Dora"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Institute of Biological Sciences, College of Arts and Sciences, University of the Philippines Los Baños",
+                        "sequence": "3",
+                        "lang": "en"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2015"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/jdsa/10/1/10_19/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "en",
+        "updated_date": "2015-08-27",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "1880-3016",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1880-3024",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "jdsa",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "Journal of Developments in Sustainable Agriculture",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "J. Dev. Sus. Agr.",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "journal_txt_lang": "en",
+        "recorded_year": "2006-2014",
+        "volume": "10",
+        "issue": "1",
+        "first_page": "19",
+        "last_page": "33",
+        "date": "2015-08-28",
+        "keyword_list": [
+            {
+                "keyword": "diversified and integrated farming",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "nutrition-sensitive agriculture",
+                "sequence": "2",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "original_text": "Addison, K., undated. Bio-intensive Gardening Cuts Malnutrition in the Philippines. http://journeytoforever.org/iirr.html. Accessed 10 July 2014."
+            },
+            {
+                "sequence": "2",
+                "original_text": "Bachmann, L., Cruzada, E., Wright, S., 2009. Food Security and Farmer Empowerment: A Study of the Impacts of Farmer-led Sustainable Agriculture in the Philippines. Los Banos: <i>Magsasaka at Siyentipiko para sa Pag-unlad ng Agrikultura </i>(MASIPAG or Farmer-Scientist Partnership for Agricultural Development)."
+            },
+            {
+                "sequence": "3",
+                "original_text": "Bequillo, I.O., 2004. Documentation of Batak Indigenous Knowledge Systems and Agricultural Practices in Sitio Nanabu, Barangay Caramay, Roxas, Palawan, unpublished BS Agriculture thesis, Department of Agronomy, College of Agriculture, University of the Philippines Los Banos."
+            },
+            {
+                "sequence": "4",
+                "original_text": "Briones, A., undated. Asia Re-Discovers Organic Agriculture for Poverty Alleviation. www.worldcivilsociety.org/documents/16.07_briones_angelina.doc. Accessed 10 July 2014. 6 p."
+            },
+            {
+                "sequence": "5",
+                "original_text": "Catacutan, D.C., Rola, A.C., Reyes, M.R., 2012. Why Vegetable Agroforestry? In: Catacutan, D.C., Mercado, A.R. Jr., Chiong-Javier, A.E., Ella, V.B., Espaldon, M.V.O., Rola, A.C., Palada, M.C., Duque-Piñon, C., Saludadez, J., Penasco, A.M., Nguyen, M.R., Pailagao, C.T., Bagares, I.B., Alibuyog, N.R., Midmore, D., Reyes, M.R., Cajilig, R., Suthumchai, W., Kunta, K., Sombatpanit, S. (Eds), Vegetable-Agroforestry Systems in the Philippines, Special Publication No. 6b, World Association of Soil and Water Conservation (WASWAC), Beijing, China and World Agroforestry Center (ICRAF), Nairobi, Kenya, pp. 3-14."
+            },
+            {
+                "sequence": "6",
+                "original_text": "Ciencia, S.L., 2007. PRRM’s Alternative Rice Production Pattern. In: Regalado, A., Sierra, J., Tanchuling, H., Bertuso, A. (Eds.). Making Our Own Choices for Sustainable Farming: Documentation of Selected Rice Farming Methods. Rice Watch Action Network. Quezon City, Philippines. pp. 37-82."
+            },
+            {
+                "sequence": "7",
+                "original_text": "Corales, R.G., Juliano, L.M., Capistrano, A.O.V., Tobias, H.S., Dasalla, N.V., Cañete, S.D., Casimero, M.C., Sebastian, L.S., 2004. Palayamanan: A Rice-based Farming Systems Model for Small-scale Farmers. Philippine Journal of Crop Science. 29(1): 21-27."
+            },
+            {
+                "sequence": "8",
+                "original_text": "de Jesus, E.M.A., 2001. Indigenous Rice-based Farming Practices of the Upland Dwellers and the Recent Lowland Settlers of Tulgao Tribe of Kalinga, unpublished BS Agriculture thesis, Department of Agronomy, College of Agriculture, University of the Philippines Los Banos."
+            },
+            {
+                "sequence": "9",
+                "original_text": "Department of Agriculture-Bureau of Agriculture and Fisheries Standards (DA-BAFS). 2014. Philippine National Standard: Organic Agriculture. PNS/BAFS 07:2014. 55 p."
+            },
+            {
+                "sequence": "10",
+                "original_text": "Destination360., 2014. Philippines Map. http://www.destination360.com/asia/philippines/map. Accessed 15 September 2014."
+            },
+            {
+                "sequence": "11",
+                "original_text": "Fernandez, R.A., 2003. Cavite Farmers Develop Agroforestry System. http://www.philstar.com/ agriculture/233176/cavite-farmers-develop-agroforestry-system. Accessed 15 September 2014."
+            },
+            {
+                "sequence": "12",
+                "original_text": "Gonsalves, J., 1989. Bio-intensive Gardening: Alternatives to Conventional External Input Based Gardening. International Institute of Rural Reconstruction, Silang, Cavite. www.mwetafro.be/leisa/1989/5-2-21.pdf. Accessed 20 November 2012."
+            },
+            {
+                "sequence": "13",
+                "original_text": "IIRR, 2012. IIRR and Malnutrition. Posted on March 27, 2012 by IIRR US Office. http://iirrblog.com/tag/bio-intensive-gardening/. Accessed 15 September 2014."
+            },
+            {
+                "sequence": "14",
+                "original_text": "Magat, S.S., 2003. Pointers in Practical Coconut-based Farming Systems (CBFS). http://www.pca.da.gov.ph/coconutrde/images/gen10.pdf. Accessed 10 July 2014. 9 p."
+            },
+            {
+                "sequence": "15",
+                "original_text": "Magat, S.S., Secretaria, M.I., 2005. Coconut-Papaya-Pineapple-Peanut Multi-storey Cropping Model. Coconut Intercropping Guide No. 3. Philippine Coconut Authority, Department of Agriculture. Diliman, Quezon City. http://www.pca.da.gov.ph/coconutrde/images/cig3.pdf. Accessed 15 September 2014. 14 p."
+            },
+            {
+                "sequence": "16",
+                "original_text": "Maps of the world, 2014. Philippines Latitude and Longitude Map. http://www.mapsofworld. com/lat_long/philippines-lat-long.html. Accessed 14 September 2014."
+            },
+            {
+                "sequence": "17",
+                "original_text": "Mercado, A.R., Jr., Duque-Piñon, C., Palada, M., Reyes, M.R., 2012. Vegetable-Agroforestry (VAF) System: Understanding Vegetable-Tree Interaction as a Key to Successful Vegetable Farming in the Uplands of Southeast Asia. In: Catacutan, D.C., Mercado, A.R. Jr., Chiong-Javier, A.E., Ella, V.B., Espaldon, M.V.O., Rola, A.C., Palada, M.C., Duque-Piñon, C., Saludadez, J., Penasco, A.M., Nguyen, M.R., Pailagao, C.T., Bagares, I.B., Alibuyog, N.R., Midmore, D., Reyes, M.R., Cajilig, R., Suthumchai, W., Kunta, K., Sombatpanit, S. (Eds), Vegetable-Agroforestry Systems in the Philippines, Special Publication No. 6b, World Association of Soil and Water Conservation (WASWAC), Beijing, China and World Agroforestry Center (ICRAF), Nairobi, Kenya. pp. 79-112."
+            },
+            {
+                "sequence": "18",
+                "original_text": "Mogul, R.T., 2005, Agroecosystems Analysis and Needs Assessment of Sitio Bidang, Barangay Panitian, Sofronio Española, Palawan, unpublished BS Agriculture thesis, Department of Agronomy, College of Agriculture, University of the Philippines Los Banos."
+            },
+            {
+                "sequence": "19",
+                "original_text": "National Statistics Office, 2014. The Philippines in Figures 2014. http://www.census. gov.ph/sites/default/files/2014%20PIF.pdf. Accessed 24 July 2014. 101 p."
+            },
+            {
+                "sequence": "20",
+                "original_text": "Nguyen, M.R., De Mesa, J.P.A., Rola, A.C., 2012. Vegetable -Agroforestry System: Baseline Survey Results in Songco, Lantapan, Bukidnon, Philippines, 2006. In: Catacutan, D.C., Mercado, A.R. Jr., Chiong-Javier, A.E., Ella, V.B., Espaldon, M.V.O., Rola, A.C., Palada, M.C., Duque-Piñon, C., Saludadez, J., Penasco, A.M., Nguyen, M.R., Pailagao, C.T., Bagares, I.B., Alibuyog, N.R., Midmore, D., Reyes, M.R., Cajilig, R., Suthumchai, W., Kunta, K., Sombatpanit, S. (Eds), Vegetable-Agroforestry Systems in the Philippines, Special Publication No. 6b, World Association of Soil and Water Conservation (WASWAC), Beijing, China and World Agroforestry Center (ICRAF), Nairobi, Kenya. pp. 15-75."
+            },
+            {
+                "sequence": "21",
+                "original_text": "Ordinario, C., 2013. MAP: The Poorest Provinces in the Philippines. http://www.rappler.com/ business/27276-poorest-provinces-philippines. Accessed 13 September 2014."
+            },
+            {
+                "sequence": "22",
+                "original_text": "Padilla, H.J., 1999a. MBRLC: The Shopping Center for Agricultural Technologies. In: Ecological Farming: Principles, Techniques that Work and Farmer Innovators in the Philippines. Misereor. Corpus Press, Philippines. pp. 151-155."
+            },
+            {
+                "sequence": "23",
+                "original_text": "Padilla, H.J., 1999b. The Silang Multi-storey Cropping System: Patterned from Nature. In: Ecological Farming: Principles, Techniques that Work and Farmer Innovators in the Philippines. Misereor. Corpus Press, Philippines. pp. 84-87."
+            },
+            {
+                "sequence": "24",
+                "original_text": "Palmer, J.J., Adang, J.P., 2000. Sustainable Agriculture: The Mindanao Baptist Rural Life Center (MBRLC) Experience. In: Fernandez, P. G., Compendium on Sustainable Agriculture: Perspectives and Strategies of Advocates and Practitioners in the Philippines. DAR-UNDP SARDIC Programme, Mag-uugmad Foundation, Inc., Silliman University, and University of the Philippines Los Banos. pp. 46-55."
+            },
+            {
+                "sequence": "25",
+                "original_text": "Paragas, R.T., 2011. How to Apply Bio-intensive Gardening in Your Backyard. http://ronytparagas.hubpages.com/hub/How-to-apply-bio-intensive-gardening-in-your-backyard. Accessed 25 January 2015."
+            },
+            {
+                "sequence": "26",
+                "original_text": "Parreño-de Guzman, L.E., Fernandez, P.G., 2001. Indigenous seed storage system of a Manuvú community in Davao City, Mindanao, <i>Philippine Journal of Crop Science </i>26, 5-14."
+            },
+            {
+                "sequence": "27",
+                "original_text": "Philippine Statistics Authority, 2014, CountryStat. Philippines, Philippine Agriculture in Figures, 2013. http://countrystat.bas.gov.ph/?cont=3. Accessed 23 August 2014"
+            },
+            {
+                "sequence": "28",
+                "original_text": "Resuello, R.D.C., 2003. Documentation of the Indigenous Agricultural Practices of the Alangan Mangyan of Sitio Sulong Dulangan III, Baco, Oriental Mindoro, unpublished BS Agriculture thesis, Department of Agronomy, College of Agriculture, University of the Philippines Los Banos."
+            },
+            {
+                "sequence": "29",
+                "original_text": "Rocas, J., 2009. Scientific Names of Vegetables in the Folksong <i>Bahay Kubo</i>. The Four-eyed Journal. http://jrocas.com.ph/archives/scientific-names-of-vegetables-in-the-folksong-bahay-kubo/. Accessed 5 July 2012."
+            },
+            {
+                "sequence": "30",
+                "original_text": "Tacio, H.D., 1991. The SALT System. In: Padilla, H.J. 1999. Ecological Farming: Principles, Techniques that Work and Farmer Innovators in the Philippines. Misereor. Corpus Press, Philippines. pp. 159-161."
+            },
+            {
+                "sequence": "31",
+                "original_text": "Virchow, D., 2013. Nutrition-sensitive Agriculture: A Pillar of Improved Nutrition and Better Health. Food Security Center, University of Hohenheim, Stuttgart, Germany. pp. 692-748. https://ew.uni-hohenheim.de/fileadmin/einrichtungen/fsc/Researchrojects/Nutrition-sensitive_agriculture_-_FSC_-_xxx.pdf. Accessed 24 July 2014."
+            },
+            {
+                "sequence": "32",
+                "original_text": "Watson, H.R., undated. The Development of Sloping Agricultural Land Technology (SALT) in the Philippines: 1. SALT for Slopeland Crop-based Agriculture. Mindanao Baptist Rural Life Center (MBRLC). Kinuskusan, Bansalan, Davao del Sur. http://www.fftc.agnet.org/ htmlarea_file/library/20110722063823/eb400a.pdf. Accessed 10 July 2014. 9 p."
+            },
+            {
+                "sequence": "33",
+                "original_text": "World Population Review, 2014. The Philippines Population 2014. http://worldpopulation-review.com/countries/the-philippines-population/. Accessed 14 September 2014."
+            },
+            {
+                "sequence": "34",
+                "original_text": "Yannucci, L., 2012. <i>Bahay Kubo </i>(Philippine Kids Song). http://www.mamalisa.com/ ?t=es&amp;p=1017&amp;c=150. Accessed 5 November 2012."
+            },
+            {
+                "sequence": "35",
+                "original_text": "Zamora, O.B., 2010. Fundamentals of Sustainable Agriculture: Resource Materials for Courses in Sustainable Agriculture. Crop Science Cluster, College of Agriculture, University of the Philippines Los Baños. 189 p."
+            },
+            {
+                "sequence": "36",
+                "original_text": "Zamora, O.B., de Guzman, L.E.P., 2012. Philippine Agriculture: Status, Problems and Challenges. Paper presented in the International Conference on: “Frontiers in Agriculture” held on 3-5 October 2012 at Cheonon Campus, Dankook University, Korea."
+            },
+            {
+                "sequence": "37",
+                "doi": "10.1007/s12571-013-0306-4",
+                "original_text": "Zamora, O.B., de Guzman, L.E.P., Saguiguit, S.L.C., Talavera, M.T.M., Gordoncillo, N.P., 2013. Leveraging Agriculture to Improve Nutrition in the Philippines. Food Security: The Science, Sociology and Economics of Food Production and Access to Food. 5, 873-886. DOI 10.1007/s12571-013-0306-4."
+            },
+            {
+                "sequence": "38",
+                "original_text": "Zamora, O.B., de Guzman, L.E.P., Talubo, J.P.P., 2014. Sustainable Upland Agricultural Practices of Some Indigenous Peoples in the Philippines. 25 p. In: Cairns, M. (Editor). A Growing Forest of Voices: Integrating Indigenous Knowledge in Sustainable Upland Farming. (in press)."
+            }
+        ]
+    }
+}

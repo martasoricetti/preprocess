@@ -1,0 +1,257 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11178/jdsa.6.64",
+        "url": "https://doi.org/10.11178/jdsa.6.64",
+        "ra": "JaLC",
+        "prefix": "10.11178",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "Agricultural and Forestry Research Center, University of Tsukuba",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "筑波大学農林技術センター",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "en",
+                "title": "Characterization of Bambara Groundnut Landraces and Their Evaluation by Farmers in the Upper West Region of Ghana"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Abu",
+                        "first_name": "Huudu Bampuori"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Regional Agricultural Development Unit, Ministry of Food and Agriculture (MOFA)",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Buah",
+                        "first_name": "Samuel Saaka Jeduah"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Savanna Agricultural Research Institute (SARI)",
+                        "sequence": "2",
+                        "lang": "en"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2011"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/jdsa/6/1/6_1_64/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "en",
+        "updated_date": "2017-03-02",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "1880-3016",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1880-3024",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "jdsa",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "Journal of Developments in Sustainable Agriculture",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "J. Dev. Sus. Agr.",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "journal_txt_lang": "en",
+        "recorded_year": "2006-2014",
+        "volume": "6",
+        "issue": "1",
+        "first_page": "64",
+        "last_page": "74",
+        "date": "2011-03-30",
+        "keyword_list": [
+            {
+                "keyword": "<I>Vigna subterranea</I>",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "landrace",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "variability",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "agro-biodiversity",
+                "sequence": "4",
+                "lang": "en"
+            },
+            {
+                "keyword": "farmer preference",
+                "sequence": "5",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "original_text": "Adenji, O.T., Peter, J.M. and Bake, I., 2008. Variation and interrelationships for pod and seed yield characters in Bambara groundnut (<I>Vigna subterranea</I> [L.] Verdc.) in Adamawa state, Nigeria. <I>African Journal of Agricultural Research</I> 3: 617-621. [online]. Available from: http://www.academicjournals.org/ajar/PDF/pdf%202008/sep/Adeniji%20et%20al.pdf [Accessed 2 June 2010]"
+            },
+            {
+                "sequence": "2",
+                "original_text": "Baudoin, J.P. and Mergeai, G., 2001. Bambara groundnut (<I>Vigna subterranea</I> (L.) Verdc.). In: Roman H.R. (Ed.), <I>Crop Production in Tropical Africa.</I> A DGIC Publication, CIP Royal Library Brussels, Belgium, pp. 313-317."
+            },
+            {
+                "sequence": "3",
+                "original_text": "Brink, M., Collinson, S.T. and Wigglesworth, D.J., 1996. Characteristics of Bambara groundnut cultivation in Botswana. In: Azam-Ali, S., N., Sesay, A., Collinson, S.T. (Eds), <I>Proceedings of the International Bambara Groundnut Symposium</I> held at the University of Nottingham, U.K., 23-25 July 1996. pp. 133-142."
+            },
+            {
+                "sequence": "4",
+                "doi": "10.1016/S0378-4290(99)00075-1",
+                "original_text": "Brink, M., Sibuga, K.P., Tarimo, A.J.P. and Ramolemana, G.M., 2000. Quantifying photothermal influence on reproductive development in Bambara groundnut (<I>Vigna subterranea</I> [L.] Verdc.) ) models and their validation. <I>Field Crops Research</I> 66: 1-14. doi: 10.1016/S0378-4290(99)00075-1"
+            },
+            {
+                "sequence": "5",
+                "doi": "10.1017/S0014479700361038",
+                "volume": "36",
+                "first_page": "1",
+                "publication_date": {
+                    "publication_year": "2000"
+                },
+                "original_text": "Collinson, S.T., Sibuga, K.P., Tarimo, A.J.P. and Azam-Ali, S.N., 2000. Influence of sowing date on the growth and yield of bambara groundnut landraces in Tanzania. <I>Experimental Agriculture</I> 36: 1-13. doi: 10.1017/S0014479700361038"
+            },
+            {
+                "sequence": "6",
+                "original_text": "Dzietror, A. and Bortei-Doku, E., 1992. Survey of Bambara groundnut production in Ada, Ghana. <I>Paper presented at The 12th National Maize and Legume Workshop</I>, Kumasi, Ghana, 24-26 March 1992."
+            },
+            {
+                "sequence": "7",
+                "original_text": "Goli, A.E., Begemann, F. and Ng, N.Q., 1997. Characterisation and evaluation of IITA's Bambara groundnut. In: Heller, J., Begemann, F., Mushonga, J. (Eds), <I>Bambara Groundnut</I> (Vigna subterranea <I>(L.) Verdc.). Promoting the Conservation and Use of Underutilized and Neglected Crops.</I> No. 9. pp. 101-118. IPGRI, Rome, Italy."
+            },
+            {
+                "sequence": "8",
+                "original_text": "Gyawali, S., Sunwar, S., Subedi, M., Tripathi, M., Joshi, K.D. and Wilcombe, J.R., 2007. Collaborative breeding with farmers can be effective. <I>Field Crop Research.</I> 1001: 88-95."
+            },
+            {
+                "sequence": "9",
+                "original_text": "IPGRI/IITA/BAMNET, 2000. <I>Descriptors for Bambara Groundnut.</I> International Plant Genetic Resources Institute, Rome Italy: International Institute of Tropical Agriculture, Ibadan, Nigeria; the International Bambara Groundnut Network, Germany, 57 pp."
+            },
+            {
+                "sequence": "10",
+                "original_text": "Karikari, S.K., 1972. Correlation studies between yield and some agronomic characters in Bambara groundnut. <I>Ghana Journal of Agricultural Science</I> 5: 79-83."
+            },
+            {
+                "sequence": "11",
+                "original_text": "Karikari, S.K., 2000. Variability between local and exotic Bambara groundnut landraces in Botswana. <I>African Crop Science Journal.</I> 8: 145-152. [online]. Available from: http://www.bioline.org.br/request?cs00015 [Accessed 2 June 2010]"
+            },
+            {
+                "sequence": "12",
+                "original_text": "Karikari, S.K. and Lavoe, S.K., 1977. Preliminary evaluation and utilization of fourteen cultivars of bambara groundnut. <I>Acta Hortic.</I>, 53: 195-199."
+            },
+            {
+                "sequence": "13",
+                "original_text": "Karikari, S.K., Wigglesworth, D.J., Kwerepe, B.C., Balole, T.V., Bebolai, B. and Munthali, D.C., 1997. Country reports Botswana. In: Heller, J., Begemann, F. and Mushonga, J. (Eds), <I>Bambara Groundnut</I> (Vigna subterranea <I>(L.) Verdc.</I>). <I>Promoting the Conservation and Use of Underutilized and Neglected Crops.</I> No. 9. pp. 17-24. IPGRI, Rome, Italy."
+            },
+            {
+                "sequence": "14",
+                "original_text": "Linnemann, A.R. and Azam-Ali, S.N., 1993. Bambara groundnut (<I>Vigna subterranea</I> (L) Verdc). In: Williams, J. T. (Ed.), <I>Underutilized Crop Series. No. 2. Vegetables and Pulses.</I> pp. 1-58. Chapman and Hall, London."
+            },
+            {
+                "sequence": "15",
+                "doi": "10.1007/s10681-006-9191-7",
+                "original_text": "Mekbib, F., 2006. Farmer and formal breeding of sorghum (<I>Sorghum bicolor</I> (L) Moench) and the implications for integrated plant breeding. <I>Euphytic</I>a 152: 163-176. doi: 10.1007/s10681-006-9191-7"
+            },
+            {
+                "sequence": "16",
+                "original_text": "Misangu, R.N., Azmio, A. and Reuben, S.O.W.M., 2007. Path coefficient analysis among components of yield in Bambara groundnut landraces under screen house conditions. <I>Journal of Agronomy</I> 6: 217-323 [online]. Available from: http://www.scialert.net/pdfs/ja/2007/317-323.pdf [Accessed 2 June 2010)"
+            },
+            {
+                "sequence": "17",
+                "original_text": "Ofori, I., 1996. Correlation and path-coefficient analysis of components of seed yield in Bambara groundnut (<I>Vigna subterranea</I>). <I>Euphytica</I> 91: 103-107."
+            },
+            {
+                "sequence": "18",
+                "original_text": "Ofori, K., Kumaga, F.K. and Bimi, L.K., 2001. Variation in seed size, seed protein and tannin content of Bambara groundnut. <I>Tropical Science</I> 41: 41-44."
+            },
+            {
+                "sequence": "19",
+                "original_text": "Ouedraogo, M., Ouedraogo, J.T., Tignere, J.B., Balma, D., Dabire, C.B. and Konate, G., 2008. Characterization and evaluation of accessions of Bambara groundnut from Burkina Faso. <I>Sciences and Nature</I> 5: 191-197."
+            },
+            {
+                "sequence": "20",
+                "doi": "10.1016/0308-521X(95)93648-W",
+                "original_text": "Rhodes, E.R. (1995). Nutrient depletion by food crops in Ghana and soil organic nitrogen management. <I>Agric. Syst.</I> 48: 101-118. doi: 10.1016/0308-521X(95)93648-W"
+            },
+            {
+                "sequence": "21",
+                "original_text": "SAS Institute, 1990. <I>SAS/STAT User's Guide.</I> SAS Institute, Inc., Cary NC."
+            },
+            {
+                "sequence": "22",
+                "original_text": "Sokal, R.R. and Rohlf, F.J., 1969. <I>Biometry. Principles and Practices of Statistics in Biological Research.</I> W. H. Freeman and Co., San Francisco. 320 pp."
+            },
+            {
+                "sequence": "23",
+                "original_text": "Steel, R.G.D. and Torrie, J., 1986. <I>Principles and Procedures of Statistics. A Biometrical Approach.</I> McGraw-Hill Book Co., Auckland, 633 pp."
+            },
+            {
+                "sequence": "24",
+                "original_text": "Tanimu, B.S. and Aliyu, L., 1990. Genotypic variability in Bambara groundnut cultivars at Samaru, Nigeria. In: Obigbeshan, I. O. (Ed.) <I>Proceedings of the 17th Annual Conference of Genetic Society of Nigeria.</I> Institute for Agricultural Research and Training. Obafemi Awolowo University, Nigeria, pp. 54-60."
+            }
+        ]
+    }
+}

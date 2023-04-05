@@ -1,0 +1,264 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11178/jdsa.8.1",
+        "url": "https://doi.org/10.11178/jdsa.8.1",
+        "ra": "JaLC",
+        "prefix": "10.11178",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "Agricultural and Forestry Research Center, University of Tsukuba",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "筑波大学農林技術センター",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "en",
+                "title": "Nitrogen Flow Model as a Tool for Evaluation of Environmental Performance of Agriculture and Effects on Water Environment"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Shindo",
+                        "first_name": "Junko"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Graduate School of Medicine and Engineering, University of Yamanashi",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2013"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/jdsa/8/1/8_1/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "en",
+        "updated_date": "2014-12-09",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "1880-3016",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1880-3024",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "jdsa",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "Journal of Developments in Sustainable Agriculture",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "J. Dev. Sus. Agr.",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "journal_txt_lang": "en",
+        "recorded_year": "2006-2014",
+        "volume": "8",
+        "issue": "1",
+        "first_page": "1",
+        "last_page": "12",
+        "date": "2013-03-15",
+        "keyword_list": [
+            {
+                "keyword": "Nitrogen flow model",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "nitrogen balance",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "dietary transition",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "water pollution",
+                "sequence": "4",
+                "lang": "en"
+            },
+            {
+                "keyword": "East Asia",
+                "sequence": "5",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "original_text": "Chen, M., Chen, J., Sun, F., 2010. Estimating nutrient releases from agriculture in China: An extended substance flow analysis framework and a modeling tool. Science of the total environment 408, 5123-5136."
+            },
+            {
+                "sequence": "2",
+                "original_text": "European Commission, 2002. Implementation of Council Directive 91/676/EEC concerning the protection of waters against pollution caused by nitrates from agricultural sources. Luxembourg:  Office for Official Publications of the European Communities, 44 pp., ISBN 92-894-4103-8."
+            },
+            {
+                "sequence": "3",
+                "original_text": "[EEA] European Environment Agency, 2005. Source apportionment of nitrogen and phosphorus inputs into the aquatic environment. EEA Report No. 7/2005, ISSN 1725-9177."
+            },
+            {
+                "sequence": "4",
+                "original_text": "[FAO] Food and Agriculture Organization, 2012a. Production database. http://faostat.fao.org/site/339/default.aspx, accessed August 2012."
+            },
+            {
+                "sequence": "5",
+                "original_text": "[FAO] Food and Agriculture Organization, 2012b. Resources / Fertilizer database. http://faostat.fao.org/site/575/default.aspx#ancor, accessed August 2012."
+            },
+            {
+                "sequence": "6",
+                "original_text": "[FAO] Food and Agriculture Organization, 2012c. Resources / Fertilizer database. http://faostat.fao.org/site/354/default.aspx, accessed August 2012."
+            },
+            {
+                "sequence": "7",
+                "original_text": "Galloway J. N., 2000. Nitrogen mobilization in Asia. Nutrient Cycle in Agroecosystems 57: 1-12."
+            },
+            {
+                "sequence": "8",
+                "original_text": "Mahendra, Dev., S., Ravi, C., Viswanathan, B., Gulati A., Ramachander, A., 2004. Economic Liberalisation, targeted programmes and household food security: A Case Study of India, MTID Discussion paper, No. 68, International Food Policy Research Institute, Washington, D.C."
+            },
+            {
+                "sequence": "9",
+                "original_text": "[OECD] Organisation for Economic Co-operation and Development, 2001. Environmental Indicators for Agriculture, vol 3. Methods and Results, OECD, Paris, p 409."
+            },
+            {
+                "sequence": "10",
+                "original_text": "[OECD] Organisation for Economic Co-operation and Development, 2008. Environmental performance of agriculture in OECD Countries since 1990. OECD, Paris, p 575. ISBN 978-92-64-04092-2"
+            },
+            {
+                "sequence": "11",
+                "original_text": "Oki, T., Sud, Y.C., 1998. Design of total runoff integrating pathways (TRIP)&mdash;a global river channel network. Earth interactions, 2: paper 1, 1-36."
+            },
+            {
+                "sequence": "12",
+                "doi": "10.1016/S0304-3800(03)00270-9",
+                "volume": "169",
+                "first_page": "197",
+                "publication_date": {
+                    "publication_year": "2003"
+                },
+                "original_text": "Shindo J, Okamoto K, Kawashima H., 2003. A model-based estimation of nitrogen flow in the food production-supply system and its environmental effects in East Asia. Ecol Model 169: 197-212."
+            },
+            {
+                "sequence": "13",
+                "doi": "10.1016/j.ecolmodel.2005.09.010",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Ecological Modelling",
+                        "lang": "en"
+                    }
+                ],
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Prediction of the environmental effects of excess nitrogen caused by increasing food demand with rapid economic growth in eastern Asian countries, 1961-2020"
+                    }
+                ],
+                "volume": "193",
+                "first_page": "703",
+                "last_page": "720",
+                "publication_date": {
+                    "publication_year": "2006"
+                },
+                "creator_list": [
+                    {
+                        "sequence": "1",
+                        "type": "person",
+                        "names": [
+                            {
+                                "lang": "en",
+                                "last_name": "SHINDO",
+                                "first_name": "J."
+                            }
+                        ]
+                    }
+                ],
+                "content_language": "en",
+                "original_text": "Shindo, J., Okamoto, K., Kawashima, H., 2006. Prediction of the environmental effects of excess nitrogen caused by increasing food demand with rapid economic growth in eastern Asian countries, 1961-2020. Ecol Model 193: 703-720."
+            },
+            {
+                "sequence": "14",
+                "doi": "10.1111/j.1747-0765.2009.00382.x",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Nitrogen flow associated with food production and consumption and its effect on water quality in Japan from 1961 to 2005"
+                    }
+                ],
+                "volume": "55",
+                "issue": "4",
+                "first_page": "532",
+                "last_page": "545",
+                "publication_date": {
+                    "publication_year": "2009"
+                },
+                "content_language": "en",
+                "original_text": "Shindo, J., Okamoto, K., Kawashima, H., Konohira, E., 2009. Nitrogen flow associated with food production and consumption and its effect on water quality in Japan from 1961 to 2005. Soil Sci Plant Nutr 55: 532-545."
+            },
+            {
+                "sequence": "15",
+                "original_text": "Shindo, J., 2012. Changes in the nitrogen balance in agricultural land in Japan and 12 other Asian Countries based on a nitrogen-flow model. Nutrient Cycling in Agroecosystems 94, 47-61."
+            },
+            {
+                "sequence": "16",
+                "original_text": "Smil, V., 2001. Feeding the world: a challenge for the twenty-first century. (Japanese trans: Henmi K, Yanagisawa K) MIT Press, Cambridge."
+            },
+            {
+                "sequence": "17",
+                "original_text": "World Resources Institute. Watersheds of the world: an earthtrends special collection. http://www.wri.org/publication/watersheds-of-the-world, accessed August 2012."
+            },
+            {
+                "sequence": "18",
+                "original_text": "Yamaji, K., Ohara, T., Akimoto, H., 2004. Regional-specific emission inventory for NH<SUB>3</SUB>, N<SUB>2</SUB>O, and CH<SUB>4 </SUB>via animal farming in South, Southeast, and East Asia. Atmospheric Environment 38, 7111-7121."
+            },
+            {
+                "sequence": "19",
+                "original_text": "Zheng, X., Fu, C., Xu, X., Yan, X., Huang, Y., Han, S., Hu, F., Chen, G., 2002. The Asian Nitrogen Cycle Case Study. Ambio 31, 79-87."
+            }
+        ]
+    }
+}

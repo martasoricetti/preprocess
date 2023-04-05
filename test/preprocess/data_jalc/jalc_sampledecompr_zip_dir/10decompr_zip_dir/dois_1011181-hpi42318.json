@@ -1,0 +1,395 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11181/hpi.42.318",
+        "url": "https://doi.org/10.11181/hpi.42.318",
+        "ra": "JaLC",
+        "prefix": "10.11181",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "HIGH PRESSURE INSTITUTE OF JAPN(HPI)",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "一般社団法人 日本高圧力技術協会",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "ja",
+                "title": "単一過大荷重負荷後の疲労き裂伝ぱに及ぼすき裂先端の塑性域について"
+            },
+            {
+                "lang": "en",
+                "title": "The Effect of Overload Plastic Zone on Fatigue Crack Propagation after Overloading"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "真壁",
+                        "first_name": "朝敏"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "MAKABE",
+                        "first_name": "Chobin"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Dept. of Mech. Systems Eng., Univ. of Ryukyu",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "琉球大学, 機械システム工学科",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "宮崎",
+                        "first_name": "達二郎"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "MIYAZAKI",
+                        "first_name": "Tatsujirou"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Dept. of Mech. Systems Eng., Univ. of Ryukyu",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "琉球大学, 機械システム工学科",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "3",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "PURNOWIDODO",
+                        "first_name": "Anindito"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Graduate student, Univ. of the Ryukyu",
+                        "sequence": "2",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "琉球大学, 大学院",
+                        "sequence": "2",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "4",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "屋富祖",
+                        "first_name": "建樹"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "YAFUSO",
+                        "first_name": "Tateki"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Dept. of Mech. Systems Eng., Univ. of Ryukyu",
+                        "sequence": "3",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "琉球大学, 機械システム工学科",
+                        "sequence": "3",
+                        "lang": "ja"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2004"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/hpi/42/6/42_6_318/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "ja",
+        "updated_date": "2017-03-02",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "0387-0154",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1347-9598",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "hpi",
+                "type": "JID"
+            },
+            {
+                "journal_id": "hpi1972",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "圧力技術",
+                "type": "full",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "圧力技術",
+                "type": "abbreviation",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "高圧力",
+                "type": "before",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "JHPIJ",
+                "type": "abbreviation",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of Japan High Pressure Institute",
+                "type": "before",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "recorded_year": "1972-2019",
+        "volume": "42",
+        "issue": "6",
+        "first_page": "318",
+        "last_page": "327",
+        "date": "2005-01-25",
+        "keyword_list": [
+            {
+                "keyword": "Fatigue",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "Crack propagation",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "Overload-plastic zone",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "Residual stress",
+                "sequence": "4",
+                "lang": "en"
+            },
+            {
+                "keyword": "Crack opening stress level",
+                "sequence": "5",
+                "lang": "en"
+            },
+            {
+                "keyword": "Acceleration",
+                "sequence": "6",
+                "lang": "en"
+            },
+            {
+                "keyword": "Retardation",
+                "sequence": "7",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "doi": "10.1016/0013-7944(89)90195-1",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Engineering Fracture Mechanics",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "32",
+                "first_page": "613",
+                "last_page": "638",
+                "publication_date": {
+                    "publication_year": "1989"
+                },
+                "content_language": "en",
+                "original_text": "1)  Ward-Close C. M. , Blom A. F. , and Ritchie R. O.; &ldquo;Mechanism Associated with Transient Fatigue Crack Growth under Variable-Amplitude Loading: An Experimental and Numerical Study&rdquo;, Engineering Fracture Mechanics, Vol. 32, pp. 613-638 (1989) ."
+            },
+            {
+                "sequence": "2",
+                "doi": "10.2472/jsms.53.481",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "材料",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "53",
+                "first_page": "481",
+                "last_page": "486",
+                "publication_date": {
+                    "publication_year": "2004"
+                },
+                "content_language": "en",
+                "original_text": "2)  真壁朝敏,  Purnowidodo A. , McEvily A. J.; &ldquo;過大荷重負荷によるき裂先端近傍の変化がき裂伝ぱに及ぼす影響&ldquo;, 材料, Vol. 53, No. 5, pp. 481-486 (2004) ."
+            },
+            {
+                "sequence": "3",
+                "doi": "10.11181/hpi.41.4",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "圧力技術",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "41",
+                "first_page": "4",
+                "last_page": "10",
+                "publication_date": {
+                    "publication_year": "2003"
+                },
+                "content_language": "en",
+                "original_text": "3)  真壁朝敏, Purnowidodo A. , 山内章広,  McEvily A. J.; &rdquo;単一過大荷重負荷後の疲労き裂伝ぱ挙動の応力比依存性について&ldquo;, 圧力技術, Vol, 41, No. 1, pp. 4-10 (2003) ."
+            },
+            {
+                "sequence": "4",
+                "original_text": "4)  McEvily A. J. and Yang Z.; &ldquo;The Nature of Two Opening Levels following an Overload in Fatigue Crack Growth&rdquo;, Metallurgical Transactions,  Vol. 21A, pp. 2717-2727 (1990) ."
+            },
+            {
+                "sequence": "5",
+                "doi": "10.2472/jsms.25.899",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "材料",
+                        "lang": "ja"
+                    }
+                ],
+                "title_list": [
+                    {
+                        "lang": "ja",
+                        "title": "除荷弾性コンプライアンス法による低進展速度領域における疲労き裂進展速度とき裂開閉口挙動の測定"
+                    }
+                ],
+                "volume": "25",
+                "issue": "276",
+                "first_page": "899",
+                "last_page": "903",
+                "publication_date": {
+                    "publication_year": "1976"
+                },
+                "creator_list": [
+                    {
+                        "sequence": "1",
+                        "type": "person",
+                        "names": [
+                            {
+                                "lang": "ja",
+                                "last_name": "菊川",
+                                "first_name": "真"
+                            }
+                        ]
+                    }
+                ],
+                "content_language": "ja",
+                "original_text": "5)  菊川 真, 城野政弘, 田中健一, 高谷 勝; &ldquo;除荷弾性コンプライアンス法による低進展速度領域における疲労き裂進展速度とき裂開閉口挙動の測定&ldquo;, 材料, 25巻 276号, pp. 899-903 (1976) ."
+            },
+            {
+                "sequence": "6",
+                "original_text": "6)  Elber W.; &ldquo;The Significance of Fatigue Crack Closure&rdquo;, Damage Tolerance in Aircraft Structure, ASTM STP 486, American Society for Testing and Materials, pp. 203-242 (1976) ."
+            },
+            {
+                "sequence": "7",
+                "original_text": "7)  Rice J. R. ; &ldquo;Mechanics of Crack Tip Deformation and Extension by Fatigue&rdquo;, Fatigue Crack Propagation, ASTM STP 415, American Society for Testing and Materials, pp. 247-309 (1967) ."
+            },
+            {
+                "sequence": "8",
+                "original_text": "8)  岡村弘之; &ldquo;線形破壊力学&rdquo;, 培風館, pp. 133-175 (1976) ."
+            },
+            {
+                "sequence": "9",
+                "original_text": "9)  田中啓介; 疲労強度学 (西谷弘信編) , 第4章, &Omega;社, pp. 151-220 (1985) ."
+            },
+            {
+                "sequence": "10",
+                "doi": "10.1016/0013-7944(71)90043-9",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Engineering Fracture Mechanics",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "3",
+                "first_page": "345",
+                "last_page": "347",
+                "publication_date": {
+                    "publication_year": "1971"
+                },
+                "content_language": "en",
+                "original_text": "10)  Tada H.; &ldquo;A Note on the Finite Width Correction to the Stress Intensity Factor&rdquo;, Engineering Fracture Mechanics, Vol. 3, No. 3, pp. 345-347 (1971)"
+            }
+        ]
+    }
+}

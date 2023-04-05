@@ -1,0 +1,659 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11178/jdsa.12.52",
+        "url": "https://doi.org/10.11178/jdsa.12.52",
+        "ra": "JaLC",
+        "prefix": "10.11178",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "Agricultural and Forestry Research Center, University of Tsukuba",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "筑波大学農林技術センター",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "en",
+                "title": "Potential Impact of an Exotic Plant Invasion on Both Plant and Arthropod Communities in a Semi-natural Grassland on Sugadaira Montane in Japan"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Sato",
+                        "first_name": "Yukie"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Mashimo",
+                        "first_name": "Yuta"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "Graduate School of Symbiotic Systems Science and Technology, Fukushima University",
+                        "sequence": "2",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "3",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Suzuki",
+                        "first_name": "Ryo O."
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "4",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Hirao",
+                        "first_name": "Akira S."
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "5",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Takagi",
+                        "first_name": "Etsuro"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "Department of Tourism Science, Tokyo Metropolitan University",
+                        "sequence": "3",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "6",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Kanai",
+                        "first_name": "Ryuji"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "7",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Masaki",
+                        "first_name": "Daisuke"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "8",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Sato",
+                        "first_name": "Miyuki"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "9",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Machida",
+                        "first_name": "Ryuichiro"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Sugadaira Montane Research Center, University of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2017"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/jdsa/12/1/12_52/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "en",
+        "updated_date": "2017-05-25",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "1880-3016",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1880-3024",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "jdsa",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "Journal of Developments in Sustainable Agriculture",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "J. Dev. Sus. Agr.",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "journal_txt_lang": "en",
+        "recorded_year": "2006-2014",
+        "volume": "12",
+        "issue": "1",
+        "first_page": "52",
+        "last_page": "64",
+        "date": "2017-05-26",
+        "keyword_list": [
+            {
+                "keyword": "<i>Ambrosia trifida</i>",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "biodiversity",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "biological invasion",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "trophic level",
+                "sequence": "4",
+                "lang": "en"
+            },
+            {
+                "keyword": "<i>Miscanthus sinensis</i>",
+                "sequence": "5",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "doi": "10.1111/j.1469-8137.1979.tb02313.x",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "New Phytologist",
+                        "lang": "en"
+                    }
+                ],
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "The biology of Ambrosia trifida L. II. Germination, emergence, growth and survival"
+                    }
+                ],
+                "volume": "83",
+                "first_page": "817",
+                "last_page": "827",
+                "publication_date": {
+                    "publication_year": "1979"
+                },
+                "creator_list": [
+                    {
+                        "sequence": "1",
+                        "type": "person",
+                        "names": [
+                            {
+                                "lang": "en",
+                                "last_name": "ABUL-FATIH",
+                                "first_name": "HA"
+                            }
+                        ]
+                    }
+                ],
+                "content_language": "en",
+                "original_text": "Abul-Fatih, H.A., Bazzaz, F.A., 1979. The biology of <i>Ambrosia trifida </i>L. II. Germination, emergence, growth and survival. New Phytol. 83, 817-827. doi:10.1111/j.1469-8137.1979.tb02313.x"
+            },
+            {
+                "sequence": "2",
+                "doi": "10.1111/j.1469-8137.1979.tb02314.x",
+                "original_text": "Abul-Fatih, H.A., Bazzaz, F.A., Hunt, R., 1979. The biology of <i>Ambrosia trifida </i>L. III. Growth and biomass allocation. New Phytol. 83, 829-838. doi:10.1111/j.1469-8137.1979.tb02314.x"
+            },
+            {
+                "sequence": "3",
+                "doi": "10.1007/s00442-010-1783-1",
+                "original_text": "Almeida-Neto, M., Prado, P.I., Lewinsohn, T.M., 2011. Phytophagous insect fauna tracks host plant responses to exotic grass invasion. Oecologia 165, 1051-1062. doi:10.1007/s00442-010-1783-1"
+            },
+            {
+                "sequence": "4",
+                "doi": "10.1111/ele.12006",
+                "original_text": "Borer, E.T., Seabloom, E.W., Tilman, D., 2012. Plant diversity controls arthropod biomass and temporal stability. Ecol. Lett. 15, 1457-1464. doi:10.1111/ele.12006"
+            },
+            {
+                "sequence": "5",
+                "original_text": "Cardinale, B.J., Wright, J.P., Cadotte, M.W., Carroll, I.T., Hector, A., Srivastava, D.S., Loreau, M., Weis, J.J., 2007. Impacts of plant diversity on biomass production increase through time because of species complementarity. Proc. Natl. Acad. Sci. 104, 18123-18128. doi:10.1073/pnas.0709069104"
+            },
+            {
+                "sequence": "6",
+                "doi": "10.1038/35079676",
+                "original_text": "Chittka, L., Schürkens, S., 2001. Successful invasion of a floral market. Nature 411, 653-653. doi:10.1038/35079676"
+            },
+            {
+                "sequence": "7",
+                "original_text": "Elton, C.S., 1958. The Ecology of Invasions by Animals and Plants. Springer US, New York."
+            },
+            {
+                "sequence": "8",
+                "doi": "10.1016/j.biocon.2013.03.015",
+                "original_text": "Emery, S.M., Doran, P.J., 2013. Presence and management of the invasive plant <i>Gypsophila paniculata </i>(baby’s breath) on sand dunes alters arthropod abundance and community structure. Biol. Conserv. 161, 174-181. doi:10.1016/j.biocon.2013.03.015"
+            },
+            {
+                "sequence": "9",
+                "doi": "10.1007/s10530-004-4062-4",
+                "original_text": "Ernst, C.M., Cappuccino, N., 2005. The effect of an invasive alien vine, <i>Vincetoxicum rossicum </i>(Asclepiadaceae), on arthropod populations in Ontario old fields. Biol. Invasions 7, 417-425. doi:10.1007/s10530-004-4062-4"
+            },
+            {
+                "sequence": "10",
+                "doi": "10.1111/jeb.12824",
+                "original_text": "Fukano, Y., Doi, H., Thomas, C.E., Takata, M., Koyama, S., Satoh, T., 2016. Contemporary evolution of host plant range expansion in an introduced herbivorous beetle <i>Ophraella communa</i>. J. Evol. Biol. 29, 757-765. doi:10.1111/jeb.12824"
+            },
+            {
+                "sequence": "11",
+                "doi": "10.1177/0309133309341607",
+                "original_text": "Gaertner, M., Breeyen, A.D., Hui, C., Richardson, D.M., 2009. Impacts of alien plant invasions on species richness in Mediterranean-type ecosystems: a meta-analysis. Prog. Phys. Geogr. 33, 319-338. doi:10.1177/0309133309341607"
+            },
+            {
+                "sequence": "12",
+                "doi": "10.1016/j.biocon.2007.12.009",
+                "original_text": "Gerber, E., Krebs, C., Murrell, C., Moretti, M., Rocklin, R., Schaffner, U., 2008. Exotic invasive knotweeds (<i>Fallopia </i>spp.) negatively affect native plant and invertebrate assemblages in European riparian habitats. Biol. Conserv. 141, 646-654. doi:10.1016/j.biocon.2007.12.009"
+            },
+            {
+                "sequence": "13",
+                "doi": "10.1016/0378-1119(91)90416-9",
+                "original_text": "Ghosh, B., Perry, M.P., Marsh, D.G., 1991. Cloning the cDNA encoding the AmbtV allergen from giant ragweed (<i>Ambrosia trifida</i>) pollen. Gene 101, 231-238. doi:10.1016/0378-1119(91)90416-9"
+            },
+            {
+                "sequence": "14",
+                "doi": "10.1603/EN10002",
+                "original_text": "Hagen, E.N., Bakker, J.D., Gara, R.I., 2010. Aerial arthropod communities of native and invaded forests, Robinson Crusoe Island, Chile. Environ. Entomol. 39, 1159-1164. doi:10.1603/EN10002"
+            },
+            {
+                "sequence": "15",
+                "original_text": "Harris, R.J., Toft, R.J., Dugdale, J.S., Williams, P.A., Rees, J.S., 2004. Insect assemblages in a native (kanuka - <i>Kunzea ericoides</i>) and an invasive (gorse - <i>Ulex europaeus</i>) shrubland. N. Z. J. Ecol. 28, 35-47."
+            },
+            {
+                "sequence": "16",
+                "original_text": "Harrison, S.K., Regnier, E.E., Schmoll, J.T., Webb, J.E., 2001. Competition and fecundity of giant ragweed in corn. Weed Sci. 49, 224-229."
+            },
+            {
+                "sequence": "17",
+                "doi": "10.1007/s11829-010-9105-4",
+                "original_text": "Hartley, M.K., Rogers, W.E., Siemann, E., 2010. Comparisons of arthropod assemblages on an invasive and native trees: abundance, diversity and damage. Arthropod-Plant Interact. 4, 237-245. doi:10.1007/s11829-010-9105-4"
+            },
+            {
+                "sequence": "18",
+                "doi": "10.1111/j.1365-2745.2009.01480.x",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Journal of Ecology",
+                        "lang": "en"
+                    }
+                ],
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Impact of invasive plants on the species richness, diversity and composition of invaded communities"
+                    }
+                ],
+                "volume": "97",
+                "first_page": "393",
+                "last_page": "403",
+                "publication_date": {
+                    "publication_year": "2009"
+                },
+                "creator_list": [
+                    {
+                        "sequence": "1",
+                        "type": "person",
+                        "names": [
+                            {
+                                "lang": "en",
+                                "last_name": "HEJDA",
+                                "first_name": "M."
+                            }
+                        ]
+                    }
+                ],
+                "content_language": "en",
+                "original_text": "Hejda, M., Pyšek, P., Jarošík, V., 2009. Impact of invasive plants on the species richness, diversity and composition of invaded communities. J. Ecol. 97, 393-403. doi:10.1111/j.1365-2745.2009.01480.x"
+            },
+            {
+                "sequence": "19",
+                "doi": "10.1016/j.biocon.2010.10.007",
+                "original_text": "Holmquist, J.G., Schmidt-Gengenbach, J., Slaton, M.R., 2011. Influence of invasive palms on terrestrial arthropod assemblages in desert spring habitat. Biol. Conserv. 144, 518-525. doi:10.1016/j.biocon.2010.10.007"
+            },
+            {
+                "sequence": "20",
+                "doi": "10.1007/BF00320418",
+                "original_text": "Jurik, T.W., 1991. Population distributions of plant size and light environment of giant ragweed (<i>Ambrosia trifida </i>L.) at three densities. Oecologia 87, 539-550. doi:10.1007/BF00320418"
+            },
+            {
+                "sequence": "21",
+                "doi": "10.1016/S0169-5347(02)02499-0",
+                "content_language": "ja",
+                "original_text": "Keane, R.M., Crawley, M.J., 2002. Exotic plant invasions and the enemy release hypothesis. Trends Ecol. Evol. 17, 164-170. doi:10.1016/S0169-5347(02)02499-0"
+            },
+            {
+                "sequence": "22",
+                "doi": "10.1046/j.1461-0248.1999.00083.x",
+                "original_text": "Knops, J.M.H., Tilman, D., Haddad, N.M., Naeem, S., Mitchell, C.E., Haarstad, J., Ritchie, M.E., Howe, K.M., Reich, P.B., Siemann, E., Groth, J., 1999. Effects of plant species richness on invasion dynamics, disease outbreaks, insect abundances and diversity. Ecol. Lett. 2, 286-293. doi:10.1046/j.1461-0248.1999.00083.x"
+            },
+            {
+                "sequence": "23",
+                "doi": "10.1007/s004420000450",
+                "original_text": "Koricheva, J., Mulder, C.P.H., Schmid, B., Joshi, J., Huss-Danell, K., 2014. Numerical responses of different trophic groups of invertebrates to manipulations of plant diversity in grasslands. Oecologia 125, 271-282. doi:10.1007/s004420000450"
+            },
+            {
+                "sequence": "24",
+                "original_text": "Langellotto, G.A., Denno, R.F., 2004. Responses of invertebrate natural enemies to complex-structured habitats: A meta-analytical synthesis. Oecologia 139, 1-10."
+            },
+            {
+                "sequence": "25",
+                "original_text": "Levine, J.M., Vilà, M., Antonio, C.M.D., Dukes, J.S., Grigulis, K., Lavorel, S., 2003. Mechanisms underlying the impacts of exotic plant invasions. Proc. R. Soc. Lond. B Biol. Sci. 270, 775-781. doi:10.1098/rspb.2003.2327"
+            },
+            {
+                "sequence": "26",
+                "doi": "10.1034/j.1600-0706.2001.950301.x",
+                "original_text": "Maron, J.L., Vilà, M., 2001. When do herbivores affect plant invasion? Evidence for the natural enemies and biotic resistance hypotheses. Oikos 95, 361-373. doi:10.1034/j.1600-0706.2001.950301.x"
+            },
+            {
+                "sequence": "27",
+                "doi": "10.1111/ele.12562",
+                "original_text": "McCary, M.A., Mores, R., Farfan, M.A., Wise, D.H., 2016. Invasive plants have different effects on trophic structure of green and brown food webs in terrestrial ecosystems: a meta-analysis. Ecol. Lett. 19, 328-335. doi:10.1111/ele.12562"
+            },
+            {
+                "sequence": "28",
+                "doi": "10.1303/aez.2010.283",
+                "original_text": "Miyatake, T., Ohno, T., 2010. Seasonal abundance of exotic leaf beetle <i>Orphraella communa </i>LeSage (Coleoptera: Chrysomelidae) on two different host plants. Appl. Entomol. Zool. 45, 283-288. doi:10.1303/aez.2010.283"
+            },
+            {
+                "sequence": "29",
+                "original_text": "Moriya, S., Shiyake, S., 2001. Spreading the distribution of an exotic ragweed beetle, <i>Ophraella communa </i>LeSage (Coleoptera: Chrysomelidae), in Japan. Jpn. J. Entomol. New Ser. 4, 99-102. (in Japanese with English abstract)"
+            },
+            {
+                "sequence": "30",
+                "doi": "10.1034/j.1600-0706.2000.910108.x",
+                "original_text": "Naeem, S., Knops, J.M.H., Tilman, D., Howe, K.M., Kennedy, T., Gale, S., 2000. Plant diversity increases resistance to invasion in the absence of covarying extrinsic factors. Oikos 91, 97-108. doi:10.1034/j.1600-0706.2000.910108.x"
+            },
+            {
+                "sequence": "31",
+                "original_text": "Oksanen, J., Blanchet F.G., Kindt, R., Legendre, P., Minchin, P.R., O’Hara, R.B., Simpson, G.L., Solymos, P., Stevens, M.H.H., Wagner, H., 2015. vegan: Community Ecology Package. URL https://cran.r-project.org/web/packages/vegan/vegan.pdf"
+            },
+            {
+                "sequence": "32",
+                "doi": "10.1007/s00442-008-1241-5",
+                "original_text": "Pearson, D.E., 2009. Invasive plant architecture alters trophic interactions by changing predator abundance and behavior. Oecologia 159, 549-558. doi:10.1007/s00442-008-1241-5"
+            },
+            {
+                "sequence": "33",
+                "doi": "10.3732/ajb.1000402",
+                "original_text": "Powell, K.I., Chase, J.M., Knight, T.M., 2011. A synthesis of plant invasion effects on biodiversity across spatial scales. Am. J. Bot. 98, 539-548. doi:10.3732/ajb.1000402"
+            },
+            {
+                "sequence": "34",
+                "original_text": "Procheş, Ş., Wilson, J.R.U., Richardson, D.M., Chown, S.L., 2008. Herbivores, but not other insects, are scarce on alien plants. Austral Ecol. 33, 691-700. doi:10.1111/j.1442-9993.2008.01836.x"
+            },
+            {
+                "sequence": "35",
+                "original_text": "R Core Team, 2015. R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL http://www.R-project.org/"
+            },
+            {
+                "sequence": "36",
+                "doi": "10.1111/j.1365-2745.2006.01161.x",
+                "original_text": "Rudgers, J.A., Whitney, K.D., 2006. Interactions between insect herbivores and a plant architectural dimorphism. J. Ecol. 94, 1249-1260. doi:10.1111/j.1365-2745.2006.01161.x"
+            },
+            {
+                "sequence": "37",
+                "doi": "10.1016/0167-8809(96)01047-X",
+                "original_text": "Samways, M.J., Caldwell, P.M., Osborn, R., 1996. Ground-living invertebrate assemblages in native, planted and invasive vegetation in South Africa. Agric. Ecosyst. Environ. 59, 19-32. doi:10.1016/0167-8809(96)01047-X"
+            },
+            {
+                "sequence": "38",
+                "doi": "10.2307/2996037",
+                "original_text": "Sickels, F.A., Simpson, R.L., 1985. Growth and survival of giant ragweed (<i>Ambrosia trifida </i>L.) in a Delaware river freshwater tidal wetland. Bull. Torrey Bot. Club 112, 368-375. doi:10.2307/2996037"
+            },
+            {
+                "sequence": "39",
+                "doi": "10.1890/0012-9658(2003)084[1489:HDRLAS]2.0.CO;2",
+                "original_text": "Siemann, E., Rogers, W.E., 2003. Herbivory, disease, recruitment limitation, and success of alien and native tree species. Ecology 84, 1489-1505. doi:10.1890/0012-9658(2003)084[1489:HDRLAS]2.0.CO;2"
+            },
+            {
+                "sequence": "40",
+                "doi": "10.1111/j.1600-0706.2010.18382.x",
+                "original_text": "Simao, M.C.M., Flory, S.L., Rudgers, J.A., 2010. Experimental plant invasion reduces arthropod abundance and richness across multiple trophic levels. Oikos 119, 1553-1562. doi:10.1111/j.1600-0706.2010.18382.x"
+            },
+            {
+                "sequence": "41",
+                "original_text": "Simpson, E.H., 1949. Measurement of diversity. Nature, Nature 688-688."
+            },
+            {
+                "sequence": "42",
+                "doi": "10.2307/3988",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "The richness, abundance and biomass of the arthropod communities on trees"
+                    }
+                ],
+                "volume": "51",
+                "first_page": "635",
+                "last_page": "649",
+                "publication_date": {
+                    "publication_year": "1982"
+                },
+                "original_text": "Southwood, T.R.E., Moran, V.C., Kennedy, C.E.J., 1982. The richness, abundance and biomass of the arthropod communities on trees. J. Anim. Ecol. 51, 635-649. doi:10.2307/3988"
+            },
+            {
+                "sequence": "43",
+                "doi": "10.1007/s10530-009-9544-y",
+                "original_text": "Spyreas, G., Wilm, B.W., Plocher, A.E., Ketzner, D.M., Matthews, J.W., Ellis, J.L., Heske, E.J., 2009. Biological consequences of invasion by reed canary grass (<i>Phalaris arundinacea</i>). Biol. Invasions 12, 1253-1267. doi:10.1007/s10530-009-9544-y"
+            },
+            {
+                "sequence": "44",
+                "doi": "10.1007/s11258-014-0396-x",
+                "original_text": "Suzuki, R.O., 2014. Combined effects of warming, snowmelt timing, and soil disturbance on vegetative development in a grassland community. Plant Ecol. 215, 1399-1408. doi:10.1007/s11258-014-0396-x"
+            },
+            {
+                "sequence": "45",
+                "original_text": "Tilman, D., Wedin, D., Knops, J., 1996. Productivity and sustainability influenced by biodiversity in grassland ecosystems. Nature 379, 718-720. doi:10.1038/379718a0"
+            },
+            {
+                "sequence": "46",
+                "doi": "10.1016/S0006-3207(01)00091-X",
+                "original_text": "Toft, R.J., Harris, R.J., Williams, P.A., 2001. Impacts of the weed <i>Tradescantia fluminensis </i>on insect communities in fragmented forests in New Zealand. Biol. Conserv. 102, 31-46. doi:10.1016/S0006-3207(01)00091-X"
+            },
+            {
+                "sequence": "47",
+                "doi": "10.1016/j.baae.2004.08.007",
+                "original_text": "Tracy, B.F., Renne, I.J., Gerrish, J., Sanderson, M.A., 2004. Effects of plant diversity on invasion of weed species in experimental pasture communities. Basic Appl. Ecol. 5, 543-550. doi:10.1016/j.baae.2004.08.007"
+            },
+            {
+                "sequence": "48",
+                "doi": "10.1111/1365-2745.12176",
+                "original_text": "van Hengstum, T., Hooftman, D.A.P., Oostermeijer, J.G.B., van Tienderen, P.H., 2014. Impact of plant invasions on local arthropod communities: a meta-analysis. J. Ecol. 102, 4-11. doi:10.1111/1365-2745.12176"
+            },
+            {
+                "sequence": "49",
+                "doi": "10.1111/j.1461-0248.2011.01628.x",
+                "original_text": "Vilà, M., Espinar, J.L., Hejda, M., Hulme, P.E., Jarošík, V., Maron, J.L., Pergl, J., Schaffner, U., Sun, Y., Pyšek, P., 2011. Ecological impacts of invasive alien plants: a meta-analysis of their effects on species, communities and ecosystems. Ecol. Lett. 14, 702-708. doi:10.1111/j.1461-0248.2011.01628.x"
+            },
+            {
+                "sequence": "50",
+                "doi": "10.1111/j.1365-2699.2005.01430.x",
+                "original_text": "Vilà, M., Tessier, M., Suehs, C.M., Brundu, G., Carta, L., Galanidis, A., Lambdon, P., Manca, M., Médail, F., Moragues, E., Traveset, A., Troumbis, A.Y., Hulme, P.E., 2006. Local and regional assessments of the impacts of plant invaders on vegetation structure and soil properties of Mediterranean islands. J. Biogeogr. 33, 853-861. doi:10.1111/j.1365-2699.2005.01430.x"
+            },
+            {
+                "sequence": "51",
+                "doi": "10.1007/s10144-001-8182-8",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Population Ecology",
+                        "lang": "en"
+                    }
+                ],
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Plant conservation ecology for management and restoration of riparian habitats of lowland Japan"
+                    }
+                ],
+                "volume": "43",
+                "first_page": "189",
+                "last_page": "195",
+                "publication_date": {
+                    "publication_year": "2001"
+                },
+                "creator_list": [
+                    {
+                        "sequence": "1",
+                        "type": "person",
+                        "names": [
+                            {
+                                "lang": "en",
+                                "last_name": "WASHITANI",
+                                "first_name": "I."
+                            }
+                        ]
+                    }
+                ],
+                "content_language": "en",
+                "original_text": "Washitani, I., 2001. Plant conservation ecology for management and restoration of riparian habitats of lowland Japan. Popul. Ecol. 43, 189-195. doi:10.1007/s10144-001-8182-8"
+            },
+            {
+                "sequence": "52",
+                "doi": "10.1086/343872",
+                "original_text": "Wolfe, L.M., 2002. Why alien invaders succeed: support for the escape-from-enemy hypothesis. Am. Nat. 160, 705-711. doi:10.1086/343872"
+            },
+            {
+                "sequence": "53",
+                "doi": "10.1007/s10530-008-9279-1",
+                "original_text": "Wu, Y.-T., Wang, C.-H., Zhang, X.-D., Zhao, B., Jiang, L.-F., Chen, J.-K., Li, B., 2008. Effects of saltmarsh invasion by <i>Spartina alterniflora </i>on arthropod community structure and diets. Biol. Invasions 11, 635-649. doi:10.1007/s10530-008-9279-1"
+            },
+            {
+                "sequence": "54",
+                "original_text": "Yasuda, T., Ikeguchi, H., Nakano, T., 2009. Spatial distribution of <i>Ambrosia trifida </i>at Lake Yamanaka. Mt Fuji Res. 3, 29-31. (in Japanese)"
+            },
+            {
+                "sequence": "55",
+                "doi": "10.1007/s10530-007-9193-y",
+                "original_text": "Zuefle, M.E., Brown, W.P., Tallamy, D.W., 2007. Effects of non-native plants on the native insect community of Delaware. Biol. Invasions 10, 1159-1169. doi:10.1007/s10530-007-9193-y"
+            }
+        ]
+    }
+}
