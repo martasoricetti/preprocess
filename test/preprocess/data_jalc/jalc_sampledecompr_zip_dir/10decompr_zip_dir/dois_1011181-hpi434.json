@@ -1,0 +1,313 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11181/hpi.43.4",
+        "url": "https://doi.org/10.11181/hpi.43.4",
+        "ra": "JaLC",
+        "prefix": "10.11181",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "HIGH PRESSURE INSTITUTE OF JAPN(HPI)",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "一般社団法人 日本高圧力技術協会",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "ja",
+                "title": "SCCが発生した炉心シュラウド,PLR配管の構造健全性評価"
+            },
+            {
+                "lang": "en",
+                "title": "Structural Integrity Evaluation for Core Shroud and PLR Piping with SCC"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "岡村",
+                        "first_name": "祐一"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "OKAMURA",
+                        "first_name": "Yuichi"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Nuclear Power Plant Management Dept.Tokyo Electric Power Company",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "東京電力(株) 原子力運営管理部",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "山下",
+                        "first_name": "裕宣"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "YAMASHITA",
+                        "first_name": "Hironobu"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Nuclear Power Plant Management Dept.Tokyo Electric Power Company",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "東京電力(株) 原子力運営管理部",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "3",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "福田",
+                        "first_name": "俊彦"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "FUKUDA",
+                        "first_name": "Toshihiko"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Fukushima-daini Nuclear Power Station Tokyo Electric Power Company",
+                        "sequence": "2",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "東京電力(株) 福島第二原子力発電所",
+                        "sequence": "2",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "4",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "二見",
+                        "first_name": "常夫"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "FUTAMI",
+                        "first_name": "Tsuneo"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Central Reserch Institute of Electric Power Industry",
+                        "sequence": "3",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "(財)電力中央研究所",
+                        "sequence": "3",
+                        "lang": "ja"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2005"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/hpi/43/1/43_1_4/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "ja",
+        "updated_date": "2017-03-02",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "0387-0154",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1347-9598",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "hpi",
+                "type": "JID"
+            },
+            {
+                "journal_id": "hpi1972",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "圧力技術",
+                "type": "full",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "圧力技術",
+                "type": "abbreviation",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "高圧力",
+                "type": "before",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "JHPIJ",
+                "type": "abbreviation",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of Japan High Pressure Institute",
+                "type": "before",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "recorded_year": "1972-2019",
+        "volume": "43",
+        "issue": "1",
+        "first_page": "4",
+        "last_page": "14",
+        "date": "2005-03-05",
+        "keyword_list": [
+            {
+                "keyword": "Stress Corrosion Cracking",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "Shroud",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "Piping",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "Stainless Steel",
+                "sequence": "4",
+                "lang": "en"
+            },
+            {
+                "keyword": "316L",
+                "sequence": "5",
+                "lang": "en"
+            },
+            {
+                "keyword": "316NG",
+                "sequence": "6",
+                "lang": "en"
+            },
+            {
+                "keyword": "Structural Integrity",
+                "sequence": "7",
+                "lang": "en"
+            },
+            {
+                "keyword": "Ultrasonic Test",
+                "sequence": "8",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "original_text": "1) 低炭素ステンレス鋼に関する研究, 電力共通研究,  (1979)"
+            },
+            {
+                "sequence": "2",
+                "original_text": "2) Tsubota, M. , Kanazawa, Y. , and Inoue, H.; The Effect of Cold Work on the Susceptibility of Austenitic Stainless Steels, Proc. of 7th Int. Symp. of Environmental Degradation of Materials in Nuclear Power Systems, pp. 519-527 (1995)"
+            },
+            {
+                "sequence": "3",
+                "doi": "10.11181/hpi.42.188",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "圧力技術",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "42",
+                "first_page": "188",
+                "last_page": "198",
+                "publication_date": {
+                    "publication_year": "2004"
+                },
+                "content_language": "en",
+                "original_text": "3) 鈴木, 高守, 熊谷, 大木, 福田, 山下, 二見; BWRにおける低炭素ステンレス鋼のSCC形態の評価, 圧力技術, 42-4, pp. 188-198 (2004)"
+            },
+            {
+                "sequence": "4",
+                "original_text": "4) 発電用原子力設備規格 維持規格 (2002年改訂版) , JSME S NA1-2002,  (2002)"
+            },
+            {
+                "sequence": "5",
+                "original_text": "5) Rooke, D. P. , and Cartwright, D. J; Compendium of Stress Intensity Factors, The Hillingdon Press (1976)"
+            },
+            {
+                "sequence": "6",
+                "original_text": "6) Kumagai, K. , Suzuki, S. , Mizutani, J. , Shitara, C. , Yonekura, K. , Masuda, M. , and Futami, T.; Evaluation of IGSCC Growth Behavior of 316NG PLR Piping in PWR, ASME PVP-Vol. 479, pp. 217-223 (2004)"
+            }
+        ]
+    }
+}

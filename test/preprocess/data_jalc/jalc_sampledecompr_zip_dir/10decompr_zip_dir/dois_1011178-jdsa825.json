@@ -1,0 +1,371 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11178/jdsa.8.25",
+        "url": "https://doi.org/10.11178/jdsa.8.25",
+        "ra": "JaLC",
+        "prefix": "10.11178",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "Agricultural and Forestry Research Center, University of Tsukuba",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "筑波大学農林技術センター",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "en",
+                "title": "Future Water Availability in the Asian Monsoon Region: A Case Study in Indonesia"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Yoshida",
+                        "first_name": "Koshi"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "College of Agriculture, Ibaraki University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Azechi",
+                        "first_name": "Issaku"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "College of Agriculture, Ibaraki University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "3",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Hariya",
+                        "first_name": "Ryunosuke"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "College of Agriculture, Ibaraki University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "4",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Tanaka",
+                        "first_name": "Kenji"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "College of Agriculture, Ibaraki University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "5",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Noda",
+                        "first_name": "Keigo"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Institute of Industrial Science, University of Tokyo",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "6",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Oki",
+                        "first_name": "Kazuo"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Institute of Industrial Science, University of Tokyo",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "7",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Hongo",
+                        "first_name": "Chiharu"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Center for Environmental Remote Sensing, Chiba University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "8",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Honma",
+                        "first_name": "Koki"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Faculty of Agriculture, Kyoto University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "9",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Maki",
+                        "first_name": "Masayasu"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Graduate School of Engineering, Kyoto University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "10",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Shirakawa",
+                        "first_name": "Hiroaki"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Graduate School of Environmental Studies, Nagoya University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2013"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/jdsa/8/1/8_25/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "en",
+        "updated_date": "2014-12-09",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "1880-3016",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1880-3024",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "jdsa",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "Journal of Developments in Sustainable Agriculture",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "J. Dev. Sus. Agr.",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "journal_txt_lang": "en",
+        "recorded_year": "2006-2014",
+        "volume": "8",
+        "issue": "1",
+        "first_page": "25",
+        "last_page": "31",
+        "date": "2013-03-15",
+        "keyword_list": [
+            {
+                "keyword": "climate change",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "hydrological model",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "water scarcity",
+                "sequence": "3",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "original_text": "Ao, T., Ishihira, H., Takeuchi K. 1999. Study of distributed runoff simulation model based on block type Topmodel and Muskingum-Cunge Method. Annual Journal of Hydraulic Engineering, 43, 7-12."
+            },
+            {
+                "sequence": "2",
+                "original_text": "[BBWSC] Balai Besar Wilayah Sungai Citarum. 2011. Profil BBWSC (in Indonesian)."
+            },
+            {
+                "sequence": "3",
+                "doi": "10.1080/02626667909491834",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "A physically based, variable contributing area model of basin hydrology"
+                    }
+                ],
+                "volume": "24",
+                "first_page": "43",
+                "last_page": "69",
+                "publication_date": {
+                    "publication_year": "1979"
+                },
+                "original_text": "Beven, K.J., Kirkby, M.J. 1979. A physically based, variable contributing area model of hydrology. Hydrol. Sci. Bull. 24 (1), 43-69."
+            },
+            {
+                "sequence": "4",
+                "volume": "1615",
+                "first_page": "1",
+                "publication_date": {
+                    "publication_year": "2000"
+                },
+                "original_text": "Bouman B.A.M. and T.P. Tuong  2000. Field water management to save water and increase its productivity in irrigated lowland rice, Agricultural water management, 1615, 1-20."
+            },
+            {
+                "sequence": "5",
+                "original_text": "Fares, Y.R. 2003. Water resources management in tropical river catchments. J. Environ. Hydrol. 11 (14), 1-11."
+            },
+            {
+                "sequence": "6",
+                "original_text": "Gallee, H., Moufouma-Okia, W., Bechtold, P., Brasseur, O., Dupays, I., Marbaix, P., Messager, C., Ramel, R., Lebel, T. 2004. A hig-resolution simulation of a West African rainy season using a regional climate model. J. Geophys. Res. 109, D05108. DOI:10.1029/2003JD004020."
+            },
+            {
+                "sequence": "7",
+                "original_text": "Hagos, S.M., Cook, K.H. 2007. Dynamics of the West African monsoon jump. J. Climate 20, 5264-5284."
+            },
+            {
+                "sequence": "8",
+                "original_text": "Hanasaki, N., Utsumi, N., Yamada, T., Shen, Y., Bengtsson, M., Kanae, S., Otaki, M., Oki, T. 2007. Development of a global integrated water resources model for water resources assessments under climate change. Annual Journal of Hydraulic Engineering, JSCE, 51, 229-234."
+            },
+            {
+                "sequence": "9",
+                "original_text": "Intergovernmental Panel on Climate Change 2007. IPCC Fourth Assessment Report: Climate Change 2007 (AR4)."
+            },
+            {
+                "sequence": "10",
+                "original_text": "Loebis, J., Syamman, P. 1993. Reservoir operation conflict in Citarum river basin management. IAHS Pub. 213, 455-459."
+            },
+            {
+                "sequence": "11",
+                "original_text": "Nawarathna, N.M.N.S.B., Ao, T.Q., Kazama, S., Sawamoto, M., Takeuchi, K. 2001. Influence of human activity on the BTOPMC model runoff simulations in large-scale watersheds. 29th IAHR Congress Proc. Theme a, 93-99."
+            },
+            {
+                "sequence": "12",
+                "doi": "10.1016/j.landurbplan.2006.03.002",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Practical application of a land resources information system for agricultural landscape planning"
+                    }
+                ],
+                "volume": "79",
+                "issue": "1",
+                "first_page": "38",
+                "last_page": "52",
+                "publication_date": {
+                    "publication_year": "2007"
+                },
+                "content_language": "en",
+                "original_text": "Saroinsong, F., Harashina, K., Arifin, H., Gandasasmita, K., Sakamoto, K. 2007. Practical application of a land resources information system for agricultural landscape planning. Landscape and Urban Planning 79, 38-52."
+            },
+            {
+                "sequence": "13",
+                "original_text": "Thornthwaite, C.W. 1948. An approach toward a rational classification of climate. Geograph. Rev. 38, 55-94."
+            }
+        ]
+    }
+}

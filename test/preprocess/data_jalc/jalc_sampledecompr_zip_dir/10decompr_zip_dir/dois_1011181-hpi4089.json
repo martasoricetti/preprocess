@@ -1,0 +1,325 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11181/hpi.40.89",
+        "url": "https://doi.org/10.11181/hpi.40.89",
+        "ra": "JaLC",
+        "prefix": "10.11181",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "HIGH PRESSURE INSTITUTE OF JAPN(HPI)",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "一般社団法人 日本高圧力技術協会",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "en",
+                "title": "Research on repair weldability of petroleum pressure vessel. Report 1. Simulation of degraded repair weld and serviceability assessment after re-service.",
+                "subtitle": "Report 1 Simulation of degraded repair weld and serviceability assessment after re-service."
+            },
+            {
+                "lang": "ja",
+                "title": "石油精製圧力容器の補修溶接性に関する研究　１　　経時劣化材補修溶接部の再現と再供用後の健全性評価",
+                "subtitle": "-第1報 経時劣化材補修溶接部の再現と再供用後の健全性評価-"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "KAYANO",
+                        "first_name": "Rinzo"
+                    },
+                    {
+                        "lang": "ja",
+                        "last_name": "茅野",
+                        "first_name": "林造"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "The Japan steel Works, Ltd.",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "(株)日本製鋼所",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "HASEGAWA",
+                        "first_name": "Tatsuo"
+                    },
+                    {
+                        "lang": "ja",
+                        "last_name": "長谷川",
+                        "first_name": "龍雄"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "The Japan steel Works, Ltd.",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "(株)日本製鋼所",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "3",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "INOUE",
+                        "first_name": "Hirokazu"
+                    },
+                    {
+                        "lang": "ja",
+                        "last_name": "井上",
+                        "first_name": "洋一"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Nippon Mitsubishi; Petroleum Refining Co.,Ltd.",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "日石三菱精製(株)",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2002"
+        },
+        "relation_list": [
+            {
+                "content": "http://www.jstage.jst.go.jp/article/hpi/40/2/40_2_89/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "ja",
+        "updated_date": "2014-12-09",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "0387-0154",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1347-9598",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "hpi",
+                "type": "JID"
+            },
+            {
+                "journal_id": "hpi1972",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "圧力技術",
+                "type": "full",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "圧力技術",
+                "type": "abbreviation",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "高圧力",
+                "type": "before",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "JHPIJ",
+                "type": "abbreviation",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of Japan High Pressure Institute",
+                "type": "before",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "recorded_year": "1972-2019",
+        "volume": "40",
+        "issue": "2",
+        "first_page": "89",
+        "last_page": "95",
+        "date": "2003-03-20",
+        "keyword_list": [
+            {
+                "keyword": "temper embrittlement",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "hydrogen embrittlement",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "repair welding",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "overlay",
+                "sequence": "4",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "&ldquo;EWI&frasl;TWI Controlled Deposition Repair Welding Procedure for 1 1&frasl;4Cr-1&frasl;2Mo and 2 1&frasl;4Cr-1Mo Steels&rdquo;"
+                    }
+                ],
+                "volume": "412",
+                "first_page": "27",
+                "last_page": "34",
+                "publication_date": {
+                    "publication_year": "1996"
+                },
+                "original_text": "1) Friedman, L. M. , &ldquo;EWI&frasl;TWI Controlled Deposition Repair Welding Procedure for 1 1&frasl;4Cr-1&frasl;2Mo and 2 1&frasl;4Cr-1Mo Steels&rdquo;, WRC Bulletin No. 412 (1996) pp. 27-34"
+            },
+            {
+                "sequence": "2",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "&ldquo;Performance of Weld Repairs on Service Aged 2 1&frasl;4Cr-1Mo Girth Weldments Utilizing Conventional Post. weld Heat Treatment and Tempr. bead Repair Techniques&rdquo;"
+                    }
+                ],
+                "volume": "412",
+                "first_page": "43",
+                "last_page": "59",
+                "publication_date": {
+                    "publication_year": "1996"
+                },
+                "original_text": "2) Gandy, D. W. , Viswanathan, R. , and Fin1an, S. J. , &ldquo;Performance of Weld Repairs on Service Aged 2 1&frasl;4Cr-1Mo Girth Weldments Utilizing Conventional Post. weld Heat Treatment and Tempr. bead  Repair Techniques&rdquo;, WRC Bulletin No. 412 (1996) pp. 43-59"
+            },
+            {
+                "sequence": "3",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "高圧ガス",
+                        "lang": "en"
+                    }
+                ],
+                "volume": "13",
+                "first_page": "564",
+                "last_page": "575",
+                "publication_date": {
+                    "publication_year": "1976"
+                },
+                "content_language": "en",
+                "original_text": "3) 渡辺十郎, 大西敬三, 千葉康太郎, &ldquo;高温高圧水素による圧力容器の損傷と対策&rdquo;, 高圧ガス, Vol. 13, No. 11 (1976) pp・564-575"
+            },
+            {
+                "sequence": "4",
+                "doi": "10.2320/materia1962.20.784",
+                "volume": "20",
+                "issue": "9",
+                "first_page": "784",
+                "last_page": "793",
+                "publication_date": {
+                    "publication_year": "1981"
+                },
+                "creator_list": [
+                    {
+                        "sequence": "1",
+                        "type": "person",
+                        "names": [
+                            {
+                                "lang": "en",
+                                "last_name": "Murakami",
+                                "first_name": "Yoshikuni"
+                            },
+                            {
+                                "lang": "ja",
+                                "last_name": "村上",
+                                "first_name": "賀國"
+                            }
+                        ]
+                    },
+                    {
+                        "sequence": "2",
+                        "type": "person",
+                        "names": [
+                            {
+                                "lang": "en",
+                                "last_name": "Ohnishi",
+                                "first_name": "Keizo"
+                            },
+                            {
+                                "lang": "ja",
+                                "last_name": "大西",
+                                "first_name": "敬三"
+                            }
+                        ]
+                    }
+                ],
+                "content_language": "ja",
+                "original_text": "4) 村上賀国, 大西敬三, &ldquo;低合金鋼における焼戻し脆化と水素脆化の関運性&rdquo;, 日本金属学会会報Vol. 20 (1981) pp. 784-793"
+            }
+        ]
+    }
+}

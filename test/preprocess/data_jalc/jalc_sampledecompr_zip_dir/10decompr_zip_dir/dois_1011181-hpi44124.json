@@ -1,0 +1,402 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11181/hpi.44.124",
+        "url": "https://doi.org/10.11181/hpi.44.124",
+        "ra": "JaLC",
+        "prefix": "10.11181",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "HIGH PRESSURE INSTITUTE OF JAPN(HPI)",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "一般社団法人 日本高圧力技術協会",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "ja",
+                "title": "ネーバル黄銅と純銅の摩擦圧接継手の引張, 曲げおよび衝撃強さ"
+            },
+            {
+                "lang": "en",
+                "title": "Tensile, bending and impact strength of friction-welded joint of naval brass to pure copper"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "川井",
+                        "first_name": "五作"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "KAWAI",
+                        "first_name": "Gosaku"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Osaka Sangyo Univ.",
+                        "sequence": "1",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "大阪産業大学",
+                        "sequence": "1",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "越智",
+                        "first_name": "秀"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "OCHI",
+                        "first_name": "Hiizu"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Osaka Institute of Technology",
+                        "sequence": "2",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "大阪工業大学",
+                        "sequence": "2",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "3",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "山口",
+                        "first_name": "博"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "YAMAGUCHI",
+                        "first_name": "Hiroshi"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Osaka Prefecture Univ.",
+                        "sequence": "3",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "大阪府立大学",
+                        "sequence": "3",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "4",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "辻野",
+                        "first_name": "良二"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "TSUJINO",
+                        "first_name": "Ryouji"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Osaka Institute of Technology Junior College",
+                        "sequence": "4",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "大阪工業大学短期大学部",
+                        "sequence": "4",
+                        "lang": "ja"
+                    }
+                ]
+            },
+            {
+                "sequence": "5",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "ja",
+                        "last_name": "山本",
+                        "first_name": "義秋"
+                    },
+                    {
+                        "lang": "en",
+                        "last_name": "YAMAMOTO",
+                        "first_name": "Yoshiaki"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Setsunan Univ.",
+                        "sequence": "5",
+                        "lang": "en"
+                    },
+                    {
+                        "affiliation_name": "摂南大学",
+                        "sequence": "5",
+                        "lang": "ja"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2006"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/hpi/44/3/44_3_124/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "ja",
+        "updated_date": "2017-03-02",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "0387-0154",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1347-9598",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "hpi",
+                "type": "JID"
+            },
+            {
+                "journal_id": "hpi1972",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "圧力技術",
+                "type": "full",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "圧力技術",
+                "type": "abbreviation",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "高圧力",
+                "type": "before",
+                "lang": "ja"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "JHPIJ",
+                "type": "abbreviation",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of Japan High Pressure Institute",
+                "type": "before",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "Journal of High Pressure Institute of Japan",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "recorded_year": "1972-2019",
+        "volume": "44",
+        "issue": "3",
+        "first_page": "124",
+        "last_page": "129",
+        "date": "2006-06-20",
+        "keyword_list": [
+            {
+                "keyword": "friction welding",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "naval brass",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "tough pitch copper",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "tensile strength",
+                "sequence": "4",
+                "lang": "en"
+            },
+            {
+                "keyword": "bending strength",
+                "sequence": "5",
+                "lang": "en"
+            },
+            {
+                "keyword": "impact strength",
+                "sequence": "6",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "original_text": "1) 日本伸銅協会編; 伸銅品データブック, pp. 253-254 (1997) ."
+            },
+            {
+                "sequence": "2",
+                "doi": "10.2207/qjjws1943.60.115",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "溶接学会誌",
+                        "lang": "ja"
+                    }
+                ],
+                "volume": "60",
+                "first_page": "115",
+                "last_page": "120",
+                "publication_date": {
+                    "publication_year": "1991"
+                },
+                "content_language": "ja",
+                "original_text": "2) Karol Lombardini, 篠田 剛; 溶接学会誌, Vol60, No2, pp. 115-120 (1991) ."
+            },
+            {
+                "sequence": "3",
+                "original_text": "3) 日本伸銅協会編; 伸銅品データブック, p. 34 (1997) ."
+            },
+            {
+                "sequence": "4",
+                "original_text": "4) 須藤 一; 材料試験法, 内田老鶴圃新社, p. 61 (1980) ."
+            },
+            {
+                "sequence": "5",
+                "original_text": "5) 須藤 一; 材料試験法, 内田老鶴圃新社, p. 78 (1980) ."
+            },
+            {
+                "sequence": "6",
+                "doi": "10.2207/qjjws1943.32.763",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "溶接学会誌",
+                        "lang": "ja"
+                    }
+                ],
+                "volume": "32",
+                "first_page": "763",
+                "last_page": "769",
+                "publication_date": {
+                    "publication_year": "1963"
+                },
+                "content_language": "ja",
+                "original_text": "6) 蓮井 淳; 溶接学会誌, Vol32, No9, pp. 763-769 (1963) ."
+            },
+            {
+                "sequence": "7",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "銅と銅合金",
+                        "lang": "ja"
+                    }
+                ],
+                "volume": "42",
+                "first_page": "132",
+                "last_page": "136",
+                "publication_date": {
+                    "publication_year": "2003"
+                },
+                "content_language": "ja",
+                "original_text": "7) 山口 博, 小川恒一, 越智 秀, 澤井 猛, 川井五作, 山本義秋, 辻野良二; 銅と銅合金, Vol42,  No1,  pp132-136 (2003) ."
+            },
+            {
+                "sequence": "8",
+                "doi": "10.2472/jsms.50.961",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "材料",
+                        "lang": "ja"
+                    }
+                ],
+                "volume": "50",
+                "first_page": "961",
+                "last_page": "967",
+                "publication_date": {
+                    "publication_year": "2001"
+                },
+                "content_language": "ja",
+                "original_text": "8) 越智 秀, 澤井 猛, 山本義秋, 栗田昌幸, 小川恒一, 菅 泰雄; 材料, Vol50, No9, pp961-967 (2001) ."
+            },
+            {
+                "sequence": "9",
+                "doi": "10.2207/qjjws1943.35.65",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "溶接学会誌",
+                        "lang": "ja"
+                    }
+                ],
+                "volume": "35",
+                "first_page": "65",
+                "last_page": "71",
+                "publication_date": {
+                    "publication_year": "1966"
+                },
+                "content_language": "ja",
+                "original_text": "9) 塩谷敏祐, 山田銑一, 樽谷 豊; 溶接学会誌, Vol35, No1, pp. 65-71 (1966) ."
+            },
+            {
+                "sequence": "10",
+                "original_text": "10) 江上 登, 大西欣一, 水野謙治; 摩擦圧接協会研究発表会資料, No232,  (1984) ."
+            }
+        ]
+    }
+}

@@ -1,0 +1,280 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11178/jdsa.7.33",
+        "url": "https://doi.org/10.11178/jdsa.7.33",
+        "ra": "JaLC",
+        "prefix": "10.11178",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "Agricultural and Forestry Research Center, University of Tsukuba",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "筑波大学農林技術センター",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "en",
+                "title": "Changes in the Physical and Chemical Properties of Thai Brown Rice Caused by High-Temperature Treatment"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Jaisut",
+                        "first_name": "Donludee"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Faculty of Agriculture, Kasetsart University",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            },
+            {
+                "sequence": "2",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Soponronnarit",
+                        "first_name": "Somchart"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "School of Energy, Environment and Materials, King Mongkut&rsquo;s University of Technology Thonburi",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2012"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/jdsa/7/1/7_1_33/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "en",
+        "updated_date": "2014-12-09",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "1880-3016",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1880-3024",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "jdsa",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "Journal of Developments in Sustainable Agriculture",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "J. Dev. Sus. Agr.",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "journal_txt_lang": "en",
+        "recorded_year": "2006-2014",
+        "volume": "7",
+        "issue": "1",
+        "first_page": "33",
+        "last_page": "38",
+        "date": "2012-04-07",
+        "keyword_list": [
+            {
+                "keyword": "brown rice",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "glycemic index",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "hig-temperature treatment",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "Thai rice",
+                "sequence": "4",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Comparing Time-Intensity to Category Scales in Sensory Evaluation."
+                    }
+                ],
+                "volume": "46",
+                "issue": "11",
+                "first_page": "98",
+                "last_page": "103",
+                "publication_date": {
+                    "publication_year": "1992"
+                },
+                "content_language": "en",
+                "original_text": "Biliaderis, C.G., 1992. Structures and phase transitions of starch in food systems. Food Technol. 46, 98-109."
+            },
+            {
+                "sequence": "2",
+                "original_text": "Champ, M., Langkilde, A. M., Brouns, F., Kettlitz, B., BaliCollet, Y.L., 2003. Advances in dietary fibre characterization. 2. Consumption, chemistry, physiology and measurement of resistant starch; implications for health and food labeling. Nutrit. Res. Rev. 16, 143-161."
+            },
+            {
+                "sequence": "3",
+                "original_text": "Chung, H.J., Liu, Q., Lee, L., Wei, D., 2011. Relationship between the structure, physicochemical properties and in vitro digestibility of rice starches with different amylose contents. Food Hydrocolloids 25(5), 968-975."
+            },
+            {
+                "sequence": "4",
+                "doi": "10.1016/S0733-5210(85)80017-5",
+                "original_text": "Eliasson, A. C., Krog, N., 1985. Physical properties of amylose-monoglyceride complexes. J. Cereal Sci. 3, 239-248."
+            },
+            {
+                "sequence": "5",
+                "doi": "10.1016/S0141-8130(05)80082-0",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Molecular modelling of the specific interactions involved in the amylose complexation by fatty acids."
+                    }
+                ],
+                "volume": "15",
+                "issue": "1",
+                "first_page": "11",
+                "last_page": "16",
+                "publication_date": {
+                    "publication_year": "1993"
+                },
+                "content_language": "en",
+                "original_text": "Godet, M. C., Tran, V., Delage, M. M., Bul&eacute;on, A., 1993. Molecular modeling of the specific interactions in amylose complexation by fatty acids. Int. J. Biol. Macromolecules 15, 11-16."
+            },
+            {
+                "sequence": "6",
+                "original_text": "Goni, I., Garcia-Alonso, A., Saura-Calixto, F., 1997. A starch hydrolysis procedure to estimate glycemic index. Nutrit. Res. 17, 427-437."
+            },
+            {
+                "sequence": "7",
+                "volume": "170",
+                "first_page": "8",
+                "publication_date": {
+                    "publication_year": "1970"
+                },
+                "original_text": "Houston, D.F., Kohler, G.O., 1970. Background and present situation. In: Nutritional Properties of Rice. National Academy of Sciences, Washington, pp. 8-38."
+            },
+            {
+                "sequence": "8",
+                "original_text": "Inprasit, C., Noomhorm, A., 2001. Effect of drying air temperature and grain temperature of different types of drying and operation on rice quality. Drying Technol. 19, 389-404."
+            },
+            {
+                "sequence": "9",
+                "original_text": "Jaisut, D., Prachayawarakorn, S., Varanyanond, W., Tungtrakul, P., Soponronnarit, S., 2009. Accelerated aging of jasmine brown rice by hig-temperature fluidization technique. Food Res. Internat. 42, 674-681."
+            },
+            {
+                "sequence": "10",
+                "original_text": "Jenkins, P.J., Donald, A.M., 1998. Gelatinization of starch: A combined SAXS/WAXS/DSC and SANS study. Carbohydrate Res. 308(1-2), 133-147."
+            },
+            {
+                "sequence": "11",
+                "volume": "38",
+                "first_page": "449",
+                "publication_date": {
+                    "publication_year": "1961"
+                },
+                "original_text": "Osman, E. M., Leith, S. J., Fles, M. (1961). Complexes of amylose with surfactants. Cereal Chem. 38, 449-463."
+            },
+            {
+                "sequence": "12",
+                "original_text": "Owen, R.F., 1996. Food Chemistry. Marcel Dekker, Inc., New York."
+            },
+            {
+                "sequence": "13",
+                "original_text": "Poomsa-ad, N., Soponronnarit, S., Terdyothin, A., Prachayawarakorn, S., 2001. Head rice yield after drying by fluidization technique and tempering. In:  A.S. Mujumdar (eds.) Proceedings of the 2<SUP>nd</SUP> Asian-Oceania Drying Conference, Penang, Malaysia, Aug. 20-22. Publisher, City, pp."
+            },
+            {
+                "sequence": "14",
+                "volume": "81",
+                "first_page": "27",
+                "last_page": "34",
+                "publication_date": {
+                    "publication_year": "2003"
+                },
+                "original_text": "Rashmi, S., Urooj, A., 2003. Effect of processing on nutritionally important starch fractions in rice varieties. Internat. J. Food Sci. Nutrit. 54, 27-36."
+            },
+            {
+                "sequence": "15",
+                "original_text": "Taweerattanapanish, A., Soponronnarit, S., Wetchacama, S., Kongseri N., Wongpiyachon, S., 1999. Effect of drying on head rice yield using fluidization technique. Drying Technol. 17, 345-353."
+            },
+            {
+                "sequence": "16",
+                "doi": "10.1006/jcrs.1997.0135",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Physico-chemical Characteristics as Indicators of Starch Availability from Milled Rice."
+                    }
+                ],
+                "volume": "26",
+                "issue": "3",
+                "first_page": "355",
+                "last_page": "361",
+                "publication_date": {
+                    "publication_year": "1997"
+                },
+                "content_language": "en",
+                "original_text": "Tetens, I., Biswas, S. K., Glito, L. V., Kabir, K. A., Thilsted, S. H., Choudhury, N. H., 1997. Physicochemical characteristics as indicators of starch availability from milled rice. J. Cereal Sci. 26, 355-361."
+            },
+            {
+                "sequence": "17",
+                "original_text": "Wiset, L., Srzednicki, G., Wootton, M., Driscoll, H.R., Blakeney B.A., 2005. Effects of hig-temperature drying on physiochemical properties of various cultivars of rice. Drying Technol. 23, 2227-2237."
+            },
+            {
+                "sequence": "18",
+                "original_text": "Zhejiang, B.J., Bergman, C. J., 2004. The functionality of rice starch. In: Eliasson, A.C. (Ed.), Starch in Food: Structure, Function and Applications. Woodhead, Cambridge."
+            }
+        ]
+    }
+}

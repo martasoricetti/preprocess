@@ -1,0 +1,361 @@
+{
+    "status": "OK",
+    "apiType": "doi",
+    "apiVersion": "1.0.0",
+    "message": {
+        "total": 1,
+        "rows": 1,
+        "totalPages": 1,
+        "page": 1
+    },
+    "data": {
+        "siteId": "SI/JST.JSTAGE",
+        "content_type": "JA",
+        "doi": "10.11178/jdsa.8.32",
+        "url": "https://doi.org/10.11178/jdsa.8.32",
+        "ra": "JaLC",
+        "prefix": "10.11178",
+        "site_name": "J-STAGE",
+        "publisher_list": [
+            {
+                "publisher_name": "Agricultural and Forestry Research Center, University of Tsukuba",
+                "lang": "en"
+            },
+            {
+                "publisher_name": "筑波大学農林技術センター",
+                "lang": "ja"
+            }
+        ],
+        "title_list": [
+            {
+                "lang": "en",
+                "title": "Advanced Light Control Technologies in Protected Horticulture: A Review of Morphological and Physiological Responses in Plants to Light Quality and its Application"
+            }
+        ],
+        "creator_list": [
+            {
+                "sequence": "1",
+                "type": "person",
+                "names": [
+                    {
+                        "lang": "en",
+                        "last_name": "Fukuda",
+                        "first_name": "Naoya"
+                    }
+                ],
+                "affiliation_list": [
+                    {
+                        "affiliation_name": "Associate Professor, Graduate School of Life and Environmental SciencesUniversity of Tsukuba",
+                        "sequence": "1",
+                        "lang": "en"
+                    }
+                ]
+            }
+        ],
+        "publication_date": {
+            "publication_year": "2013"
+        },
+        "relation_list": [
+            {
+                "content": "https://www.jstage.jst.go.jp/article/jdsa/8/1/8_32/_pdf",
+                "type": "URL",
+                "relation": "fullTextPdf"
+            }
+        ],
+        "content_language": "en",
+        "updated_date": "2014-12-09",
+        "article_type": "pub",
+        "journal_id_list": [
+            {
+                "journal_id": "1880-3016",
+                "type": "ISSN",
+                "issn_type": "print"
+            },
+            {
+                "journal_id": "1880-3024",
+                "type": "ISSN",
+                "issn_type": "online"
+            },
+            {
+                "journal_id": "jdsa",
+                "type": "JID"
+            }
+        ],
+        "journal_title_name_list": [
+            {
+                "journal_title_name": "Journal of Developments in Sustainable Agriculture",
+                "type": "full",
+                "lang": "en"
+            },
+            {
+                "journal_title_name": "J. Dev. Sus. Agr.",
+                "type": "abbreviation",
+                "lang": "en"
+            }
+        ],
+        "journal_classification": "01",
+        "journal_txt_lang": "en",
+        "recorded_year": "2006-2014",
+        "volume": "8",
+        "issue": "1",
+        "first_page": "32",
+        "last_page": "40",
+        "date": "2013-03-15",
+        "keyword_list": [
+            {
+                "keyword": "gene expression",
+                "sequence": "1",
+                "lang": "en"
+            },
+            {
+                "keyword": "light quality",
+                "sequence": "2",
+                "lang": "en"
+            },
+            {
+                "keyword": "photomorphogenesis",
+                "sequence": "3",
+                "lang": "en"
+            },
+            {
+                "keyword": "photoreceptors",
+                "sequence": "4",
+                "lang": "en"
+            },
+            {
+                "keyword": "phytohormone",
+                "sequence": "5",
+                "lang": "en"
+            }
+        ],
+        "citation_list": [
+            {
+                "sequence": "1",
+                "doi": "10.1111/j.1365-313X.2009.03962.x",
+                "volume": "60",
+                "first_page": "257",
+                "last_page": "267",
+                "publication_date": {
+                    "publication_year": "2009"
+                },
+                "original_text": "Adams, S., Allen, T., Whitelam, G.C., 2009. Interaction between the light quality and flowering time pathways in <I>Arabidopsis</I>. Plant J. 60, 257-267."
+            },
+            {
+                "sequence": "2",
+                "original_text": "Bernier, G., Perilleux, C., 2005. A physiological overview of the genetics of flowering time control. Plant Biotechnol. 3, 3-16."
+            },
+            {
+                "sequence": "3",
+                "doi": "10.1038/nature01636",
+                "original_text": "Cerdan, P.D., Chory, J., 2003. Regulation of flowering time by light quality. Nature 423, 881-885."
+            },
+            {
+                "sequence": "4",
+                "original_text": "Chen, I.C., Lee, S.C., Pan, S.M., Hsieh, H.L., 2007. <I>GASA4</I>, a GA-stimulated gene, participates in light signaling in <I>Arabidopsis</I>. Plant Sci. 172, 1062-1071."
+            },
+            {
+                "sequence": "5",
+                "doi": "10.1111/j.1399-3054.1992.tb01341.x",
+                "volume": "86",
+                "first_page": "439",
+                "publication_date": {
+                    "publication_year": "1992"
+                },
+                "original_text": "Eskins, K., 1992. Light quality effects on <I>Arabidopsis </I>development. Red, blue and far-red regulation of flowering and morphology. Physiol. Plant. 86, 439-444."
+            },
+            {
+                "sequence": "6",
+                "original_text": "Ferrario, S., Busscher, J., Franken, J., Gerats, T., Vandenbussche, M., Angenent, G.C., Immink, R.G.H., 2004. Ectopic expression of the petunia MADS box gene <I>UNSHAVEN </I>accelerates flowering and confers leaf-like characteristics to floral organs in a dominant-negative manner. Plant Cell 16, 1490-1505."
+            },
+            {
+                "sequence": "7",
+                "original_text": "Fukuda, N., Kobayashi-Yoshinaka, M., Ubukawa, M., Takayanagi, K., Sase, S., 2002. Effect of light quality, intensity and duration from different artificial light sources on the growth of petunia (<I>Petunia</I>&times;<I>hybrida </I>Vilm.). J. Jpn. Soc. Hort. Sci. 71, 509-516."
+            },
+            {
+                "sequence": "8",
+                "original_text": "Fukuda, N., Nishimura, S., Fumiki, Y., 2004. Effect of supplemental lighting during the period from middle of night to morning on photosynthesis and leaf thickness of lettuce (<I>Lactuca sativa </I>L.) and tsukena (<I>Brassica campestris </I>L.). Acta Hort. 633, 237-244."
+            },
+            {
+                "sequence": "9",
+                "original_text": "Fukuda N., Kondo, M., Nishimura, S., Koshioka, M., Tanakadate, S., Ito, A., Mander, L.N., 2006. The role of phytohormones in flowering and bolting of spinach (<I>Spinacia oleracea </I>L.) under mid-night lighting. Acta Hort. 711, 247-253."
+            },
+            {
+                "sequence": "10",
+                "original_text": "Fukuda, N., Fujita, M., Ohta, Y., Sase, S., Nishimura, S., Ezura, H., 2008. Directional blue light irradiation triggers epidermal cell elongation of abaxial side resulting in inhibition of leaf epinasty in geranium under red light condition. Sci. Hort. 115, 176-182."
+            },
+            {
+                "sequence": "11",
+                "original_text": "Fukuda, N., Ishii, Y., Ezura, H., Olsen, J.E., 2011. Effect of light quality under red and blue light emitting diodes on growth and expression of <I>FBP28 </I>in petunia. Acta Hort. 907, 361-366."
+            },
+            {
+                "sequence": "12",
+                "original_text": "Fukuda, N., Yoshida, T., Senaha, C., Olsen, J. E., Jikumaru, Y., Kamiya, Y., 2012. Short main shoot length and inhibition of floral bud development under red light can be recovered by application of gibberellin and cytokinin. Acta Hort. 956, 215-222."
+            },
+            {
+                "sequence": "13",
+                "original_text": "Grimstad, S.O., 1987. The effect of supplemental irradiation with different light sources on the growth and flowering of gloxinia (<I>Sinningia speciosa </I>(Lodd.) Hiern). Scientia Hortic. 32, 297-305."
+            },
+            {
+                "sequence": "14",
+                "doi": "10.1007/s11738-008-0185-z",
+                "original_text": "Haliapas, S., Yupsanis, T.A., Syros, T.D., Kofidis, G., Economou, A.S., 2008. <I>Petunia</I>&times;<I>hybrida </I>during transition to flowering as affected by light intensity and quality treatments, Acta Physiol. Plant. 30, 807-815."
+            },
+            {
+                "sequence": "15",
+                "doi": "10.1104/pp.104.059055",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "The Involvement of Gibberellin 20-Oxidase Genes in Phytochrome-Regulated Petiole Elongation of Arabidopsis"
+                    }
+                ],
+                "volume": "138",
+                "issue": "2",
+                "first_page": "1106",
+                "last_page": "1116",
+                "publication_date": {
+                    "publication_year": "2005"
+                },
+                "content_language": "en",
+                "original_text": "Hisamatsu, T., King, R.W., Helliwell, C.A., Koshioka, M., 2005. The involvement of gibberellin 20-oxidase genes in phytochrome-regulated petiole elongation of <I>Arabidopsis</I>. Plant Physiol. 138, 1106-1116."
+            },
+            {
+                "sequence": "16",
+                "original_text": "Ilias, F.I., Rajapakse, N., 2005. Prohexadione-calcium affects growth and flowering of petunia and impatiens grown under photoselective films. Sci. Hort. 106, 190-202."
+            },
+            {
+                "sequence": "17",
+                "original_text": "Kanto, T., Matsuura, K., Yamada, M., Usami, T., Amemiya, Y., 2009. UV-B radiation for control of strawberry powdery mildew. Acta Hort. 842, 359-362."
+            },
+            {
+                "sequence": "18",
+                "original_text": "King, R.W., Hisamatsu, T., Gildschmidt, E.E., Blundell, C., 2008. The nature of floral signals in Arabidopsis. I. Photosynthesis and a far-red photoresponse independently regulate flowering by increasing expression of <I>FLOWERING LOCUS T (FT)</I>. J. Exp. Bot. 59, 3811-3820."
+            },
+            {
+                "sequence": "19",
+                "original_text": "Kubota, S., Yamamoto, T., Hisamatsu, T., Esaki, S., Oi, R., Roh, M.S., Koshioka, M., 2000. Effects of red- and far-red-rich spectral treatments and diurnal temperature alternation on the growth and development of <I>Petunia</I>. J. Jpn. Soc. Hort. Sci. 69, 403-409."
+            },
+            {
+                "sequence": "20",
+                "original_text": "Kumar, K.S., Tiwari, K,N., Nadan K. Jha, 2009. Design and technology for greenhouse cooling in tropical and subtropical regions: A review. Energy and Building 41, 1269-1275."
+            },
+            {
+                "sequence": "21",
+                "doi": "10.1104/pp.123.1.39",
+                "volume": "123",
+                "first_page": "39",
+                "publication_date": {
+                    "publication_year": "2000"
+                },
+                "original_text": "Lin, C., 2000. Photoreceptors and regulation of flowering time. Plant Physiol. 123, 39-50."
+            },
+            {
+                "sequence": "22",
+                "original_text": "MaCavoy, R.J., Janes, H.W., 1988. Alternative production strategies for greenhouse tomatoes using supplemental lighting. Sci. Hort. 35, 161-16."
+            },
+            {
+                "sequence": "23",
+                "original_text": "Maki, S.L., Rajapakse, S., Ballard, R.E., Rajapakse, N.C., 2002. Role of gibberellins in chrysanthemum growth under far red light-deficient greenhouse environments. J. Amer. Soc. Hort. Sci. 127, 639-643."
+            },
+            {
+                "sequence": "24",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Growth of Dendranthema *grandiflorum (Ramat.) Kitamura under Various Spectral Filters."
+                    }
+                ],
+                "volume": "116",
+                "issue": "6",
+                "first_page": "950",
+                "last_page": "954",
+                "publication_date": {
+                    "publication_year": "1991"
+                },
+                "content_language": "en",
+                "original_text": "McMahon, M.J., Kelly, J.W., Decoteau, D.R., 1991. Growth of <I>Dendranthema</I>&times;<I>grandiflorum </I>(Ramat.) Kitamura under various spectral filters. J. Amer. Soc. Hort. Sci., 116, 950-954."
+            },
+            {
+                "sequence": "25",
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Regulation of Chrysanthemum Growth by Spectral Filters."
+                    }
+                ],
+                "volume": "117",
+                "issue": "3",
+                "first_page": "481",
+                "last_page": "485",
+                "publication_date": {
+                    "publication_year": "1992"
+                },
+                "content_language": "en",
+                "original_text": "Rajapakse, N.R., Kelly, J.W., 1992. Regulation of chrysanthemum growth by spectral filters. J. Amer. Soc. Hort. Sci. 117, 481-485."
+            },
+            {
+                "sequence": "26",
+                "original_text": "Schofield, A., Paliyath, G., 2005. Modulation of carotenoid biosynthesis during tomato fruit ripening through phytochrome regulation of phytoene synthase activity. Plant Physiol. Biochem. 43, 1052-1060."
+            },
+            {
+                "sequence": "27",
+                "original_text": "Shahak, Y., 2008. Photo-selective netting for improved performance of horticultural crops. A review of ornamental and vegetable studies carried out in Israel. Acta Hort. 770, 161-168."
+            },
+            {
+                "sequence": "28",
+                "doi": "10.1007/s00018-011-0673-y",
+                "original_text": "Srikanth, A., Schmid, M., 2011. Regulation of flowering time: all roads lead to Rome. Cell. Mol. Life Sci. 68, 2013-2037."
+            },
+            {
+                "sequence": "29",
+                "original_text": "Ubukawa, M., Fukuda, N., Oyama-Okubo, N., Koshioka, M., Mander, L.N., Sase, S., Nishimura, S., 2004. Effect of light source and quality on endogenous gibberellin level and GA<SUB>3</SUB> response of petunia (<I>Petunia</I>&times;<I>hybrida </I>Vilm.). J. Jpn. Soc. Hort. Sci. 73, 441-446."
+            },
+            {
+                "sequence": "30",
+                "doi": "10.1104/pp.107.099838",
+                "original_text": "Xiaoying, Z., Xuhong, Y., Eloise, F., Gregory, M.S., Javier, L., Krishnaprasad, T.B., Jing, X., James, L.W., Xuanming, L., James, B.R., Chentao, L., 2007. A study of gibberellin homeostasis and cryptochrome-mediated blue light inhibition of hypocotyl elongation. Plant Physiol. 145, 106-118."
+            },
+            {
+                "sequence": "31",
+                "doi": "10.1016/j.scienta.2006.05.009",
+                "journal_title_name_list": [
+                    {
+                        "journal_title_name": "Scientia Horticulturae",
+                        "lang": "en"
+                    }
+                ],
+                "title_list": [
+                    {
+                        "lang": "en",
+                        "title": "Light quality of continuous illuminating at night to induce floral initiation of Fragaria chiloensis L. CHI-24-1"
+                    }
+                ],
+                "volume": "109",
+                "first_page": "309",
+                "last_page": "314",
+                "publication_date": {
+                    "publication_year": "2006"
+                },
+                "creator_list": [
+                    {
+                        "sequence": "1",
+                        "type": "person",
+                        "names": [
+                            {
+                                "lang": "en",
+                                "last_name": "YANAGI",
+                                "first_name": "T."
+                            }
+                        ]
+                    }
+                ],
+                "content_language": "en",
+                "original_text": "Yanagi, T., Yahi, T., Okuda, N., Okamoto, K., 2006. Light quality of continuous illuminating at night to induce floral initiation of <I>Fragaria chiloensis </I>L. CHI-24-1. Sci. Hort. 109, 309-314."
+            },
+            {
+                "sequence": "32",
+                "original_text": "Yase, J., 2011. Control of the cotton budworm, <I>Helicoverpa armigera</I>, by YFLs in carnation greenhouse. Agrochem. Jpn. 78, 10-12."
+            }
+        ]
+    }
+}
