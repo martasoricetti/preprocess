@@ -12,8 +12,14 @@ class JalcPPTest(unittest.TestCase):
     def setUp(self):
         self.test_dir = join("test", "preprocess")
         self._input_dir_dj = join(self.test_dir, "data_jalc")
-        self._output_dir_dj = join(self.test_dir, "data_jalc_output")
+        self._output_dir_dj = self.__get_output_directory("data_jalc_output")
         self._interval = 10
+
+    def __get_output_directory(self, directory):
+        directory = join("", "tmp", directory)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        return directory
 
     def test_to_validated_id_list_API(self):
         self.JAPP1 = JalcPreProcessing(self._input_dir_dj, self._output_dir_dj, self._interval, testing=True)

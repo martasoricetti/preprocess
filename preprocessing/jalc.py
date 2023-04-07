@@ -3,7 +3,7 @@ from preprocessing.base import Preprocessing
 from os import makedirs
 from oc_idmanager.doi import DOIManager
 from oc_idmanager.issn import ISSNManager
-from identifier_manager.oc_idmanager.jid import JIDManager
+from identifier_manager.jid import JIDManager
 from os.path import exists
 import os
 import datetime
