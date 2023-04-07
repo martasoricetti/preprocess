@@ -25,6 +25,10 @@ class Preprocessing(metaclass=ABCMeta):
             setattr(self, key, params[key])
 
     def get_all_files(self, i_dir_or_compr, req_type):
+        """This method is meant to extract all the files of a given format from the compressed file
+        or directory at the filepath in input. It takes in input a filepath and the string of the
+        required filename extension, such as '.csv', '.json', '.ndjson', etc. The output includes
+        a list of extracted files and a targz opener, if required."""
         result = []
         targz_fd = None
 
@@ -77,16 +81,16 @@ class Preprocessing(metaclass=ABCMeta):
             print("It is not possible to process the input path.", i_dir_or_compr)
         return result, targz_fd
 
-    def load_json(self, file, targz_fd, file_idx, len_all_files):
+    def load_json(self, file, targz_fd):
+        """This method is meant to open a json file and load its content in a python dictionary"""
+
         result = None
 
         if targz_fd is None:
-            print("Open file %s of %s" % (file_idx, len_all_files))
             with open(file, encoding="utf8") as f:
                 result = load(f)
 
         else:
-            print("Open file %s of %s (in tar.gz archive)" % (file_idx, len_all_files))
             cur_tar_file = targz_fd.extractfile(file)
             json_str = cur_tar_file.read()
 
@@ -104,19 +108,46 @@ class Preprocessing(metaclass=ABCMeta):
         return result
 
     def get_id_manager(self, schema, id_man_dict):
+        """Given as input the string of a schema (e.g.:'pmid') and a dictionary mapping strings of
+        the schemas to their id managers, the method returns the correct id manager. Note that each
+        instance of the Preprocessing class needs its own instances of the id managers, in order to
+        avoid conflicts while validating data"""
         id_man = id_man_dict.get(schema)
         return id_man
 
     @abstractmethod
     def split_input(self):
-        """ ...
+        """ This is the method which orchestrates the tasks performed by all the
+        other methods, in order to split the input dump in lighter files, filtering
+        out the entities which are not involved in citations, removing information
+        which is not relevant for opencitations purposes, and validating identifiers
         """
         pass
 
-    def filter(self, data):
-        pass
+    @abstractmethod
+    def to_validated_id_list(self, id_dict_list, process_type):
+        """this method takes in input a list of id dictionaries and returns a list of valid and existent ids with
+        prefixes, or an updated version of the id_dict_list in input, where the identifiers in each dictionary of the
+        list are validated.
+        For each id, a first validation try is made by checking its presence in the META db. If the id is not in the
+        META db yet, a second attempt is made by using the specific id-schema API.
+        The input parameter are a list of dictionaries (containing identifiers and possibly some extra information that
+        makes clear which is the identifier schema) and a string defining the type of validation process to be
+        performed, in order to allow the implementation of customized solutions. For example, depending on the type of
+        information, it may be necessary to keep the validated identifier paired with other data (e.g.: the case of an
+        orcid and the name of an author, in which we need to return a list of dictionaries), while in other cases we
+        just need a list of validated ids as output (e.g.: the case of the identifiers of the cited publications)."""
+        return []
 
     @abstractmethod
     def splitted_to_file(self, cur_n, data, type):
+        """This method takes in input an integer number which represent the number of
+        entities already processed (cur_n), a list of processed entities (data) and the
+        string of a filename extension (type, i.e.: '.csv'). It performs two tasks: it
+        checks if the current number of processed entities can be divided by the target
+        number of entities to store in each file, defined as an input parameter for each
+        instance of the class Preprocessing: if it is not the case, it returns the list of
+        entities in input (data); otherwise, it stores the entities in the list data to
+        an output file of the required type and it returns an empty list."""
         pass
 

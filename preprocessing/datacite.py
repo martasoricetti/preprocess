@@ -21,7 +21,10 @@ from argparse import ArgumentParser
 
 class DatacitePreProcessing(Preprocessing):
     """This class aims at pre-processing DataCite dumps.
-    In particular, DatacitePreProcessing splits the original nldJSON in many JSON files, each one containing the number of entities specified in input by the user. Further, the class discards those entities that are not involved in citations"""
+    In particular, DatacitePreProcessing splits the original ndJSON in many ndJSON files, each one containing the
+    number of entities specified in input by the user. Further, the class validates identifiers, and discards those
+    entities that are not involved in citations, together with key-value pairs which are not used in OpenCitations
+    processes."""
 
     _req_type = ".ndjson"
     _accepted_ids = {"doi", "pmid", "pmcid", "wikidata"}
@@ -29,7 +32,13 @@ class DatacitePreProcessing(Preprocessing):
     _accepted_ids_ra = {"orcid", "viaf", "ror"}
     _entity_keys_to_keep = {"titles", "publicationYear", "dates", "types", "updated", "publisher"}
     _entity_keys_to_update = {"identifiers", "creators", "container", "contributors", "relatedIdentifiers"}
-    #allkeys = "doi", "identifiers", "creators", "titles", "publisher", "container", "publicationYear", "subjects", "contributors", "dates", "language", "types", "relatedIdentifiers", "sizes", "formats", "version", "rightsList", "descriptions", "geoLocations", "fundingReferences", "url", "contentUrl", "metadataVersion", "schemaVersion", "source", "isActive", "state", "reason", "viewCount", "downloadCount", "referenceCount", "citationCount", "partCount", "partOfCount", "versionCount", "versionOfCount", "created", "registered", "published", "updated"
+    # all keys in the origial dump = "doi", "identifiers", "creators", "titles", "publisher", "container",
+    # "contributors", "dates", "language", "types", "relatedIdentifiers", "sizes", "formats", "version", "rightsList",
+    # "descriptions", "geoLocations", "fundingReferences", "url", "contentUrl", "metadataVersion", "schemaVersion",
+    # "source", "isActive", "state", "reason", "viewCount", "downloadCount", "referenceCount", "citationCount",
+    # "partCount", "partOfCount", "versionCount", "versionOfCount", "created", "registered", "published", "updated"
+    # "publicationYear", "subjects",
+
     def __init__(self, input_dir, output_dir, interval, testing=False):
         if testing:
             self._redis_db = self.BR_redis_test
@@ -90,9 +99,11 @@ class DatacitePreProcessing(Preprocessing):
                                 if e['type'] == "dois":
                                     attributes = e["attributes"]
 
-                                    #add k,v pairs which do not need to be modified: "titles", "publicationYear", "dates", "types", "updated", "publisher"
+                                    # add k,v pairs which do not need to be modified: "titles", "publicationYear",
+                                    # "dates", "types", "updated", "publisher"
                                     processed_entity = {k:v for k,v in e.get("attributes").items() if k in self._entity_keys_to_keep}
 
+                                    # add an updated version of the k,v pairs which needs some check or validation
                                     #doi
                                     processed_entity["doi"] = doi_entity
 
@@ -173,9 +184,6 @@ class DatacitePreProcessing(Preprocessing):
 
 
     def to_validated_id_list(self, id_dict_list, process_type):
-        """this method takes in input a list of id dictionaries and returns a list valid and existent ids with prefixes.
-        For each id, a first validation try is made by checking its presence in META db. If the id is not in META db yet,
-        a second attempt is made by using the specific id-schema API"""
         if process_type == "contributors" or process_type == "creators":
             processed_list = []
             for c in id_dict_list:

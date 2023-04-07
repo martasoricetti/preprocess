@@ -1,9 +1,8 @@
-from os import sep, makedirs, walk, listdir
-import glob
+from os import makedirs
 import re
 import html
 import os.path
-from os.path import exists, join
+from os.path import exists
 import json
 import csv
 from bs4 import BeautifulSoup
@@ -22,7 +21,10 @@ class NIHPreProcessing(Preprocessing):
     Citation Collection + ICite Metadata), available at:
     https://nih.figshare.com/search?q=iCite+Database+Snapshot. In particular,
     NIHPreProcessing splits the original CSV file in many lighter CSV files,
-    each one containing the number of entities specified in input by the user"""
+    each one containing the number of entities specified in input by the user.
+    In addition to that, csv fields which contain information which is not
+    relevant for OpenCitations purposes are discarded, and also the entities
+    that are not involved in citations are excluded from the output files."""
     _req_type = ".csv"
     _accepted_ids = {"doi", "pmid"}
     _entity_keys_to_discard = {"is_research_article","citation_count","field_citation_rate","expected_citations_per_year","citations_per_year","relative_citation_ratio","nih_percentile","human","animal","molecular_cellular","x_coord","y_coord","apt","is_clinical","cited_by_clin","provisional"}
@@ -98,7 +100,7 @@ class NIHPreProcessing(Preprocessing):
 
                     for line in filt_values:
                         count += 1
-                        norm_pmid = self.to_validated_id_list([{"id":line.get("pmid"), "schema":"pmid"}])[0]
+                        norm_pmid = self.to_validated_id_list([{"id":line.get("pmid"), "schema":"pmid"}], "citations")[0]
                         if norm_pmid is None:
                             print("ERROR:", line.get("pmid"), norm_pmid)
                             continue
@@ -106,15 +108,15 @@ class NIHPreProcessing(Preprocessing):
                         cit_by = line.get("cited_by").split() if line.get("cited_by") else []
                         if ref:
                             ref_dict_list = [{"id":i, "schema":"pmid"} for i in ref]
-                            norm_ref = ' '.join([x for x in self.to_validated_id_list(ref_dict_list) if x]).strip()
+                            norm_ref = ' '.join([x for x in self.to_validated_id_list(ref_dict_list, "citations") if x]).strip()
                         else:
                             norm_ref = ""
                         if cit_by:
                             cit_by_dict_list = [{"id":i, "schema":"pmid"} for i in cit_by]
-                            norm_cit_by = ' '.join([x for x in self.to_validated_id_list(cit_by_dict_list) if x]).strip()
+                            norm_cit_by = ' '.join([x for x in self.to_validated_id_list(cit_by_dict_list, "citations") if x]).strip()
                         else:
                             norm_cit_by = ""
-                        valid_doi = self.to_validated_id_list([{"id":line.get("doi"), "schema":"doi"}])[0]
+                        valid_doi = self.to_validated_id_list([{"id":line.get("doi"), "schema":"doi"}], "citations")[0]
                         if valid_doi is None:
                             valid_doi = ""
                         valid_venue, self.jour_dict = self.get_venue_title_and_id(line.get("journal"), self.jour_dict, norm_pmid)
@@ -135,52 +137,58 @@ class NIHPreProcessing(Preprocessing):
             self.splitted_to_file(count, lines)
             self.issn_data_to_cache_poci(self.jour_dict, self.journals_dict_path)
 
-    def to_validated_id_list(self, id_dict_list):
-        """this method takes in input a list of id dictionaries and returns a list valid and existent ids with prefixes.
-        For each id, a first validation try is made by checking its presence in META db. If the id is not in META db yet,
-        a second attempt is made by using the specific id-schema API"""
-        valid_id_list = []
-        for i in id_dict_list:
-            id = i.get("id")
-            if id:
-                schema = i.get("schema")
-                id_man = self.get_id_manager(schema, self._id_man_dict)
-                norm_id = id_man.normalise(id, include_prefix=True)
-                if schema == "pmid":
-                    # since the datasource is also responsible for the only pmid API, there is no need of further checks
-                    if norm_id:
-                        valid_id_list.append(norm_id)
+    def to_validated_id_list(self, id_dict_list, process_type):
+        if process_type == "citations":
+            valid_id_list = []
+            for i in id_dict_list:
+                id = i.get("id")
+                if id:
+                    schema = i.get("schema")
+                    id_man = self.get_id_manager(schema, self._id_man_dict)
+                    norm_id = id_man.normalise(id, include_prefix=True)
+                    if schema == "pmid":
+                        # since the datasource is also responsible for the only pmid API, there is no need of
+                        # further checks on the ids validity
+                        if norm_id:
+                            valid_id_list.append(norm_id)
+                        else:
+                            valid_id_list.append(None)
                     else:
-                        valid_id_list.append(None)
+                        # check if the id is in redis db
+                        if self._redis_db.get(norm_id):
+                            valid_id_list.append(norm_id)
+                        # if the id is not in redis db, validate it before appending
+                        elif id_man.is_valid(norm_id):
+                            valid_id_list.append(norm_id)
+                        else:
+                            valid_id_list.append(None)
                 else:
-                    # check if the id is in redis db
-                    if self._redis_db.get(norm_id):
-                        valid_id_list.append(norm_id)
-                    # if the id is not in redis db, validate it before appending
-                    elif id_man.is_valid(norm_id):
-                        valid_id_list.append(norm_id)
-                    else:
-                        valid_id_list.append(None)
-            else:
-                valid_id_list.append(None)
+                    valid_id_list.append(None)
 
-        return valid_id_list
+            return valid_id_list
 
     def get_venue_title_and_id(self, short_n, jour_dict, be_id):
-        '''
+        """
+        :param short_n: 
+        :param jour_dict: 
+        :param be_id: 
+        :return: 
+        """"""
         This method deals with generating the venue's name, followed by id in square brackets, separated by spaces.
         HTML tags are deleted and HTML entities escaped. In addition, any ISBN and ISSN are validated.
-        Finally, the square brackets in the venue name are replaced by round brackets to avoid conflicts with the ids enclosures.
+        Finally, the square brackets in the venue name are replaced by round brackets to avoid conflicts with the ids 
+        enclosures.
 
         :params item: the item's dictionary
         :type item: dict
         :params row: a CSV row
         :type row: dict
-        :returns: str, dict -- The output is a string in the format 'NAME [SCHEMA:ID]', for example, 'Nutrition & Food Science
-         [issn:0034-6659]', and the updated dictionary mapping short journal names to extended journal names and ISSN ids,
-         If the id does not exist, the output is only the name. Finally, if there is no venue,
-         the output is an empty string.
-         '''
+        :returns: str, dict -- The output is a string in the format 'NAME [SCHEMA:ID]', for example, 
+        'Nutrition & Food Science [issn:0034-6659]', and the updated dictionary mapping short journal 
+        names to extended journal names and ISSN ids, If the id does not exist, the output is only the name. 
+        Finally, if there is no venue, the output is an empty string. 
+        """
+
         cont_title = ""
         venids_list = []
         if short_n:
@@ -225,10 +233,11 @@ class NIHPreProcessing(Preprocessing):
         return name_and_id, self.jour_dict
 
 if __name__ == '__main__':
-    arg_parser = ArgumentParser('pubmed.py', description='This script preprocesses a NIH dump (either compressed or not,'
-                                                         'either NIH-OCC or iCite Metadata) by discarding the entities '
-                                                         'which are not involved in citations and storing the other ones '
-                                                         'in smaller csv files')
+    arg_parser = ArgumentParser('pubmed.py', description='This script preprocesses a NIH dump (iCite Metadata) by '
+                                                         'discarding the entities which are not involved in citations '
+                                                         'and storing the other ones in smaller csv files, containing'
+                                                         'a reduced number of fields with respect to the original'
+                                                         'csv file')
     arg_parser.add_argument('-in', '--input', dest='input', required=True,
                             help='Either a directory containing the decompressed csv input file or the zip compressed '
                                  'csv input file')

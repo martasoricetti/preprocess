@@ -172,12 +172,14 @@ class OpenirePreProcessing(Preprocessing):
         return valid_id_list
 
 if __name__ == '__main__':
-    arg_parser = ArgumentParser('openaire.py', description='This script preprocesses a directory of tar compressed directories containing '
-                                                           'the gzipped scholix files of the openaire dump by filtering the duplicated citation'
-                                                           'entities, i.e. considering only the addressed citations and not the received, in order'
-                                                           'to obtain a lighter dump')
+    arg_parser = ArgumentParser('openaire.py', description='This script preprocesses a directory of tar compressed '
+                                                           'directories containing the gzipped scholix files of the '
+                                                           'openaire dump by filtering the duplicated citation entities'
+                                                           'by considering the addressed citations only and not the '
+                                                           'received, in order to obtain a lighter dump')
     arg_parser.add_argument('-in', '--input', dest='input', required=True,
-                            help=' a directory containing the tar compressed directories, containing gz compressed scholix files')
+                            help=' a directory containing the tar compressed directories, containing gz compressed '
+                                 'scholix files')
     arg_parser.add_argument('-out_g', '--output_g', dest='output_g', required=True,
                             help='Directory where the preprocessed scholix gz files will be stored ')
     arg_parser.add_argument('-n', '--number', dest='number', required=True, type=int,
@@ -189,4 +191,3 @@ if __name__ == '__main__':
 
     oapp = OpenirePreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number, testing=args.testing)
     oapp.split_input()
-

@@ -21,7 +21,6 @@ from tqdm import tqdm
 from datetime import datetime
 import os.path
 from os.path import exists
-from json import load, loads
 from preprocessing.base import Preprocessing
 from oc_idmanager.doi import DOIManager
 from oc_idmanager.issn import ISSNManager
@@ -59,35 +58,13 @@ class CrossrefPreProcessing(Preprocessing):
 
         super(CrossrefPreProcessing, self).__init__()
 
-    def load_json_coci(self, file, targz_fd):
-        if targz_fd is None:
-            # print("Open file %s of %s" % (file_idx, len_all_files))
-            with open(file, encoding="utf8") as f:
-                result = load(f)
-        else:
-            # print("Open file %s of %s (in tar.gz archive)" % (file_idx, len_all_files))
-            cur_tar_file = targz_fd.extractfile(file)
-            json_str = cur_tar_file.read()
-
-            # In Python 3.5 it seems that, for some reason, the extractfile method returns an
-            # object 'bytes' that cannot be managed by the function 'load' in the json package.
-            # Thus, to avoid issues, in case an object having type 'bytes' is return, it is
-            # transformed as a string before passing it to the function 'loads'. Please note
-            # that Python 3.9 does not show this behaviour, and it works correctly without
-            # any transformation.
-            if type(json_str) is bytes:
-                json_str = json_str.decode("utf-8")
-            result = loads(json_str)
-
-        return result
-
     def split_input(self):
         data = []
         count = 0
 
         all_files, targz_fd = self.get_all_files(self._input_dir, self._req_type)
         for file_idx, file in enumerate(tqdm(all_files), 1):
-            file_data = self.load_json_coci(file, targz_fd)
+            file_data = self.load_json(file, targz_fd)
             if "items" in file_data:
                 for obj in tqdm(file_data["items"]):
 
@@ -174,9 +151,6 @@ class CrossrefPreProcessing(Preprocessing):
             return data
 
     def to_validated_id_list(self, id_dict_list, process_type):
-        """this method takes in input a list of id dictionaries and returns a list valid and existent ids with prefixes.
-        For each id, a first validation try is made by checking its presence in META db. If the id is not in META db yet,
-        a second attempt is made by using the specific id-schema API"""
         if process_type == "responsible_agents":
             processed_list = []
             for c in id_dict_list:
@@ -237,8 +211,11 @@ class CrossrefPreProcessing(Preprocessing):
 
 
 if __name__ == '__main__':
-    arg_parser = ArgumentParser('crossref.py', description='This script preprocesses a tar.gz compressed file containing crossref dump json files. The ids are validated and the entities which do not contain citations are discarder. For each filtered entity dict, only'
-                                                           'keys which are relevant for opencitations purposes are kept')
+    arg_parser = ArgumentParser('crossref.py', description='This script preprocesses the tar.gz compressed file of the '
+                                                           'crossref dump json files. The ids are validated and the '
+                                                           'entities which do not contain citations are discarder. For '
+                                                           'each filtered entity dict, only keys which are relevant '
+                                                           'for opencitations purposes are kept')
     arg_parser.add_argument('-in', '--input', dest='input', required=True,
                             help=' path to the compressed tar gz input o to the directory containing input json files')
     arg_parser.add_argument('-out_g', '--output_g', dest='output_g', required=True,
@@ -252,4 +229,3 @@ if __name__ == '__main__':
 
     crpp = CrossrefPreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number, testing=args.testing)
     crpp.split_input()
-
