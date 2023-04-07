@@ -33,8 +33,10 @@ class OpenirePreProcessing(Preprocessing):
     def __init__(self, input_dir, output_dir, interval, testing=False):
         if testing:
             self._redis_db = self.BR_redis_test
+            self._redis_db_ra = self.RA_redis_test
         else:
             self._redis_db = self.BR_redis
+            self._redis_db_ra = self.RA_redis
         self._input_dir = input_dir
         self._output_dir = output_dir
         if not exists(self._output_dir):

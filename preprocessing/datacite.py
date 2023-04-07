@@ -33,8 +33,10 @@ class DatacitePreProcessing(Preprocessing):
     def __init__(self, input_dir, output_dir, interval, testing=False):
         if testing:
             self._redis_db = self.BR_redis_test
+            self._redis_db_ra = self.RA_redis_test
         else:
             self._redis_db = self.BR_redis
+            self._redis_db_ra = self.RA_redis
         self._doi_manager = DOIManager()
         self._issn_manager = ISSNManager()
         self._isbn_manager = ISBNManager()
@@ -67,7 +69,7 @@ class DatacitePreProcessing(Preprocessing):
         count = 0
 
         # PROCESS START (on files)
-        for file_idx, file in enumerate(all_files, 1):
+        for file_idx, file in enumerate(tqdm(all_files), 1):
             f = open(file, encoding="utf8")
             for line in tqdm(f):
                 if line:
@@ -195,7 +197,7 @@ class DatacitePreProcessing(Preprocessing):
                                         id_man = self.get_id_manager(schema, self._id_man_dict)
                                         if id_man:
                                             norm_id = id_man.normalise(id, include_prefix=True)
-                                            if self._redis_db.get(norm_id):
+                                            if self._redis_db_ra.get(norm_id):
                                                 norm_identifiers.append(norm_id)
                                             elif id_man.is_valid(norm_id):
                                                 norm_identifiers.append(norm_id)

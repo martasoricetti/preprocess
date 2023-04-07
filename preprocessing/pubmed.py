@@ -47,7 +47,6 @@ class NIHPreProcessing(Preprocessing):
         self._nih_rf = NIHResourceFinder()
         self._id_man_dict = {"doi":self._doi_manager, "pmid": self._pmid_manager}
 
-
         super(NIHPreProcessing, self).__init__()
 
     def issn_data_recover_poci(self, path):

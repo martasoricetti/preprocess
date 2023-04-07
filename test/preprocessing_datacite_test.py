@@ -21,7 +21,7 @@ import os.path
 import shutil
 
 
-class PreprocessingTest(unittest.TestCase):
+class PreprocessingTestDatacite(unittest.TestCase):
         def setUp(self):
             self.test_dir = join("test", "preprocess")
             self._input_dir_dc = join(self.test_dir, "data_datacite")
