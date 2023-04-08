@@ -196,7 +196,7 @@ class JalcPPTest(unittest.TestCase):
         all_files_out, targz_fd = self.JAPP.get_all_files(self._output_dir_dj, ".ndjson")
         for file_idx, file in enumerate(all_files_out, 1):
             fo = open(file, encoding="utf8")
-            lines_out = [json.loads(line) for line in fo if line]
+            lines_out = [line for line in fo if line]
             n_out_ents += len(lines_out)
             fo.close()
 
@@ -215,6 +215,12 @@ class JalcPPTest(unittest.TestCase):
                              os.path.isfile(os.path.join(self._output_dir_dj, name))])
 
         self.assertEqual(exp_n_out_file, len_out_files)
+
+        # for f in os.listdir(self._input_dir_dj):
+        #     decompr_dir_filepath = join(self._input_dir_dj, f.split(".")[0] + "_decompr_zip_dir")
+        #
+        #     if exists(decompr_dir_filepath):
+        #         shutil.rmtree(decompr_dir_filepath)
 
 
  #python -m unittest discover -s test -p "preprocessing_jalc_test.py"

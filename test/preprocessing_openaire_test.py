@@ -34,7 +34,7 @@ class OpenAirePPTest(unittest.TestCase):
 
         # OpenArie data, for OROCI parser
         self.input_dir = join(self.test_dir, "data_openaire")
-        self.output_dir = self.__get_output_directory("oroci_pp_dump_output")
+        self.output_dir = self.__get_output_directory("data_openaire_output")
 
 
     def __get_output_directory(self, directory):

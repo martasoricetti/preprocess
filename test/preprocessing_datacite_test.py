@@ -24,8 +24,10 @@ import shutil
 class PreprocessingTestDatacite(unittest.TestCase):
         def setUp(self):
             self.test_dir = join("test", "preprocess")
-            self._input_dir_dc = join(self.test_dir, "data_datacite")
-            self._output_dir_dc_lm = self.__get_output_directory("tmp_data_datacite_lm")
+            self._input_dir_dc = join(self.test_dir, "data_datacite", "ndjson_files")
+            self._compr_input_dir_dc = join(self.test_dir, "data_datacite", "sample_9.ndjson.zst")
+            self._output_dir_dc_lm = self.__get_output_directory("data_datacite_output")
+            self._compr_output_dir_dc_lm = self.__get_output_directory("data_datacite_output_compress")
             self._interval = 7
 
         def __get_output_directory(self, directory):
@@ -59,31 +61,88 @@ class PreprocessingTestDatacite(unittest.TestCase):
                                         entities_w_citations.append(lrid)
                                         break
                 f.close()
-                n_ents_w_cit = len(entities_w_citations)
+            n_ents_w_cit = len(entities_w_citations)
 
-                n_out_ents = 0
-                all_files_out, targz_fd = self._dc_pp.get_all_files(self._output_dir_dc_lm, self._dc_pp._req_type)
-                for file_idx, file in enumerate(all_files_out, 1):
-                    fo = open(file, encoding="utf8")
-                    lines_out = [json.loads(line) for line in fo if line]
-                    n_out_ents += len(lines_out)
-                    fo.close()
+            n_out_ents = 0
+            all_files_out, targz_fd = self._dc_pp.get_all_files(self._output_dir_dc_lm, self._dc_pp._req_type)
+            for file_idx, file in enumerate(all_files_out, 1):
+                fo = open(file, encoding="utf8")
+                lines_out = [json.loads(line) for line in fo if line]
+                n_out_ents += len(lines_out)
+                fo.close()
 
-                # TESTING THAT: the number of filtered entities in output is the same as
-                # the n of input entities having citations
-                self.assertEqual(n_out_ents, n_ents_w_cit)
+            # TESTING THAT: the number of filtered entities in output is the same as
+            # the n of input entities having citations
+            self.assertEqual(n_out_ents, n_ents_w_cit)
 
-                # TESTING THAT: the number of output entities is organized in the correct amount of output
-                # files, according to the specified number of entities to store in each output file
-                if n_ents_w_cit % self._interval == 0:
-                    exp_n_out_file = n_ents_w_cit // self._interval
-                else:
-                    exp_n_out_file = (n_ents_w_cit // self._interval) + 1
+            # TESTING THAT: the number of output entities is organized in the correct amount of output
+            # files, according to the specified number of entities to store in each output file
+            if n_ents_w_cit % self._interval == 0:
+                exp_n_out_file = n_ents_w_cit // self._interval
+            else:
+                exp_n_out_file = (n_ents_w_cit // self._interval) + 1
 
-                len_out_files = len([name for name in os.listdir(self._output_dir_dc_lm) if
-                                     os.path.isfile(os.path.join(self._output_dir_dc_lm, name))])
+            len_out_files = len([name for name in os.listdir(self._output_dir_dc_lm) if
+                                 os.path.isfile(os.path.join(self._output_dir_dc_lm, name))])
 
-                self.assertEqual(exp_n_out_file, len_out_files)
+            self.assertEqual(exp_n_out_file, len_out_files)
+
+        def test_dc_preprocessing_compress(self):
+            if exists(self._compr_output_dir_dc_lm):
+                shutil.rmtree(self._compr_output_dir_dc_lm)
+            self._dc_pp = DatacitePreProcessing(self._compr_input_dir_dc, self._compr_output_dir_dc_lm, self._interval, testing=True)
+            self._dc_pp.split_input()
+            entities_w_citations = []
+            all_files, targz_fd = self._dc_pp.get_all_files(self._compr_input_dir_dc, self._dc_pp._req_type)
+            for file_idx, file in enumerate(all_files, 1):
+                f = open(file, encoding="utf8")
+                lines = [json.loads(line) for line in f]
+                ents = [d for d in lines if d.get("data")]
+                lists_of_dicts = [d.get("data") for d in ents if d.get("data")]
+                for l in lists_of_dicts:
+                    ents_w_atts = [d.get("attributes") for d in l if d.get("attributes")]
+                    lists_of_relids = [d.get("relatedIdentifiers") for d in ents_w_atts if d.get("relatedIdentifiers")]
+                    for lrid in lists_of_relids:
+                        for e in lrid:
+                            if all(elem in e for elem in  self._dc_pp._needed_info):
+                            #schema = (str(ref["relatedIdentifierType"])).lower().strip()
+                            #id_man = self.get_id_manager(schema, self._id_man_dict)
+                                if e.get("relationType").lower().strip() in {"cites", "iscitedby", "references", "isreferencedby"}:
+                                    if e.get("relatedIdentifierType").lower().strip() == "doi":
+                                        entities_w_citations.append(lrid)
+                                        break
+                f.close()
+            n_ents_w_cit = len(entities_w_citations)
+
+            n_out_ents = 0
+            all_files_out, targz_fd = self._dc_pp.get_all_files(self._compr_output_dir_dc_lm, self._dc_pp._req_type)
+            for file_idx, file in enumerate(all_files_out, 1):
+                fo = open(file, encoding="utf8")
+                lines_out = [json.loads(line) for line in fo if line]
+                n_out_ents += len(lines_out)
+                fo.close()
+
+            # TESTING THAT: the number of filtered entities in output is the same as
+            # the n of input entities having citations
+            self.assertEqual(n_out_ents, n_ents_w_cit)
+
+            # TESTING THAT: the number of output entities is organized in the correct amount of output
+            # files, according to the specified number of entities to store in each output file
+            if n_ents_w_cit % self._interval == 0:
+                exp_n_out_file = n_ents_w_cit // self._interval
+            else:
+                exp_n_out_file = (n_ents_w_cit // self._interval) + 1
+
+            len_out_files = len([name for name in os.listdir(self._compr_output_dir_dc_lm) if
+                                 os.path.isfile(os.path.join(self._compr_output_dir_dc_lm, name))])
+
+            self.assertEqual(exp_n_out_file, len_out_files)
+
+            #remove the directory where the zst was extracted
+            decompr_dir_filepath = self._compr_input_dir_dc.split(".")[0]+"_decompr_zst_dir"
+            if exists(decompr_dir_filepath):
+                shutil.rmtree(decompr_dir_filepath)
+
 
 if __name__ == '__main__':
     unittest.main()

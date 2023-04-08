@@ -45,7 +45,7 @@ class Preprocessing(metaclass=ABCMeta):
                     result.append(cur_file)
         elif i_dir_or_compr.endswith("zip"):
             with zipfile.ZipFile(i_dir_or_compr, 'r') as zip_ref:
-                dest_dir = i_dir_or_compr.split(".")[0] + "decompr_zip_dir"
+                dest_dir = i_dir_or_compr.split(".")[0] + "_decompr_zip_dir"
                 if not exists(dest_dir):
                     makedirs(dest_dir)
                 zip_ref.extractall(dest_dir)

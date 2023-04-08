@@ -20,9 +20,7 @@ from preprocessing.pubmed import NIHPreProcessing
 import shutil
 import csv
 import os
-from os import listdir
 import pandas as pd
-import glob
 
 
 class PubMedPPTest(unittest.TestCase):
@@ -36,8 +34,10 @@ class PubMedPPTest(unittest.TestCase):
         self.num_4 = 4
 
         # iCite Metadata, for POCI glob
-        self.input_md_dir = join(self.test_dir, "poci_md_pp_dump_input")
-        self.output_md_dir = self.__get_output_directory("poci_md_pp_dump_output")
+        self.input_md_dir = join(self.test_dir, "data_poci", "csv_files")
+        self.compr_input_md_dir = join(self.test_dir, "data_poci", "CSV_iCiteMD_zipped.zip")
+        self.output_md_dir = self.__get_output_directory("data_poci_output")
+        self.compr_output_md_dir = self.__get_output_directory("data_poci_output_compress")
         self._support_dir = "support_files"
         self.jt_path_json = join("support_files","journal_issn_ext.json")
         self.jt_path_empty = join("tmp","journal_issn_ext_temp.json")
@@ -86,3 +86,42 @@ class PubMedPPTest(unittest.TestCase):
 
 
 
+    def test_icmd_split_compress(self):
+        if exists(self.compr_output_md_dir):
+            shutil.rmtree(self.compr_output_md_dir)
+        self.assertFalse(exists(self.compr_output_md_dir))
+        self.NIHPPmd = NIHPreProcessing(self.compr_input_md_dir, self.compr_output_md_dir, self.num_2, self.jt_path_json, testing=True)
+        self.NIHPPmd.split_input()
+
+        # checks that the output directory is generated in the process.
+        self.assertTrue(exists(self.compr_output_md_dir))
+
+        # checks that the input lines where stored in the correct number of files, with respect to the parameters specified.
+        # checks that the number of filtered lines is equal to the number of lines in input - the number of discarded lines
+        input_files, targz_fd = self.NIHPPmd.get_all_files(self.compr_input_md_dir, self.req_type)
+        len_discarded_lines = 0
+        len_total_lines = 0
+        for idx, file in enumerate(input_files):
+            df = pd.read_csv(file, usecols=self.NIHPPmd._filter, low_memory=True)
+            df.fillna("", inplace=True)
+            df_dict_list = df.to_dict("records")
+            len_total_lines += len(df_dict_list)
+            len_discarded_lines += len([d for d in df_dict_list if not (d.get("cited_by") or d.get("references"))])
+
+        expected_num_files = (len_total_lines - len_discarded_lines) // self.num_2 if (len_total_lines - len_discarded_lines) % self.num_2 == 0 else (
+                                                                                                                                                                            len_total_lines - len_discarded_lines) // self.num_2 + 1
+        files, targz_fd = self.NIHPPmd.get_all_files(self.compr_output_md_dir, self.req_type)
+        len_files = len(files)
+        self.assertEqual(len_files, expected_num_files)
+
+        len_filtered_lines = 0
+        for idx, file in enumerate(files):
+            with open(file, "r") as op_file:
+                reader = csv.reader(op_file, delimiter=",")
+                next(reader, None)
+                len_filtered_lines += len(list(reader))
+        self.assertEqual(len_filtered_lines, len_total_lines - len_discarded_lines)
+        # remove the directory where the zst was extracted
+        decompr_dir_filepath = self.compr_input_md_dir.split(".")[0] + "_decompr_zip_dir"
+        if exists(decompr_dir_filepath):
+            shutil.rmtree(decompr_dir_filepath)
