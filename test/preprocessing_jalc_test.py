@@ -11,7 +11,9 @@ class JalcPPTest(unittest.TestCase):
 
     def setUp(self):
         self.test_dir = join("test", "preprocess")
-        self._input_dir_dj = join(self.test_dir, "data_jalc")
+        self._cont_input_dir = join(self.test_dir, "data_jalc")
+        self._input_dir_dj = join(self._cont_input_dir, "jalc_sample.zip")
+        self._input_dir_dj = join(self.test_dir, "data_jalc", "jalc_sample.zip")
         self._output_dir_dj = self.__get_output_directory("data_jalc_output")
         self._interval = 10
 
@@ -164,32 +166,28 @@ class JalcPPTest(unittest.TestCase):
 
         entities_w_citations = []
         # iterate over the input data
-        all_files = self.JAPP.get_all_files(self._input_dir_dj, ".zip")
-        for i, zipped_folder in enumerate(all_files, 1):
-            if zipped_folder:
-                for n, el in enumerate(zipped_folder):
-                    if el:
-                        all_files_unzipped = self.JAPP.get_all_files(el, self.JAPP._req_type)
-                        for folder_idx, folder in enumerate(all_files_unzipped, 1):
-                            if folder:
-                                for file_idx, file in enumerate(folder, 1):
-                                    f = open(file, encoding="utf-8")
-                                    my_dict = json.load(f)
-                                    d = my_dict.get("data")
-                                    # filtering out entities without citations
-                                    if "citation_list" in d:
-                                        cit_list = d["citation_list"]
-                                        cit_list_doi = [x for x in cit_list if x.get("doi")]
-                                        # filtering out entities with citations without dois
-                                        if cit_list_doi:
-                                            # citing_entity
-                                            citing_id_to_keep = self.JAPP.to_validated_id_list(d.get("doi"), "citing_entity")
-                                            if citing_id_to_keep:
-                                                citations = d.get("citation_list")
-                                                processed_citations = self.JAPP.to_validated_id_list(citations, "citation")
-                                                if processed_citations:
-                                                    entities_w_citations.append(citing_id_to_keep)
-                                    f.close()
+        all_files, targz_fd  = self.JAPP.get_all_files(self._input_dir_dj, ".zip")
+        for i, el in enumerate(all_files, 1):
+            if el:
+                all_files_unzipped, targz_fd_el = self.JAPP.get_all_files(el, self.JAPP._req_type)
+                for file_idx, file in enumerate(all_files_unzipped, 1):
+                    f = open(file, encoding="utf-8")
+                    my_dict = json.load(f)
+                    d = my_dict.get("data")
+                    # filtering out entities without citations
+                    if "citation_list" in d:
+                        cit_list = d["citation_list"]
+                        cit_list_doi = [x for x in cit_list if x.get("doi")]
+                        # filtering out entities with citations without dois
+                        if cit_list_doi:
+                            # citing_entity
+                            citing_id_to_keep = self.JAPP.to_validated_id_list(d.get("doi"), "citing_entity")
+                            if citing_id_to_keep:
+                                citations = d.get("citation_list")
+                                processed_citations = self.JAPP.to_validated_id_list(citations, "citation")
+                                if processed_citations:
+                                    entities_w_citations.append(citing_id_to_keep)
+                    f.close()
         n_ents_w_cit = len(entities_w_citations)
 
         n_out_ents = 0
@@ -216,11 +214,14 @@ class JalcPPTest(unittest.TestCase):
 
         self.assertEqual(exp_n_out_file, len_out_files)
 
-        # for f in os.listdir(self._input_dir_dj):
-        #     decompr_dir_filepath = join(self._input_dir_dj, f.split(".")[0] + "_decompr_zip_dir")
-        #
-        #     if exists(decompr_dir_filepath):
-        #         shutil.rmtree(decompr_dir_filepath)
+        for f in os.listdir(self._cont_input_dir):
+            if f.endswith(".zip"):
+                f_ext = ".".join(f.split(".")[:-1])
+                path_no_ext = join(self._cont_input_dir, f_ext)
+                decompr_dir_filepath = path_no_ext+"_decompr_zip_dir"
+                if exists(decompr_dir_filepath):
+                    shutil.rmtree(decompr_dir_filepath)
+                self.assertFalse(exists(decompr_dir_filepath))
 
 
  #python -m unittest discover -s test -p "preprocessing_jalc_test.py"

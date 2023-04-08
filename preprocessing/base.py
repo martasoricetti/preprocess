@@ -45,7 +45,7 @@ class Preprocessing(metaclass=ABCMeta):
                     result.append(cur_file)
         elif i_dir_or_compr.endswith("zip"):
             with zipfile.ZipFile(i_dir_or_compr, 'r') as zip_ref:
-                dest_dir = i_dir_or_compr.split(".")[0] + "_decompr_zip_dir"
+                dest_dir = ".".join(i_dir_or_compr.split(".")[:-1]) + "_decompr_zip_dir"
                 if not exists(dest_dir):
                     makedirs(dest_dir)
                 zip_ref.extractall(dest_dir)
@@ -56,7 +56,7 @@ class Preprocessing(metaclass=ABCMeta):
 
         elif i_dir_or_compr.endswith("zst"):
             input_file = pathlib.Path(i_dir_or_compr)
-            dest_dir = i_dir_or_compr.split(".")[0] + "_decompr_zst_dir"
+            dest_dir = ".".join(i_dir_or_compr.split(".")[:-1]) + "_decompr_zst_dir"
             with open(input_file, 'rb') as compressed:
                 decomp = zstd.ZstdDecompressor()
                 if not exists(dest_dir):
@@ -70,7 +70,7 @@ class Preprocessing(metaclass=ABCMeta):
                     if cur_file.endswith(req_type) and not basename(cur_file).startswith("."):
                         result.append(cur_dir + sep + cur_file)
         elif i_dir_or_compr.endswith(".tar"):
-            dest_dir = i_dir_or_compr.split(".")[0] + "_open_tar_dir"
+            dest_dir = ".".join(i_dir_or_compr.split(".")[:-1]) + "_open_tar_dir"
             with tarfile.open(i_dir_or_compr, "r") as tf:
                 tf.extractall(path=dest_dir)
             for cur_dir, cur_subdir, cur_files in walk(dest_dir):
@@ -83,8 +83,6 @@ class Preprocessing(metaclass=ABCMeta):
 
     def load_json(self, file, targz_fd):
         """This method is meant to open a json file and load its content in a python dictionary"""
-
-        result = None
 
         if targz_fd is None:
             with open(file, encoding="utf8") as f:

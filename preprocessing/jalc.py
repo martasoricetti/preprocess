@@ -126,55 +126,51 @@ class JalcPreProcessing(Preprocessing):
         data = []
         count = 0
         # iterate over the input data
-        all_files = self.get_all_files(self._input_dir, ".zip")
-        for i, zipped_folder in enumerate(tqdm(all_files), 1):
-            if zipped_folder:
-                for n, el in enumerate(zipped_folder):
-                    if el:
-                        all_files_unzipped = self.get_all_files(el, self._req_type)
-                        for folder_idx, folder in enumerate(tqdm(all_files_unzipped), 1):
-                            if folder:
-                                for file_idx, file in enumerate(tqdm(folder), 1):
-                                    f = open(file, encoding="utf-8")
-                                    my_dict = json.load(f)
-                                    d = my_dict.get("data")
-                                    # filtering out entities without citations
-                                    if "citation_list" in d:
-                                        cit_list = d["citation_list"]
-                                        cit_list_doi = [x for x in cit_list if x.get("doi")]
-                                        # filtering out entities with citations without dois
-                                        if cit_list_doi:
-                                            # citing_entity
-                                            citing_id_to_keep = self.to_validated_id_list(d.get("doi"), "citing_entity")
-                                            if citing_id_to_keep:
-                                                # start creating reduced entity file
-                                                entity_data = dict()
-                                                entity_data["doi"] = citing_id_to_keep
-                                                entity_data.update({k: v for (k, v) in d.items() if
-                                                                    k not in self._entity_keys_to_discard and k not in self._entity_keys_to_update and k not in {
-                                                                        "doi"}})
-                                                # journal_id_list
-                                                if d.get("journal_id_list"):
-                                                    venues = d.get("journal_id_list")
-                                                    processed_venues = self.to_validated_id_list(venues, "venue")
-                                                    entity_data["journal_id_list"] = processed_venues
-                                                # creator_list
-                                                if d.get("creator_list"):
-                                                    entity_data["creator_list"] = []
-                                                    for x in d.get("creator_list"):
-                                                        creator = {k: v for (k, v) in x.items() if
-                                                                   k not in self._entity_keys_to_discard and k not in self._entity_keys_to_update}
-                                                        entity_data["creator_list"].append(creator)
-                                                # citation_list
-                                                citations = d.get("citation_list")
-                                                processed_citations = self.to_validated_id_list(citations, "citation")
-                                                entity_data["citation_list"] = processed_citations
+        all_files, targz_fd = self.get_all_files(self._input_dir, ".zip")
+        for i, el in enumerate(tqdm(all_files), 1):
+            if el:
+                all_files_unzipped, targz_fd_el = self.get_all_files(el, self._req_type)
+                for file_idx, file in enumerate(tqdm(all_files_unzipped), 1):
+                    f = open(file, encoding="utf-8")
+                    my_dict = json.load(f)
+                    d = my_dict.get("data")
+                    # filtering out entities without citations
+                    if "citation_list" in d:
+                        cit_list = d["citation_list"]
+                        cit_list_doi = [x for x in cit_list if x.get("doi")]
+                        # filtering out entities with citations without dois
+                        if cit_list_doi:
+                            # citing_entity
+                            citing_id_to_keep = self.to_validated_id_list(d.get("doi"), "citing_entity")
+                            if citing_id_to_keep:
+                                # start creating reduced entity file
+                                entity_data = dict()
+                                entity_data["doi"] = citing_id_to_keep
+                                entity_data.update({k: v for (k, v) in d.items() if
+                                                    k not in self._entity_keys_to_discard and k not in self._entity_keys_to_update and k not in {
+                                                        "doi"}})
+                                # journal_id_list
+                                if d.get("journal_id_list"):
+                                    venues = d.get("journal_id_list")
+                                    processed_venues = self.to_validated_id_list(venues, "venue")
+                                    entity_data["journal_id_list"] = processed_venues
+                                # creator_list
+                                if d.get("creator_list"):
+                                    entity_data["creator_list"] = []
+                                    for x in d.get("creator_list"):
+                                        creator = {k: v for (k, v) in x.items() if
+                                                   k not in self._entity_keys_to_discard and k not in self._entity_keys_to_update}
+                                        entity_data["creator_list"].append(creator)
+                                # citation_list
+                                citations = d.get("citation_list")
+                                processed_citations = self.to_validated_id_list(citations, "citation")
+                                entity_data["citation_list"] = processed_citations
 
-                                                data.append(entity_data)
-                                                count += 1
-                                                if int(count) != 0 and int(count) % int(self._n) == 0:
-                                                    data = self.splitted_to_file(count, data, ".ndjson")
-                                    f.close()
+                                data.append(entity_data)
+                                count += 1
+                                if int(count) != 0 and int(count) % int(self._n) == 0:
+                                    data = self.splitted_to_file(count, data, ".ndjson")
+                    f.close()
         if len(data) > 0:
             count = count + (self._n - (int(count) % int(self._n)))
             self.splitted_to_file(count, data, ".ndjson")
