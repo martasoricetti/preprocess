@@ -28,10 +28,11 @@ class DatacitePreProcessing(Preprocessing):
 
     _req_type = ".ndjson"
     _accepted_ids = {"doi", "pmid", "pmcid", "wikidata"}
-    _accepted_ids_container = {"issn", "isbn"}
     _accepted_ids_ra = {"orcid", "viaf", "ror"}
     _entity_keys_to_keep = {"titles", "publicationYear", "dates", "types", "updated", "publisher"}
     _entity_keys_to_update = {"identifiers", "creators", "container", "contributors", "relatedIdentifiers"}
+    _container_id_map = {"Series": ["doi","issn"], "Journal": ["doi","issn"], "Book Series": ["doi","issn"], "DataRepository": ["doi", "issn"], "ISSN": ["issn"], "Book": ["doi","isbn"]}
+    _accepted_ids_container = {"doi", "issn", "isbn"}
     # all keys in the origial dump = "doi", "identifiers", "creators", "titles", "publisher", "container",
     # "contributors", "dates", "language", "types", "relatedIdentifiers", "sizes", "formats", "version", "rightsList",
     # "descriptions", "geoLocations", "fundingReferences", "url", "contentUrl", "metadataVersion", "schemaVersion",
@@ -155,7 +156,6 @@ class DatacitePreProcessing(Preprocessing):
                                             if int(count) != 0 and int(count) % int(self._interval) == 0:
                                                 data = self.splitted_to_file(count, data, ".ndjson")
 
-
             f.close()
         if len(data) > 0:
             count = count + (self._interval - (int(count) % int(self._interval)))
@@ -249,24 +249,27 @@ class DatacitePreProcessing(Preprocessing):
             to_keep = {'type', 'title', 'firstPage', 'volume', 'issue', 'lastPage'}
             processed_dict = {k:v for k,v in dict_input.items() if k in to_keep}
             i_type = dict_input.get("identifierType")
-            if i_type:
-                if i_type.lower().strip() in self._accepted_ids_container:
-                    # we assume that a doi is either a repetition or an error
-                    schema = i_type.lower().strip()
-                    id = dict_input.get("identifier")
-                    id_man = self.get_id_manager(schema, self._id_man_dict)
-                    if id_man:
-                        norm_id = id_man.normalise(id, include_prefix=True)
-                        if norm_id:
-                            if self._redis_db.get(norm_id):
-                                processed_dict["identifier"] = [norm_id]
-                                return processed_dict
-                            elif id_man.is_valid(norm_id):
-                                processed_dict["identifier"] = [norm_id]
-                                return processed_dict
-                            else:
-                                processed_dict["identifier"] = []
-                                return processed_dict
+            cont_type = processed_dict.get('type') if processed_dict.get('type') and processed_dict.get('type') != 'null' else None
+            if i_type and cont_type:
+                if self._container_id_map.get(cont_type):
+                    #  {'type': 'Series', 'identifier': '10.11646/zootaxa.4059.3.1', 'identifierType': 'DOI'}
+                    if i_type.lower().strip() in self._container_id_map[cont_type]:
+                        # we assume that a doi is either a repetition or an error
+                        schema = i_type.lower().strip()
+                        id = dict_input.get("identifier")
+                        id_man = self.get_id_manager(schema, self._id_man_dict)
+                        if id_man:
+                            norm_id = id_man.normalise(id, include_prefix=True)
+                            if norm_id:
+                                if self._redis_db.get(norm_id):
+                                    processed_dict["identifier"] = [norm_id]
+                                    return processed_dict
+                                elif id_man.is_valid(norm_id):
+                                    processed_dict["identifier"] = [norm_id]
+                                    return processed_dict
+                                else:
+                                    processed_dict["identifier"] = []
+                                    return processed_dict
 
 
             # return the input dict without the keys "identifier" and "identifierType" in the case the id was not valid
