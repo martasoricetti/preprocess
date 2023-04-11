@@ -61,17 +61,20 @@ class OpenAirePPTest(unittest.TestCase):
 
     def test_to_validated_id_list_DB(self):
         self.OAPP3 = OpenirePreProcessing(self.input_dir, self.output_dir, self.num_1, testing=True)
-        id_dict_list = [{"identifier":"pmid:9999999999999", "schema":"pmid"}]
+        id_dict_list = [{"identifier":"pmid:89999999999999", "schema":"pmid"}]
         expected = []
         #check id management of an id which does not exist - API
         outp = self.OAPP3.to_validated_id_list(id_dict_list)
         self.assertEqual(outp, expected)
 
         #check id management of the same id after it was inserted in the db (preferred validation option)
-        self.OAPP3._redis_db.set("pmid:9999999999999", "0000000000")
-        expected = ["pmid:9999999999999"]
+        if self.OAPP3._redis_db.get("pmid:89999999999999"):
+            self.OAPP3._redis_db.delete("pmid:89999999999999")
+        self.OAPP3._redis_db.set("pmid:89999999999999", "0000000000")
+        expected = ["pmid:89999999999999"]
         outp = self.OAPP3.to_validated_id_list(id_dict_list)
         self.assertEqual(outp, expected)
+        self.OAPP3._redis_db.delete("pmid:89999999999999")
 
 
     def test_split_input(self):

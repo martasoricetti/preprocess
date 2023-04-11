@@ -121,6 +121,7 @@ class DatacitePreProcessing(Preprocessing):
                                             valid_rel_id_dict = dict()
                                             valid_rel_id_dict["Cites"] = cites_ents
                                             valid_rel_id_dict["IsCitedBy"] = citedby_ents
+                                            valid_rel_id_dict["IsPartOf"] = rel_container
                                             processed_entity["relatedIdentifiers"] = valid_rel_id_dict
 
                                             # contributors
@@ -145,7 +146,7 @@ class DatacitePreProcessing(Preprocessing):
                                             processed_entity["identifiers"] = processed_ids
 
                                             # container
-                                            container = attributes.get("container")
+                                            container = attributes.get("container") #one dict
                                             processed_container = dict()
                                             if container:
                                                 processed_container = self.to_validated_id_list([container], "container")
@@ -182,19 +183,18 @@ class DatacitePreProcessing(Preprocessing):
         else:
             return data
 
-
     def to_validated_id_list(self, id_dict_list, process_type):
         if process_type == "contributors" or process_type == "creators":
             processed_list = []
             for c in id_dict_list:
-                if c.get("givenName") and c.get("familyName") or c.get("name"):
+                norm_identifiers = []
+                if (c.get("givenName") and c.get("familyName")) or c.get("name"):
                     proceed = True
                     if process_type == "contributors":
                         if c.get("contributorType"):
                             if c.get("contributorType") != "Editor":
                                 proceed = False
                     if proceed:
-                        norm_identifiers = []
                         if c.get("nameIdentifiers"):
                             name_ids = c.get("nameIdentifiers")
                             for nid in name_ids:
@@ -212,18 +212,19 @@ class DatacitePreProcessing(Preprocessing):
                                             else:
                                                 pass
 
-                            contrib_processed_dict = dict()
-                            if process_type == "contributors":
-                                contrib_processed_dict = {k:v for k,v in c.items() if k in {"givenName", "familyName", "name", "contributorType", "nameType"}}
-                            elif process_type == "creators":
-                                contrib_processed_dict = {k:v for k,v in c.items() if k in {"givenName", "familyName", "name", "nameType"}}
+                    contrib_processed_dict = dict()
+                    if process_type == "contributors":
+                        contrib_processed_dict = {k:v for k,v in c.items() if k in {"givenName", "familyName", "name", "contributorType", "nameType"}}
+                    elif process_type == "creators":
+                        contrib_processed_dict = {k:v for k,v in c.items() if k in {"givenName", "familyName", "name", "nameType"}}
 
-                            contrib_processed_dict["nameIdentifiers"] = norm_identifiers
-                            processed_list.append(contrib_processed_dict)
+                    contrib_processed_dict["nameIdentifiers"] = norm_identifiers
+                    processed_list.append(contrib_processed_dict)
 
             return processed_list
 
         elif process_type == "identifiers":
+
             processed_list = []
             for c in id_dict_list:
                 i_type = c.get("identifierType")
@@ -245,6 +246,7 @@ class DatacitePreProcessing(Preprocessing):
             return processed_list
 
         elif process_type == "container":
+
             dict_input = id_dict_list[0]
             to_keep = {'type', 'title', 'firstPage', 'volume', 'issue', 'lastPage'}
             processed_dict = {k:v for k,v in dict_input.items() if k in to_keep}
@@ -277,6 +279,7 @@ class DatacitePreProcessing(Preprocessing):
             return processed_dict
 
         elif process_type == "related_ids":
+
             valid_id_list_cites = []
             valid_id_list_citedby = []
             valid_id_container = []
