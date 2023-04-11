@@ -110,6 +110,7 @@ class DatacitePreProcessing(Preprocessing):
 
                                     # relatedIdentifiers
                                     rel_ids = attributes.get("relatedIdentifiers")
+                                    #print(len(rel_ids))
                                     if rel_ids:
 
                                         cites_ents, citedby_ents, rel_container = self.to_validated_id_list(rel_ids, "related_ids")
@@ -165,6 +166,7 @@ class DatacitePreProcessing(Preprocessing):
     def splitted_to_file(self, cur_n, data, type):
         if type == ".ndjson":
             if int(cur_n) != 0 and int(cur_n) % int(self._interval) == 0: # and len(data)
+                #print("doing file", str(cur_n // self._interval) + self._req_type)
                 filename = "jSonFile_" + str(cur_n // self._interval) + self._req_type
                 if exists(os.path.join(self._output_dir, filename)):
                     cur_datetime = datetime.now()
@@ -205,12 +207,13 @@ class DatacitePreProcessing(Preprocessing):
                                         id_man = self.get_id_manager(schema, self._id_man_dict)
                                         if id_man:
                                             norm_id = id_man.normalise(id, include_prefix=True)
-                                            if self._redis_db_ra.get(norm_id):
-                                                norm_identifiers.append(norm_id)
-                                            elif id_man.is_valid(norm_id):
-                                                norm_identifiers.append(norm_id)
-                                            else:
-                                                pass
+                                            if norm_id:
+                                                if self._redis_db_ra.get(norm_id):
+                                                    norm_identifiers.append(norm_id)
+                                                elif id_man.is_valid(norm_id):
+                                                    norm_identifiers.append(norm_id)
+                                                else:
+                                                    pass
 
                     contrib_processed_dict = dict()
                     if process_type == "contributors":
@@ -236,12 +239,13 @@ class DatacitePreProcessing(Preprocessing):
                         id_man = self.get_id_manager(schema, self._id_man_dict)
                         if id_man:
                             norm_id = id_man.normalise(id, include_prefix=True)
-                            if self._redis_db.get(norm_id):
-                                processed_list.append(norm_id)
-                            elif id_man.is_valid(norm_id):
-                                processed_list.append(norm_id)
-                            else:
-                                pass
+                            if norm_id:
+                                if self._redis_db.get(norm_id):
+                                    processed_list.append(norm_id)
+                                elif id_man.is_valid(norm_id):
+                                    processed_list.append(norm_id)
+                                else:
+                                    pass
 
             return processed_list
 
@@ -272,6 +276,9 @@ class DatacitePreProcessing(Preprocessing):
                                 else:
                                     processed_dict["identifier"] = []
                                     return processed_dict
+                            else:
+                                processed_dict["identifier"] = []
+                                return processed_dict
 
 
             # return the input dict without the keys "identifier" and "identifierType" in the case the id was not valid
@@ -285,47 +292,47 @@ class DatacitePreProcessing(Preprocessing):
             valid_id_container = []
 
             for ref in id_dict_list:
-                if all(elem in ref for elem in self._needed_info):
+                if all(ref.get(elem) for elem in self._needed_info):
                     schema = (str(ref["relatedIdentifierType"])).lower().strip()
                     id_man = self.get_id_manager(schema, self._id_man_dict)
                     relationType = str(ref["relationType"]).lower().strip()
 
                     if id_man:
                         norm_id = id_man.normalise(str(ref["relatedIdentifier"]), include_prefix=True)
-
-                        if relationType == "references" or relationType == "cites":
-                            if norm_id not in valid_id_list_cites:
-                                # check if the id is in redis db
-                                if self._redis_db.get(norm_id):
-                                    valid_id_list_cites.append(norm_id)
-                                # if the id is not in redis db, validate it before appending
-                                elif id_man.is_valid(norm_id):
-                                    valid_id_list_cites.append(norm_id)
-                                else:
-                                    pass
-
-                        elif relationType == "isreferencedby" or relationType == "iscitedby":
-                            if norm_id not in valid_id_list_citedby:
-                                # check if the id is in redis db
-                                if self._redis_db.get(norm_id):
-                                    valid_id_list_citedby.append(norm_id)
-                                # if the id is not in redis db, validate it before appending
-                                elif id_man.is_valid(norm_id):
-                                    valid_id_list_citedby.append(norm_id)
-                                else:
-                                    pass
-
-                        elif relationType == "ispartof":
-                            if schema in self._accepted_ids_container:
-                                if norm_id not in valid_id_container:
+                        if norm_id:
+                            if relationType == "references" or relationType == "cites":
+                                if norm_id not in valid_id_list_cites:
                                     # check if the id is in redis db
                                     if self._redis_db.get(norm_id):
-                                        valid_id_container.append(norm_id)
+                                        valid_id_list_cites.append(norm_id)
                                     # if the id is not in redis db, validate it before appending
                                     elif id_man.is_valid(norm_id):
-                                        valid_id_container.append(norm_id)
+                                        valid_id_list_cites.append(norm_id)
                                     else:
                                         pass
+
+                            elif relationType == "isreferencedby" or relationType == "iscitedby":
+                                if norm_id not in valid_id_list_citedby:
+                                    # check if the id is in redis db
+                                    if self._redis_db.get(norm_id):
+                                        valid_id_list_citedby.append(norm_id)
+                                    # if the id is not in redis db, validate it before appending
+                                    elif id_man.is_valid(norm_id):
+                                        valid_id_list_citedby.append(norm_id)
+                                    else:
+                                        pass
+
+                            elif relationType == "ispartof":
+                                if schema in self._accepted_ids_container:
+                                    if norm_id not in valid_id_container:
+                                        # check if the id is in redis db
+                                        if self._redis_db.get(norm_id):
+                                            valid_id_container.append(norm_id)
+                                        # if the id is not in redis db, validate it before appending
+                                        elif id_man.is_valid(norm_id):
+                                            valid_id_container.append(norm_id)
+                                        else:
+                                            pass
 
             return valid_id_list_cites, valid_id_list_citedby, valid_id_container
 
@@ -337,8 +344,8 @@ if __name__ == '__main__':
     arg_parser.add_argument('-in', '--input', dest='input', required=True,
                             help='Either a directory containing the decompressed json input file or the zst compressed '
                                  'json input file')
-    arg_parser.add_argument('-out_g', '--output_g', dest='output_g', required=True,
-                            help='Directory where the preprocessed json files will be stored (for glob)')
+    arg_parser.add_argument('-out', '--output', dest='output_g', required=True,
+                            help='Directory where the preprocessed json files will be stored')
     arg_parser.add_argument('-n', '--number', dest='number', required=True, type=int,
                             help='Number of relevant entities which will be stored in each json file')
     arg_parser.add_argument('-t', '--testing', dest='testing', required=False, type=bool, default=False,
@@ -349,3 +356,5 @@ if __name__ == '__main__':
 
     dcpp = DatacitePreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number, testing=args.testing)
     dcpp.split_input()
+
+    # HOW TO RUN (example: preprocess) % python -m preprocessing.datacite -in "/Volumes/T7_Touch/LAVORO/DOCI/dump2022/datacite_dump_20221118.ndjson.zst" -out "/Volumes/T7_Touch/test_preprocess_datacite" -n 100 -t True

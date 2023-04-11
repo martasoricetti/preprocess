@@ -78,7 +78,7 @@ class OpenirePreProcessing(Preprocessing):
                                 if c_ing_id.get("schema").strip().lower() in self._accepted_ids:
                                     citing_ids_to_keep.append(c_ing_id)
                             # filter out all citing entity ids which are not valid
-                            citing_ids_to_keep = self.to_validated_id_list(citing_ids_to_keep)
+                            citing_ids_to_keep = self.to_validated_id_list(citing_ids_to_keep, "citations")
                             if citing_ids_to_keep:
 
                                 cited_data = d.get("target")
@@ -87,7 +87,7 @@ class OpenirePreProcessing(Preprocessing):
                                 for c_ed_id in cited_ids:
                                     if c_ed_id.get("schema").strip().lower() in self._accepted_ids:
                                         cited_ids_to_keep.append(c_ed_id)
-                                cited_ids_to_keep = self.to_validated_id_list(cited_ids_to_keep)
+                                cited_ids_to_keep = self.to_validated_id_list(cited_ids_to_keep, "citations")
 
                                 if cited_ids_to_keep:
                                     # BUILD SOURCE
@@ -150,7 +150,7 @@ class OpenirePreProcessing(Preprocessing):
 
 
 
-    def to_validated_id_list(self, id_dict_list):
+    def to_validated_id_list(self, id_dict_list, proc_type):
         """this method takes in input a list of id dictionaries and returns a list valid and existent ids with prefixes.
         For each id, a first validation try is made by checking its presence in META db. If the id is not in META db yet,
         a second attempt is made by using the specific id-schema API"""
@@ -164,11 +164,12 @@ class OpenirePreProcessing(Preprocessing):
             if id_man:
                 norm_id = id_man.normalise(id, include_prefix=True)
                 # check if the id is in redis db
-                if self._redis_db.get(norm_id):
-                    valid_id_list.append(norm_id)
-                # if the id is not in redis db, validate it before appending
-                elif id_man.is_valid(norm_id):
-                    valid_id_list.append(norm_id)
+                if norm_id:
+                    if self._redis_db.get(norm_id):
+                        valid_id_list.append(norm_id)
+                    # if the id is not in redis db, validate it before appending
+                    elif id_man.is_valid(norm_id):
+                        valid_id_list.append(norm_id)
         return valid_id_list
 
 if __name__ == '__main__':

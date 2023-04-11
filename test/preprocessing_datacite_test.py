@@ -53,7 +53,7 @@ class PreprocessingTestDatacite(unittest.TestCase):
                     lists_of_relids = [d.get("relatedIdentifiers") for d in ents_w_atts if d.get("relatedIdentifiers")]
                     for lrid in lists_of_relids:
                         for e in lrid:
-                            if all(elem in e for elem in  self._dc_pp._needed_info):
+                            if all(e.get(elem) for elem in  self._dc_pp._needed_info):
                             #schema = (str(ref["relatedIdentifierType"])).lower().strip()
                             #id_man = self.get_id_manager(schema, self._id_man_dict)
                                 if e.get("relationType").lower().strip() in {"cites", "iscitedby", "references", "isreferencedby"}:
@@ -104,7 +104,7 @@ class PreprocessingTestDatacite(unittest.TestCase):
                     lists_of_relids = [d.get("relatedIdentifiers") for d in ents_w_atts if d.get("relatedIdentifiers")]
                     for lrid in lists_of_relids:
                         for e in lrid:
-                            if all(elem in e for elem in  self._dc_pp._needed_info):
+                            if all(e.get(elem) for elem in  self._dc_pp._needed_info):
                             #schema = (str(ref["relatedIdentifierType"])).lower().strip()
                             #id_man = self.get_id_manager(schema, self._id_man_dict)
                                 if e.get("relationType").lower().strip() in {"cites", "iscitedby", "references", "isreferencedby"}:
