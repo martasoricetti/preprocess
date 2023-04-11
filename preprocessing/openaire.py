@@ -192,3 +192,5 @@ if __name__ == '__main__':
 
     oapp = OpenirePreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number, testing=args.testing)
     oapp.split_input()
+
+#python -m preprocessing.openaire -in "/Volumes/T7_Touch/LAVORO/OROCI/ver_1" -out "/Volumes/T7_Touch/test_preprocess_openaire" -n 500 -t True
