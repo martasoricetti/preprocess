@@ -34,7 +34,7 @@ class CrossrefPreProcessing(Preprocessing):
     _req_type = ".json"
     _accepted_ids = {"doi", "issn", "isbn", "orcid"}
     _entity_keys_to_update = {"ISSN", "author", "reference", "editor", "ISBN", "DOI"}
-    _entity_keys_to_keep = {"container-title", "issued", "member", "container-title", "issued", "issue", "prefix", "title", "type", "publisher", "volume", "deposited", "page", "original-title", "content-updated"}
+    _entity_keys_to_keep = {"container-title", "issued", "member", "issued", "issue", "prefix", "title", "type", "publisher", "volume", "deposited", "page", "original-title", "content-updated"}
 
     def __init__(self, input_dir, output_dir, interval, testing=False):
         if testing:

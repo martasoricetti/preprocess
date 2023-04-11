@@ -263,3 +263,5 @@ if __name__ == '__main__':
     nihpp = NIHPreProcessing(input_dir=args.input, output_dir=args.output, interval=args.number, journals_dict_path=args.jtpath, testing=args.testing)
     nihpp.split_input()
 
+
+    # HOW TO RUN (example: preprocess) % python -m preprocessing.pubmed -in "/Volumes/T7_Touch/LAVORO/POCI/MAR_23_post/icite_metadata.zip" -out "/Volumes/T7_Touch/test_preprocess_nih" -n 100 -jtp "/Volumes/T7_Touch/LAVORO/POCI/journal_issn_extt.json" -t True
