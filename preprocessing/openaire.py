@@ -59,13 +59,14 @@ class OpenirePreProcessing(Preprocessing):
                 f = gzip.open(file, 'rb')
                 file_content = f.readlines()  # list
 
-                for entity in file_content:
+                for entity in tqdm(file_content):
                     if entity:
                         d = json.loads(entity.decode('utf-8'))
                         type = (d.get("relationship")).get("name")
 
                         #filter out all duplicate citations expressed as received citations
                         if type == "Cites":
+
                             #instantiate the dict for storing reduced and validated version of the citation data
                             validated_dict = dict()
 

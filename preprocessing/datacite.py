@@ -110,7 +110,6 @@ class DatacitePreProcessing(Preprocessing):
 
                                     # relatedIdentifiers
                                     rel_ids = attributes.get("relatedIdentifiers")
-                                    #print(len(rel_ids))
                                     if rel_ids:
 
                                         cites_ents, citedby_ents, rel_container = self.to_validated_id_list(rel_ids, "related_ids")
@@ -166,7 +165,6 @@ class DatacitePreProcessing(Preprocessing):
     def splitted_to_file(self, cur_n, data, type):
         if type == ".ndjson":
             if int(cur_n) != 0 and int(cur_n) % int(self._interval) == 0: # and len(data)
-                #print("doing file", str(cur_n // self._interval) + self._req_type)
                 filename = "jSonFile_" + str(cur_n // self._interval) + self._req_type
                 if exists(os.path.join(self._output_dir, filename)):
                     cur_datetime = datetime.now()

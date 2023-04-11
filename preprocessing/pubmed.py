@@ -116,8 +116,10 @@ class NIHPreProcessing(Preprocessing):
                             norm_cit_by = ' '.join([x for x in self.to_validated_id_list(cit_by_dict_list, "citations") if x]).strip()
                         else:
                             norm_cit_by = ""
-                        valid_doi = self.to_validated_id_list([{"id":line.get("doi"), "schema":"doi"}], "citations")[0]
-                        if valid_doi is None:
+                        valid_doi = None
+                        if line.get("doi"):
+                            valid_doi = self.to_validated_id_list([{"id":line.get("doi"), "schema":"doi"}], "citations")[0]
+                        if not valid_doi:
                             valid_doi = ""
                         valid_venue, self.jour_dict = self.get_venue_title_and_id(line.get("journal"), self.jour_dict, norm_pmid)
 
@@ -145,25 +147,27 @@ class NIHPreProcessing(Preprocessing):
                 if id:
                     schema = i.get("schema")
                     id_man = self.get_id_manager(schema, self._id_man_dict)
-                    norm_id = id_man.normalise(id, include_prefix=True)
-                    if schema == "pmid":
-                        # since the datasource is also responsible for the only pmid API, there is no need of
-                        # further checks on the ids validity
+                    if id_man:
+                        norm_id = id_man.normalise(id, include_prefix=True)
                         if norm_id:
-                            valid_id_list.append(norm_id)
+                            if schema == "pmid":
+                                # since the datasource is also responsible for the only pmid API, there is no need of
+                                # further checks on the ids validity
+                                valid_id_list.append(norm_id)
+
+                            else:
+                                # check if the id is in redis db
+                                if self._redis_db.get(norm_id):
+                                    valid_id_list.append(norm_id)
+                                # if the id is not in redis db, validate it before appending
+                                elif id_man.is_valid(norm_id):
+                                    valid_id_list.append(norm_id)
+                                else:
+                                    valid_id_list.append(None)
                         else:
                             valid_id_list.append(None)
                     else:
-                        # check if the id is in redis db
-                        if self._redis_db.get(norm_id):
-                            valid_id_list.append(norm_id)
-                        # if the id is not in redis db, validate it before appending
-                        elif id_man.is_valid(norm_id):
-                            valid_id_list.append(norm_id)
-                        else:
-                            valid_id_list.append(None)
-                else:
-                    valid_id_list.append(None)
+                        valid_id_list.append(None)
 
             return valid_id_list
 
