@@ -12,7 +12,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "oc_preprocessing"
-version = "0.0.3"
+version = "0.0.5"
 authors = [
       { name="OpenCitations authors", email="contact@opencitations.net" },
 ]
@@ -27,3 +27,6 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/opencitations/preprocess"
 "Bug Tracker" = "https://github.com/opencitations/preprocess/issues"
+
+[tool.setuptools]
+include-package-data = true

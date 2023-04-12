@@ -1,8 +1,9 @@
 venv
 tmp
 .idea
-.github
+.github/
 __pycache__
 *DS_Store
 build/
 oc_preprocessing.egg-info/
+dist/

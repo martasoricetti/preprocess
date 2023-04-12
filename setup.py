@@ -7,7 +7,7 @@ from setuptools import setup
 if __name__ == '__main__':
     setup(
         name="oc_preprocessing",
-        version = "0.0.3",
+        version = "0.0.5",
         install_requires= ["setuptools>=61.0",
             "beautifulsoup4==4.12.2",
             "fakeredis==2.10.3",
@@ -29,4 +29,5 @@ if __name__ == '__main__':
             "License :: OSI Approved :: ISC License (ISCL)",
             "Operating System :: OS Independent",
         ],
+        include_package_data=True
     )
