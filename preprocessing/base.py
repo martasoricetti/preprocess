@@ -8,7 +8,7 @@ import zstandard as zstd
 import pathlib
 import zipfile
 import fakeredis
-from preprocessing.identifier_manager.datasource.redis import RedisDataSource
+from preprocessing.datasource.redis import RedisDataSource
 
 
 class Preprocessing(metaclass=ABCMeta):

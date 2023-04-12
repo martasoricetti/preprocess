@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0",
+    "beautifulsoup4==4.12.2",
+    "fakeredis==2.10.3",
+    "ndjson==0.3.1",
+    "oc_idmanager==0.2.6",
+    "pandas==1.5.3",
+    "requests==2.28.2",
+    "tqdm==4.64.1",
+    "zstandard==0.19.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oc_preprocessing"
+version = "0.0.3"
+authors = [
+      { name="OpenCitations authors", email="contact@opencitations.net" },
+]
+description = "This package is meant to preprocess OpenCitations source dumps so to make them easily usable in OpenCitations main processes, by deleting unused information, splitting big files, and validating identifiers"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: ISC License (ISCL)",
+    "Operating System :: OS Independent",
+]
+[project.urls]
+"Homepage" = "https://github.com/opencitations/preprocess"
+"Bug Tracker" = "https://github.com/opencitations/preprocess/issues"

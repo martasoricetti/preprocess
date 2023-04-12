@@ -14,13 +14,17 @@
 # SOFTWARE.
 
 import json
-from preprocessing.identifier_manager.datasource.datasource import DataSource
+from preprocessing.datasource.datasource import DataSource
 import redis
 import configparser
+import os
+from os.path import join
 
 # Read the Redis configuration file
 config = configparser.ConfigParser(allow_no_value=True)
-config.read('config.ini')
+cur_path = os.path.dirname(os.path.abspath(__file__))
+conf_file = join(cur_path, "config.ini")
+config.read(conf_file)
 
 
 class RedisDataSource(DataSource):
