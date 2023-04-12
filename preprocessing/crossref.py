@@ -229,3 +229,5 @@ if __name__ == '__main__':
 
     crpp = CrossrefPreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number, testing=args.testing)
     crpp.split_input()
+
+    # HOW TO RUN (example: preprocess) % python -m preprocessing.crossref -in "/Volumes/T7_Touch/LAVORO/COCI/crossref-data-YYYY-MM.tar.gz" -out "/Volumes/T7_Touch/test_preprocess_crossref" -n 100 -t True

@@ -13,7 +13,7 @@ from datetime import datetime
 from tqdm import tqdm
 from oc_idmanager.doi import DOIManager
 from oc_idmanager.pmid import PMIDManager
-from finder.nih import NIHResourceFinder
+from preprocessing.finder.nih import NIHResourceFinder
 
 
 class NIHPreProcessing(Preprocessing):

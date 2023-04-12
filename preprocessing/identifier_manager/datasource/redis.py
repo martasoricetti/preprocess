@@ -14,7 +14,7 @@
 # SOFTWARE.
 
 import json
-from datasource.datasource import DataSource
+from preprocessing.identifier_manager.datasource.datasource import DataSource
 import redis
 import configparser
 
