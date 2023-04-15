@@ -4,7 +4,9 @@ import glob
 import json
 import os
 from tqdm import tqdm
+import csv
 import os.path
+import shutil
 from os.path import exists, join
 from preprocessing.base import Preprocessing
 from oc_idmanager.pmid import PMIDManager
@@ -18,6 +20,8 @@ from oc_idmanager.ror import RORManager
 from oc_idmanager.wikidata import WikidataManager
 from datetime import datetime
 from argparse import ArgumentParser
+from oc_meta.lib.csvmanager import CSVManager
+
 
 class DatacitePreProcessing(Preprocessing):
     """This class aims at pre-processing DataCite dumps.
@@ -40,7 +44,7 @@ class DatacitePreProcessing(Preprocessing):
     # "partCount", "partOfCount", "versionCount", "versionOfCount", "created", "registered", "published", "updated"
     # "publicationYear", "subjects",
 
-    def __init__(self, input_dir, output_dir, interval, testing=False):
+    def __init__(self, input_dir, output_dir, interval, citing_map_dir,  testing=False):
         if testing:
             self._redis_db = self.BR_redis_test
             self._redis_db_ra = self.RA_redis_test
@@ -59,18 +63,87 @@ class DatacitePreProcessing(Preprocessing):
         self._wikidata_manager = WikidataManager()
         self._input_dir = input_dir
         self._output_dir = output_dir
+        if not exists(self._output_dir):
+            makedirs(self._output_dir)
+        self._citing_file_dir = citing_map_dir
+        if not exists(self._citing_file_dir):
+            makedirs(self._citing_file_dir)
+        self._dir_to_compr = os.path.join(self._citing_file_dir, "dir_to_compr")
+        if not exists(self._dir_to_compr):
+            makedirs(self._dir_to_compr)
         self._needed_info = ["relationType", "relatedIdentifierType", "relatedIdentifier"]
         self._id_man_dict = {"doi":self._doi_manager, "pmcid": self._pmcid_manager, "pmid":self._pmid_manager, "wikidata": self._wikidata_manager, "ror": self._ror_manager, "issn": self._issn_manager, "viaf": self._viaf_manager, "isbn": self._isbn_manager, "orcid": self._orcid_manager}
 
-
-
-        if not exists(self._output_dir):
-            makedirs(self._output_dir)
         self._interval = interval
         self._cites_filter = ["references", "cites"]
         self._citedby_filter = ["isreferencedby", "iscitedby"]
         self._csv_col = ["citing", "referenced"]
+        self.zip_filepath = self.create_citing_map()
+        self.citing_id_index = CSVManager(self.zip_filepath)
         super(DatacitePreProcessing, self).__init__()
+
+    def create_citing_map(self):
+        data = []
+        count = 0
+        filecount = 0
+
+        all_files, targz_fd = self.get_all_files(self._input_dir, self._req_type)
+        for file_idx, file in enumerate(tqdm(all_files), 1):
+            f = open(file, encoding="utf8")
+            for line in tqdm(f):
+                if line:
+                    try:
+                        linedict = json.loads(line)
+                    except:
+                        print(ValueError, line)
+                        continue
+                    if linedict:
+                        d = linedict["data"]
+                        for e in d:
+                            if 'id' not in e or 'type' not in e:
+                                continue
+                            doi_entity = self._doi_manager.normalise(e['id'])
+                            if doi_entity:
+                                data.append(doi_entity)
+                                count += 1
+                                if count == 1000:
+                                    # List that we want to add as a new row
+                                    rows_to_append = [[x]for x in data]
+                                    # Open our existing CSV file in append mode
+                                    # Create a file object for this file
+                                    with open(os.path.join(self._dir_to_compr, str(filecount)+".csv"), 'w') as f_object:
+                                        # Pass this file object to csv.writer()
+                                        # and get a writer object
+                                        writer_object = csv.writer(f_object)
+                                        writer_object.writerow(["id"])
+                                        # Pass the list as an argument into
+                                        # the writerow()
+                                        writer_object.writerows(rows_to_append)
+                                        # Close the file object
+                                        f_object.close()
+
+                                    filecount += 1
+                                    count = 0
+                                    data = []
+            if data:
+                rows_to_append = [[x] for x in data]
+                with open(os.path.join(self._dir_to_compr, str(filecount+1)+".csv"), 'w') as f_object:
+                    # Pass this file object to csv.writer()
+                    # and get a writer object
+                    writer_object = csv.writer(f_object)
+                    writer_object.writerow(["id"])
+                    # Pass the list as an argument into
+                    # the writerow()
+                    writer_object.writerows(rows_to_append)
+                    # Close the file object
+                    f_object.close()
+            print("citing index: created")
+            shutil.make_archive(os.path.join(self._citing_file_dir, "zip_citing_map"), 'zip', self._dir_to_compr)
+            print("citing index: compressed")
+            shutil.rmtree(self._dir_to_compr)
+            compressed_filepath = os.path.join(self._citing_file_dir, "zip_citing_map.zip")
+            return compressed_filepath
+
 
     def split_input(self):
 
@@ -238,7 +311,7 @@ class DatacitePreProcessing(Preprocessing):
                         if id_man:
                             norm_id = id_man.normalise(id, include_prefix=True)
                             if norm_id:
-                                if self._redis_db.get(norm_id):
+                                if self._redis_db.get(norm_id): #no check in processed dois index since we assume not to find a doi in this field
                                     processed_list.append(norm_id)
                                 elif id_man.is_valid(norm_id):
                                     processed_list.append(norm_id)
@@ -265,7 +338,10 @@ class DatacitePreProcessing(Preprocessing):
                         if id_man:
                             norm_id = id_man.normalise(id, include_prefix=True)
                             if norm_id:
-                                if self._redis_db.get(norm_id):
+                                if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                                    processed_dict["identifier"] = [norm_id]
+                                    return processed_dict
+                                elif self._redis_db.get(norm_id):
                                     processed_dict["identifier"] = [norm_id]
                                     return processed_dict
                                 elif id_man.is_valid(norm_id):
@@ -300,8 +376,11 @@ class DatacitePreProcessing(Preprocessing):
                         if norm_id:
                             if relationType == "references" or relationType == "cites":
                                 if norm_id not in valid_id_list_cites:
+                                    # check first if the id is in the citing dois index
+                                    if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                                        valid_id_list_cites.append(norm_id)
                                     # check if the id is in redis db
-                                    if self._redis_db.get(norm_id):
+                                    elif self._redis_db.get(norm_id):
                                         valid_id_list_cites.append(norm_id)
                                     # if the id is not in redis db, validate it before appending
                                     elif id_man.is_valid(norm_id):
@@ -311,8 +390,11 @@ class DatacitePreProcessing(Preprocessing):
 
                             elif relationType == "isreferencedby" or relationType == "iscitedby":
                                 if norm_id not in valid_id_list_citedby:
+                                    # check first if the id is in the citing dois index
+                                    if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                                        valid_id_list_citedby.append(norm_id)
                                     # check if the id is in redis db
-                                    if self._redis_db.get(norm_id):
+                                    elif self._redis_db.get(norm_id):
                                         valid_id_list_citedby.append(norm_id)
                                     # if the id is not in redis db, validate it before appending
                                     elif id_man.is_valid(norm_id):
@@ -323,8 +405,10 @@ class DatacitePreProcessing(Preprocessing):
                             elif relationType == "ispartof":
                                 if schema in self._accepted_ids_container:
                                     if norm_id not in valid_id_container:
+                                        if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                                            valid_id_container.append(norm_id)
                                         # check if the id is in redis db
-                                        if self._redis_db.get(norm_id):
+                                        elif self._redis_db.get(norm_id):
                                             valid_id_container.append(norm_id)
                                         # if the id is not in redis db, validate it before appending
                                         elif id_man.is_valid(norm_id):
@@ -346,13 +430,15 @@ if __name__ == '__main__':
                             help='Directory where the preprocessed json files will be stored')
     arg_parser.add_argument('-n', '--number', dest='number', required=True, type=int,
                             help='Number of relevant entities which will be stored in each json file')
+    arg_parser.add_argument('-cmd', '--citing_map_dir', dest='citing_map_dir', required=True, type=str,
+                            help='paremeter to define whether or not the script is executed in testing modality')
     arg_parser.add_argument('-t', '--testing', dest='testing', required=False, type=bool, default=False,
                             help='paremeter to define whether or not the script is executed in testing modality')
 
     args = arg_parser.parse_args()
 
 
-    dcpp = DatacitePreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number, testing=args.testing)
+    dcpp = DatacitePreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number,citing_map_dir=args.citing_map_dir,testing=args.testing)
     dcpp.split_input()
 
     # HOW TO RUN (example: preprocess) % python -m preprocessing.datacite -in "/Volumes/T7_Touch/LAVORO/DOCI/dump2022/datacite_dump_20221118.ndjson.zst" -out "/Volumes/T7_Touch/test_preprocess_datacite" -n 100 -t True

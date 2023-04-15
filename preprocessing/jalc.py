@@ -6,12 +6,14 @@ from oc_idmanager.issn import ISSNManager
 from preprocessing.identifier_manager.jid import JIDManager
 from os.path import exists
 import os
+import csv
+import shutil
 import datetime
 import json
 from tqdm import tqdm
 from datetime import datetime
 from argparse import ArgumentParser
-
+from oc_meta.lib.csvmanager import CSVManager
 
 class JalcPreProcessing(Preprocessing):
     _req_type = ".json"
@@ -20,7 +22,7 @@ class JalcPreProcessing(Preprocessing):
     _entity_keys_to_discard = {"relation_list", "keyword_list", "sequence", "affiliation_list", "original_text", "url"}
     _entity_keys_to_update = {"citation_list", "creator_list", "journal_id_list"}
 
-    def __init__(self, input_dir, output_dir, interval, testing=False):
+    def __init__(self, input_dir, output_dir, interval, citing_map_dir,  testing=False):
         if testing:
             self._redis_db = self.BR_redis_test
         else:
@@ -29,13 +31,77 @@ class JalcPreProcessing(Preprocessing):
         self._output_dir = output_dir
         if not exists(self._output_dir):
             makedirs(self._output_dir)
+        self._citing_file_dir = citing_map_dir
+        if not exists(self._citing_file_dir):
+            makedirs(self._citing_file_dir)
+        self._dir_to_compr = os.path.join(self._citing_file_dir, "dir_to_compr")
+        if not exists(self._dir_to_compr):
+            makedirs(self._dir_to_compr)
         self._n = interval
         self._doi_manager = DOIManager()
         self._issn_manager = ISSNManager()
         self._jid_manager = JIDManager()
         self._id_man_dict = {"doi" :self._doi_manager, "issn": self._issn_manager, "jid": self._jid_manager}
-
+        self.zip_filepath = self.create_citing_map()
+        self.citing_id_index = CSVManager(self.zip_filepath)
         super(JalcPreProcessing, self).__init__()
+
+    def create_citing_map(self):
+        data = []
+        count = 0
+        filecount = 0
+
+        all_files, targz_fd = self.get_all_files(self._input_dir, ".zip")
+        for i, el in enumerate(tqdm(all_files), 1):
+            if el:
+                all_files_unzipped, targz_fd_el = self.get_all_files(el, self._req_type)
+                for file_idx, file in enumerate(tqdm(all_files_unzipped), 1):
+                    f = open(file, encoding="utf-8")
+                    my_dict = json.load(f)
+                    obj = my_dict.get("data")
+                    if obj.get("doi"):
+                        doi_entity = self._doi_manager.normalise(obj['doi'])
+                        if doi_entity:
+                            data.append(doi_entity)
+                            count += 1
+                            if count == 1000:
+                                # List that we want to add as a new row
+                                rows_to_append = [[x]for x in data]
+                                # Open our existing CSV file in append mode
+                                # Create a file object for this file
+                                with open(os.path.join(self._dir_to_compr, str(filecount)+".csv"), 'w') as f_object:
+                                    # Pass this file object to csv.writer()
+                                    # and get a writer object
+                                    writer_object = csv.writer(f_object)
+                                    writer_object.writerow(["id"])
+                                    # Pass the list as an argument into
+                                    # the writerow()
+                                    writer_object.writerows(rows_to_append)
+                                    # Close the file object
+                                    f_object.close()
+
+                                filecount += 1
+                                count = 0
+                                data = []
+        if data:
+            rows_to_append = [[x] for x in data]
+            with open(os.path.join(self._dir_to_compr, str(filecount+1)+".csv"), 'w') as f_object:
+                # Pass this file object to csv.writer()
+                # and get a writer object
+                writer_object = csv.writer(f_object)
+                writer_object.writerow(["id"])
+                # Pass the list as an argument into
+                # the writerow()
+                writer_object.writerows(rows_to_append)
+                # Close the file object
+                f_object.close()
+        print("citing index: created")
+        shutil.make_archive(os.path.join(self._citing_file_dir, "zip_citing_map"), 'zip', self._dir_to_compr)
+        print("citing index: compressed")
+        shutil.rmtree(self._dir_to_compr)
+        compressed_filepath = os.path.join(self._citing_file_dir, "zip_citing_map.zip")
+
+        return compressed_filepath
 
     def to_validated_id_list(self, id_dict_list, process_type):
         if process_type == "venue":
@@ -48,8 +114,11 @@ class JalcPreProcessing(Preprocessing):
                         id_man = self.get_id_manager(schema, self._id_man_dict)
                         if id_man:
                             norm_id = id_man.normalise(id, include_prefix=True)
+                            # check first if the id is in the citing dois mapping
+                            if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                                norm_identifiers.append(norm_id)
                             # check if the id is in redis db
-                            if self._redis_db.get(norm_id):
+                            elif self._redis_db.get(norm_id):
                                 norm_identifiers.append(norm_id)
                             # if the id is not in redis db, validate it before appending
                             elif id_man.is_valid(norm_id):
@@ -65,8 +134,11 @@ class JalcPreProcessing(Preprocessing):
                     id_man = self.get_id_manager(schema, self._id_man_dict)
                     if id_man:
                         norm_id = id_man.normalise(id, include_prefix=True)
+                        # check first if the doi is in the citing dois mapping
+                        if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                            norm_identifiers.append(norm_id)
                         # check if the id is in redis db
-                        if self._redis_db.get(norm_id):
+                        elif self._redis_db.get(norm_id):
                             norm_identifiers.append(norm_id)
                         # if the id is not in redis db, validate it before appending
                         elif id_man.is_valid(norm_id):
@@ -93,8 +165,11 @@ class JalcPreProcessing(Preprocessing):
             id_man = self.get_id_manager(schema, self._id_man_dict)
             if id_man:
                 norm_id = id_man.normalise(id_dict_list, include_prefix=True)
+                # check first if the doi is in the citing dois mapping
+                if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                    return norm_id
                 # check if the id is in redis db
-                if self._redis_db.get(norm_id):
+                elif self._redis_db.get(norm_id):
                     return norm_id
                 # if the id is not in redis db, validate it before appending
                 elif id_man.is_valid(norm_id):
@@ -187,10 +262,12 @@ if __name__ == '__main__':
                             help='Directory where the preprocessed scholix gz files will be stored ')
     arg_parser.add_argument('-n', '--number', dest='number', required=True, type=int,
                             help='Number of relevant entities which will be stored in each scholix gz file')
+    arg_parser.add_argument('-cmd', '--citing_map_dir', dest='citing_map_dir', required=True, type=str,
+                            help='paremeter to define whether or not the script is executed in testing modality')
     arg_parser.add_argument('-t', '--testing', dest='testing', required=False, type=bool, default=False,
                             help='paremeter to define whether or not the script is executed in testing modality')
 
     args = arg_parser.parse_args()
 
-    japp = JalcPreProcessing(input_dir=args.input, output_dir=args.output_g, interval=args.number, testing=args.testing)
+    japp = JalcPreProcessing(input_dir=args.input, output_dir=args.output_g, interval=args.number,citing_map_dir=args.citing_map_dir, testing=args.testing)
     japp.split_input()

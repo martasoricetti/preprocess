@@ -8,7 +8,9 @@ import zstandard as zstd
 import pathlib
 import zipfile
 import fakeredis
+import pandas as pd
 from preprocessing.datasource.redis import RedisDataSource
+from oc_meta.lib.csvmanager import CSVManager
 
 
 class Preprocessing(metaclass=ABCMeta):
@@ -18,11 +20,17 @@ class Preprocessing(metaclass=ABCMeta):
     BR_redis = RedisDataSource("DB-META-BR")
     RA_redis_test = fakeredis.FakeStrictRedis()
     RA_redis = RedisDataSource("DB-META-RA")
+    csv_man = CSVManager()
 
     def __init__(self, **params):
         """preprocessor constructor."""
         for key in params:
             setattr(self, key, params[key])
+
+    # def set_from_zip(self, zip_dir):
+    #     set_from_zip = self.csv_man.load_csv_column_as_set(zip_dir, "id")
+    #     print("citing IDs index set: created")
+    #     return set_from_zip
 
     def get_all_files(self, i_dir_or_compr, req_type):
         """This method is meant to extract all the files of a given format from the compressed file

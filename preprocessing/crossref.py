@@ -17,9 +17,11 @@ from argparse import ArgumentParser
 from os import makedirs
 import json
 import os
+import csv
 from tqdm import tqdm
 from datetime import datetime
 import os.path
+import shutil
 from os.path import exists
 from preprocessing.base import Preprocessing
 from oc_idmanager.doi import DOIManager
@@ -28,6 +30,7 @@ from oc_idmanager.isbn import ISBNManager
 from oc_idmanager.ror import RORManager
 from oc_idmanager.viaf import ViafManager
 from oc_idmanager.orcid import ORCIDManager
+from oc_meta.lib.csvmanager import CSVManager
 
 
 class CrossrefPreProcessing(Preprocessing):
@@ -36,7 +39,7 @@ class CrossrefPreProcessing(Preprocessing):
     _entity_keys_to_update = {"ISSN", "author", "reference", "editor", "ISBN", "DOI"}
     _entity_keys_to_keep = {"container-title", "issued", "member", "issued", "issue", "prefix", "title", "type", "publisher", "volume", "deposited", "page", "original-title", "content-updated"}
 
-    def __init__(self, input_dir, output_dir, interval, testing=False):
+    def __init__(self, input_dir, output_dir, interval, citing_map_dir, testing=False):
         if testing:
             self._redis_db = self.BR_redis_test
             self._redis_db_ra = self.RA_redis_test
@@ -47,6 +50,12 @@ class CrossrefPreProcessing(Preprocessing):
         self._output_dir = output_dir
         if not exists(self._output_dir):
             makedirs(self._output_dir)
+        self._citing_file_dir = citing_map_dir
+        if not exists(self._citing_file_dir):
+            makedirs(self._citing_file_dir)
+        self._dir_to_compr = os.path.join(self._citing_file_dir, "dir_to_compr")
+        if not exists(self._dir_to_compr):
+            makedirs(self._dir_to_compr)
         self._interval = interval
         self._doi_manager = DOIManager()
         self._issn_manager = ISSNManager()
@@ -55,10 +64,66 @@ class CrossrefPreProcessing(Preprocessing):
         self._ror_manager = RORManager()
         self._orcid_manager = ORCIDManager()
         self._id_man_dict = {"doi":self._doi_manager, "issn": self._issn_manager, "isbn": self._isbn_manager, "viaf":self._viaf_manager, "ror": self._ror_manager, "orcid":self._orcid_manager}
-
+        # CREATE THE CITING ID FILE
+        self.zip_filepath = self.create_citing_map()
+        self.citing_id_index = CSVManager(self.zip_filepath)
         super(CrossrefPreProcessing, self).__init__()
 
+    def create_citing_map(self):
+        data = []
+        count = 0
+        filecount = 0
+
+        all_files, targz_fd = self.get_all_files(self._input_dir, self._req_type)
+        for file_idx, file in enumerate(tqdm(all_files), 1):
+            file_data = self.load_json(file, targz_fd)
+            if "items" in file_data:
+                for obj in tqdm(file_data["items"]):
+                    if obj.get("DOI"):
+                        doi_entity = self._doi_manager.normalise(obj['DOI'])
+                        if doi_entity:
+                            data.append(doi_entity)
+                            count += 1
+                            if count == 1000:
+                                # List that we want to add as a new row
+                                rows_to_append = [[x]for x in data]
+                                # Open our existing CSV file in append mode
+                                # Create a file object for this file
+                                with open(os.path.join(self._dir_to_compr, str(filecount)+".csv"), 'w') as f_object:
+                                    # Pass this file object to csv.writer()
+                                    # and get a writer object
+                                    writer_object = csv.writer(f_object)
+                                    writer_object.writerow(["id"])
+                                    # Pass the list as an argument into
+                                    # the writerow()
+                                    writer_object.writerows(rows_to_append)
+                                    # Close the file object
+                                    f_object.close()
+
+                                filecount += 1
+                                count = 0
+                                data = []
+        if data:
+            rows_to_append = [[x] for x in data]
+            with open(os.path.join(self._dir_to_compr, str(filecount+1)+".csv"), 'w') as f_object:
+                # Pass this file object to csv.writer()
+                # and get a writer object
+                writer_object = csv.writer(f_object)
+                writer_object.writerow(["id"])
+                # Pass the list as an argument into
+                # the writerow()
+                writer_object.writerows(rows_to_append)
+                # Close the file object
+                f_object.close()
+        print("citing index: created")
+        shutil.make_archive(os.path.join(self._citing_file_dir, "zip_citing_map"), 'zip', self._dir_to_compr)
+        print("citing index: compressed")
+        shutil.rmtree(self._dir_to_compr)
+        compressed_filepath = os.path.join(self._citing_file_dir, "zip_citing_map.zip")
+        return compressed_filepath
+
     def split_input(self):
+
         data = []
         count = 0
 
@@ -182,7 +247,10 @@ class CrossrefPreProcessing(Preprocessing):
                     c_processed = {k:v for k,v in c.items() if k!= "DOI"}
                     id = c.get("DOI")
                     norm_id = id_man.normalise(id, include_prefix=True)
-                    if self._redis_db.get(norm_id):
+                    if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                        c_processed["DOI"]= norm_id
+                        processed_list.append(c_processed)
+                    elif self._redis_db.get(norm_id):
                         c_processed["DOI"]= norm_id
                         processed_list.append(c_processed)
                     elif id_man.is_valid(norm_id):
@@ -200,7 +268,9 @@ class CrossrefPreProcessing(Preprocessing):
                 id = c.get("id")
                 id_man = self.get_id_manager(schema, self._id_man_dict)
                 norm_id = id_man.normalise(id, include_prefix=True)
-                if self._redis_db.get(norm_id):
+                if self.citing_id_index.get_value(norm_id.split(":")[1]):
+                    processed_list.append(norm_id)
+                elif self._redis_db.get(norm_id):
                     processed_list.append(norm_id)
                 elif id_man.is_valid(norm_id):
                     processed_list.append(norm_id)
@@ -222,12 +292,14 @@ if __name__ == '__main__':
                             help='Directory where the preprocessed json files will be stored ')
     arg_parser.add_argument('-n', '--number', dest='number', required=True, type=int,
                             help='Number of relevant entities which will be stored in each  json output file')
+    arg_parser.add_argument('-cmd', '--citing_map_dir', dest='citing_map_dir', required=True, type=str,
+                            help='paremeter to define whether or not the script is executed in testing modality')
     arg_parser.add_argument('-t', '--testing', dest='testing', required=False, type=bool, default=False,
                             help='paremeter to define whether or not the script is executed in testing modality')
 
     args = arg_parser.parse_args()
 
-    crpp = CrossrefPreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number, testing=args.testing)
+    crpp = CrossrefPreProcessing(input_dir=args.input, output_dir=args.output_g,  interval=args.number,citing_map_dir=args.citing_map_dir, testing=args.testing)
     crpp.split_input()
 
     # HOW TO RUN (example: preprocess) % python -m preprocessing.crossref -in "/Volumes/T7_Touch/LAVORO/COCI/crossref-data-YYYY-MM.tar.gz" -out "/Volumes/T7_Touch/test_preprocess_crossref" -n 100 -t True

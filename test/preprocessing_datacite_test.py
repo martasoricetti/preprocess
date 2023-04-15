@@ -29,6 +29,7 @@ class PreprocessingTestDatacite(unittest.TestCase):
             self._output_dir_dc_lm = self.__get_output_directory("data_datacite_output")
             self._compr_output_dir_dc_lm = self.__get_output_directory("data_datacite_output_compress")
             self._interval = 7
+            self._dirt_to_compress = join(self.test_dir, "citing_map")
 
         def __get_output_directory(self, directory):
             directory = join("", "tmp", directory)
@@ -39,7 +40,7 @@ class PreprocessingTestDatacite(unittest.TestCase):
         def test_split_input(self):
             if exists(self._output_dir_dc_lm):
                 shutil.rmtree(self._output_dir_dc_lm)
-            self._dc_pp = DatacitePreProcessing(self._input_dir_dc, self._output_dir_dc_lm, self._interval, testing=True)
+            self._dc_pp = DatacitePreProcessing(self._input_dir_dc, self._output_dir_dc_lm, self._interval, self._dirt_to_compress, testing=True)
             self._dc_pp.split_input()
             entities_w_citations = []
             all_files, targz_fd = self._dc_pp.get_all_files(self._input_dir_dc, self._dc_pp._req_type)
@@ -90,7 +91,7 @@ class PreprocessingTestDatacite(unittest.TestCase):
         def test_split_input_compress(self):
             if exists(self._compr_output_dir_dc_lm):
                 shutil.rmtree(self._compr_output_dir_dc_lm)
-            self._dc_pp = DatacitePreProcessing(self._compr_input_dir_dc, self._compr_output_dir_dc_lm, self._interval, testing=True)
+            self._dc_pp = DatacitePreProcessing(self._compr_input_dir_dc, self._compr_output_dir_dc_lm, self._interval, self._dirt_to_compress, testing=True)
             self._dc_pp.split_input()
             entities_w_citations = []
             all_files, targz_fd = self._dc_pp.get_all_files(self._compr_input_dir_dc, self._dc_pp._req_type)
@@ -144,7 +145,7 @@ class PreprocessingTestDatacite(unittest.TestCase):
                 shutil.rmtree(decompr_dir_filepath)
 
         def test_to_validated_id_list_API(self):
-            self._dc_pp2 = DatacitePreProcessing(self._input_dir_dc, self._output_dir_dc_lm, self._interval, testing=True)
+            self._dc_pp2 = DatacitePreProcessing(self._input_dir_dc, self._output_dir_dc_lm, self._interval, self._dirt_to_compress, testing=True)
 
             identifiers = [{'type': 'Series', 'identifier': '10.11646/zootaxa.3644.1.1', 'identifierType': 'DOI'}, {'type': 'Journal Article', 'identifier': '1248', 'identifierType': 'PMID'}]
             container_w_id = [{'type': 'Series', 'identifier': '10.11646/zootaxa.3644.1.1', 'identifierType': 'DOI'}]
@@ -250,7 +251,7 @@ class PreprocessingTestDatacite(unittest.TestCase):
             self.assertEqual(outp7, expected_7)
 
         def test_to_validated_id_list_DB(self):
-            self._dc_pp3 = DatacitePreProcessing(self._input_dir_dc, self._output_dir_dc_lm, self._interval, testing=True)
+            self._dc_pp3 = DatacitePreProcessing(self._input_dir_dc, self._output_dir_dc_lm, self._interval, self._dirt_to_compress, testing=True)
             id_dict_list = [{'relationType': 'IsCitedBy', 'relatedIdentifier': '9999999999999', 'resourceTypeGeneral': 'Text', 'relatedIdentifierType': 'PMID'}]
             expected = [], [], []
             # check id management of an id which does not exist - API
@@ -297,7 +298,7 @@ class PreprocessingTestDatacite(unittest.TestCase):
               'identifiers': [], 'container': {}}
             ]
 
-            self._dc_pp4 = DatacitePreProcessing(self._input_dir_dc, self._output_dir_dc_lm, 1, testing=True)
+            self._dc_pp4 = DatacitePreProcessing(self._input_dir_dc, self._output_dir_dc_lm, 1, self._dirt_to_compress, testing=True)
             count = 0
             for el in data_to_file:
                 count += 1

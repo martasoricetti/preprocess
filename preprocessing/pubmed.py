@@ -260,7 +260,7 @@ if __name__ == '__main__':
     args = arg_parser.parse_args()
 
 
-    nihpp = NIHPreProcessing(input_dir=args.input, output_dir=args.output, interval=args.number, journals_dict_path=args.jtpath, testing=args.testing)
+    nihpp = NIHPreProcessing(input_dir=args.input, output_dir=args.output, interval=args.number, journals_dict_path=args.jtpath,testing=args.testing)
     nihpp.split_input()
 
 

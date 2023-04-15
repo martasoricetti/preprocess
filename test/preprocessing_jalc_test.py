@@ -16,6 +16,7 @@ class JalcPPTest(unittest.TestCase):
         self._input_dir_dj = join(self.test_dir, "data_jalc", "jalc_sample.zip")
         self._output_dir_dj = self.__get_output_directory("data_jalc_output")
         self._interval = 10
+        self._dirt_to_compress = join(self._cont_input_dir, "citing_map")
 
     def __get_output_directory(self, directory):
         directory = join("", "tmp", directory)
@@ -24,7 +25,7 @@ class JalcPPTest(unittest.TestCase):
         return directory
 
     def test_to_validated_id_list_API(self):
-        self.JAPP1 = JalcPreProcessing(self._input_dir_dj, self._output_dir_dj, self._interval, testing=True)
+        self.JAPP1 = JalcPreProcessing(self._input_dir_dj, self._output_dir_dj, self._interval, self._dirt_to_compress, testing=True)
         # process_type == "venue"
         id_dict_list_1 = [{
                 "journal_id": "1880-3016",
@@ -144,7 +145,7 @@ class JalcPPTest(unittest.TestCase):
         self.assertEqual(outp6, expected6)
 
     def test_to_validated_id_list_DB(self):
-        self.JAPP2 = JalcPreProcessing(self._input_dir_dj, self._output_dir_dj, self._interval, testing=True)
+        self.JAPP2 = JalcPreProcessing(self._input_dir_dj, self._output_dir_dj, self._interval,self._dirt_to_compress, testing=True)
         # check id management of an id which does not exist - API
         doi_invalid = "10.11231/jaem.32.90"
         expected = None
@@ -161,7 +162,7 @@ class JalcPPTest(unittest.TestCase):
             shutil.rmtree(self._output_dir_dj)
         self.assertFalse(exists(self._output_dir_dj))
 
-        self.JAPP = JalcPreProcessing(self._input_dir_dj, self._output_dir_dj, self._interval, testing=True)
+        self.JAPP = JalcPreProcessing(self._input_dir_dj, self._output_dir_dj, self._interval, self._dirt_to_compress, testing=True)
         self.JAPP.split_input()
 
         entities_w_citations = []
