@@ -7,3 +7,4 @@ __pycache__
 build/
 oc_preprocessing.egg-info/
 dist/
+*decompr_zip_dir

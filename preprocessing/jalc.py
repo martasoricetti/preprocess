@@ -83,6 +83,7 @@ class JalcPreProcessing(Preprocessing):
                                 filecount += 1
                                 count = 0
                                 data = []
+                    f.close()
         if data:
             rows_to_append = [[x] for x in data]
             with open(os.path.join(self._dir_to_compr, str(filecount+1)+".csv"), 'w') as f_object:

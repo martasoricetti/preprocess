@@ -137,6 +137,7 @@ class DatacitePreProcessing(Preprocessing):
                     writer_object.writerows(rows_to_append)
                     # Close the file object
                     f_object.close()
+            f.close()
             print("citing index: created")
             shutil.make_archive(os.path.join(self._citing_file_dir, "zip_citing_map"), 'zip', self._dir_to_compr)
             print("citing index: compressed")

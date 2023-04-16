@@ -28,9 +28,9 @@ class NIHPreProcessing(Preprocessing):
     _req_type = ".csv"
     _accepted_ids = {"doi", "pmid"}
     _entity_keys_to_discard = {"is_research_article","citation_count","field_citation_rate","expected_citations_per_year","citations_per_year","relative_citation_ratio","nih_percentile","human","animal","molecular_cellular","x_coord","y_coord","apt","is_clinical","cited_by_clin","provisional"}
-    _entity_keys_to_update = {"pmid", "doi", "cited_by","references"}
-    _entity_keys_to_keep = {"pmid","title","authors","year","journal","cited_by","references"}
-    _filter = ["pmid", "doi", "title", "authors", "year", "journal", "cited_by", "references"]
+    _entity_keys_to_update = {"pmid", "doi","references"}
+    _entity_keys_to_keep = {"pmid","title","authors","year","journal","references"}
+    _filter = ["pmid", "doi", "title", "authors", "year", "journal", "references"]
 
     def __init__(self, input_dir, output_dir, interval, journals_dict_path, testing=False):
         self.journals_dict_path = journals_dict_path
@@ -105,17 +105,13 @@ class NIHPreProcessing(Preprocessing):
                             print("ERROR:", line.get("pmid"), norm_pmid)
                             continue
                         ref = line.get("references").split() if line.get("references") else []
-                        cit_by = line.get("cited_by").split() if line.get("cited_by") else []
+
                         if ref:
                             ref_dict_list = [{"id":i, "schema":"pmid"} for i in ref]
                             norm_ref = ' '.join([x for x in self.to_validated_id_list(ref_dict_list, "citations") if x]).strip()
                         else:
                             norm_ref = ""
-                        if cit_by:
-                            cit_by_dict_list = [{"id":i, "schema":"pmid"} for i in cit_by]
-                            norm_cit_by = ' '.join([x for x in self.to_validated_id_list(cit_by_dict_list, "citations") if x]).strip()
-                        else:
-                            norm_cit_by = ""
+
                         valid_doi = None
                         if line.get("doi"):
                             valid_doi = self.to_validated_id_list([{"id":line.get("doi"), "schema":"doi"}], "citations")[0]
@@ -127,7 +123,6 @@ class NIHPreProcessing(Preprocessing):
                         line["doi"] = valid_doi
                         line["journal"] = valid_venue
                         line["references"] = norm_ref
-                        line["cited_by"] = norm_cit_by
 
                         lines.append(line)
                         if int(count) != 0 and int(count) % int(self._interval) == 0:

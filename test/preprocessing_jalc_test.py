@@ -4,7 +4,7 @@ import unittest
 import os.path
 from preprocessing.jalc import JalcPreProcessing
 from os.path import join, exists
-import os.path
+import pathlib
 
 class JalcPPTest(unittest.TestCase):
     """This class aims at testing the methods of the classes OpenAirePreProcessing."""
@@ -215,14 +215,12 @@ class JalcPPTest(unittest.TestCase):
 
         self.assertEqual(exp_n_out_file, len_out_files)
 
-        for f in os.listdir(self._cont_input_dir):
-            if f.endswith(".zip"):
-                f_ext = ".".join(f.split(".")[:-1])
-                path_no_ext = join(self._cont_input_dir, f_ext)
-                decompr_dir_filepath = path_no_ext+"_decompr_zip_dir"
-                if exists(decompr_dir_filepath):
-                    shutil.rmtree(decompr_dir_filepath)
-                self.assertFalse(exists(decompr_dir_filepath))
+        todel = [join(self._cont_input_dir, x)for x in os.listdir(self._cont_input_dir) if x.endswith("_decompr_zip_dir")]
+        self.assertTrue(len(todel)>0)
+        for t in todel:
+            self.assertTrue(exists(t))
+            shutil.rmtree(t)
+            self.assertFalse(exists(t))
 
 
  #python -m unittest discover -s test -p "preprocessing_jalc_test.py"
